@@ -91,43 +91,32 @@ La commande `ls(1)`_ permet de lister le contenu d'un répertoire. Elle supporte
 
 
 
-Question 3. Premier programme en langage C
-------------------------------------------
+Question 3. Failure with Distance Vector Routing
+--------------------------------------------------------------
 
-Depuis la publication du livre de référence [KernighanRitchie1998]_, le premier programme écrit en langage C affiche à l'écran la chaîne de caractères "Hello, world". Parmi les codes source ci-dessous, un seul est entièrement correct. Lequel ?
+Consider that the network reach a state where the router A, C, D have receive
+distance vector from each of them. For an unknow reason, these routers have
+never heard about B and E. Then, the link between the router A and C fail. What
+will happen ?
 
-
+ .. figure:: ../png/qcm1-3.png 
+     :align: center
+     :scale: 100
+ 
 .. class:: positive
 
--
- .. code:: c
+- Routers A and C notice after a sufficient delay that they own a route which
+  is too old. The next distance vector for A will be [ TODO ] and the next
+  distance vector for D will be [ TODO ].
 
-    #include <stdio.h>
-    int main(int argc, const char *argv[]) {
-        printf("Hello, world\n");
-    }
-
--
- .. code:: c
-
-    #include <stdio.h>
-    int main(int argc, const char *argv[]) {
-        printf("Hello,");
-	printf(" world\n");
-    }
 
 .. class:: negative
 
--
- .. code:: c
+- Routers A and C notice after a sufficient delay that they own a route which
+  is too old. The next distance vector for A will be [ TODO B=inf, E=inf ] and the next
+  distance vector for D will be [ TODO B=inf, E=inf ].
 
-    #include <stdio.h>
-    void main(int argc, const char *argv[]) {
-        printf("Hello, world\n");
-    }
-
-
- .. class:: comment
+.. class:: comment
 
       En C, contrairement à Java, la fonction ``main`` retourne une valeur de type ``int``.
 
