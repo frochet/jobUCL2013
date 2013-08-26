@@ -7,18 +7,18 @@
 
 
 =========================
-Mission X : 
+Mission X : The Network Layer, Principles
 =========================
 
 Ces questions ont pour objectif de vous permettre de tester vous-même votre compréhension de la matière couverte par cette mission de mise en route.
 
-Ces questions supposent que vous avez lu le premier chapitre du syllabus contenant l'introduction à Unix et au langage C.
+Ces questions supposent que vous avez lu le cinquième chapitre du syllabus contenant l'introduction à la Network Layer.
 
 
-Question 1. Commande `man(1)`_
+Question 1. Shortest Path Tree
 ------------------------------
 
-La commande `man(1)`_ permet de lire les pages de manuel d'un système Unix. Elle est particulièrement utile pour vérifier les arguments à donner à un programme en ligne de commande ou pour savoir comment utiliser certaines fonctions de la librairie standard ou appels systèmes. Comment faut-il appeler la commande `man(1)`_ pour lister toutes les pages de manuel dont le résumé contient le mot ''intro'' ?
+Analyse the network given. What is the shortest path tree for the router A?
 
 .. class:: positive
 
