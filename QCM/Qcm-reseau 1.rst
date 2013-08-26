@@ -35,22 +35,16 @@ Analyse the network given. What is the shortest path tree for the router A?
 .. class:: negative
 
 -
- .. code:: console
-
-    man intro
-
- .. class:: comment
-
-    Cette commande permet d'obtenir la page dénommée ``intro`` mais uniquement dans la première section du manuel. Elle ne liste pas toutes les pages dont le résumé contient le mot clé ``intro``.
-
+ .. figure:: ../png/Q1-mauvais1.png 
+     :align: center
+     :scale: 100
 -
- .. code:: console
-
-    man -k *intro*
-
+ .. figure:: ../png/Q1-mauvais2.png 
+     :align: center
+     :scale: 100
+ 
  .. class:: comment
 
-    Par défaut, lorsque vous passez un argument tel que ``*intro*`` en ligne de commande, le shell va tenter de remplacer ``*intro*`` par tous les noms de fichiers du répertoire courant qui contiennent l'expression régulière qui commence par n'importe quelle suite de caractères, contient ``intro`` et se termine par n'importe quelle suite de caractères. Si le répertoire dans lequel vous exécutez cette commande contient les fichiers ``intro.txt`` et ``intro.dat``, ``man`` recevra ces deux noms de fichiers comme arguments.
 
 Question 2. Commande `ls(1)`_
 -----------------------------
