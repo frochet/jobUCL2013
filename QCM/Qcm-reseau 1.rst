@@ -20,12 +20,16 @@ Question 1. Shortest Path Tree
 
 Analyse the network given. What is the shortest path tree for the router A?
 
+  .. figure:: ../png/qcm1-1.png
+     :align: center
+     :scale: 0.4
+
 .. class:: positive
 
 -
   .. figure:: ../png/qcm1-1.png
      :align: center
-     :scale: 70
+     :scale: 40
 
 
 .. class:: negative
