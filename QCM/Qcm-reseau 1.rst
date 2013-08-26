@@ -22,7 +22,7 @@ Analyse the network given. What is the shortest path tree for the router A?
 
   .. figure:: ../png/qcm1-1.png
      :align: center
-     :scale: 20
+     :scale: 0.4
 
 .. class:: positive
 
