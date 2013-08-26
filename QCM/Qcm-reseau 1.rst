@@ -105,16 +105,19 @@ will happen ?
  
 .. class:: positive
 
-- Routers A and C notice after a sufficient delay that they own a route which
+- Routers A and C notice after a sufficient delay (How much ?) that they own a route which
   is too old. The next distance vector for A will be [ TODO ] and the next
   distance vector for D will be [ TODO ].
 
 
 .. class:: negative
 
-- Routers A and C notice after a sufficient delay that they own a route which
+- Routers A and C notice after a sufficient delay (How much ?) that they own a route which
   is too old. The next distance vector for A will be [ TODO B=inf, E=inf ] and the next
   distance vector for D will be [ TODO B=inf, E=inf ].
+
+- Either router A or router C notice first the failure (let's say that A notice
+  first) and sent its vector routing to the others with inside C=inf. When router C receive 
 
 .. class:: comment
 
