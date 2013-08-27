@@ -152,6 +152,8 @@ will happen ?
   is too old. The next distance vector for A will be [ TODO B=inf, E=inf ] and the next
   distance vector for D will be [ TODO B=inf, E=inf ].
 
+.. class:: negative
+
 - Either router A or router C notice first the failure (let's say that A notice
   first) and sent its vector routing to the others with inside C=inf. When router C receive 
 

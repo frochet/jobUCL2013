@@ -132,7 +132,7 @@ Question 3. Failure with Distance Vector Routing
 
 Consider that the network reach a state where the router A, C, D have receive
 distance vector from each of them. For an unknow reason, these routers have
-never heard about B and E. Then, the link between the router A and C fail. What
+never heard about B and E. Then, the link between the router A and D fail. What
 will happen ?
 
  .. figure:: ../png/qcm1-3.png 
@@ -141,20 +141,20 @@ will happen ?
  
 .. class:: positive
 
-- Routers A and C notice after a sufficient delay (How much ?) that they own a route which
+- Routers A and D notice after a sufficient delay (How much ?) that they own a route which
   is too old. The next distance vector for A will be [ TODO ] and the next
   distance vector for D will be [ TODO ].
 
 
 .. class:: negative
 
-- Routers A and C notice after a sufficient delay (How much ?) that they own a route which
+- Routers A and D notice after a sufficient delay (How much ?) that they own a route which
   is too old. The next distance vector for A will be [ TODO B=inf, E=inf ] and the next
   distance vector for D will be [ TODO B=inf, E=inf ].
 
 .. class:: negative
 
-- Either router A or router C notice first the failure (let's say that A notice
+- Either router A or router D notice first the failure (let's say that A notice
   first) and sent its vector routing to the others with inside C=inf. When router C receive 
 
 .. class:: comment
@@ -200,7 +200,7 @@ will happen ?
     En C, la signature de la fonction ``main`` est ``int main(int argc, const char *argv[])`` même si certains compilateurs peuvent être tolérants. `printf(3)`_ est défini via `stdio.h`_ et non `stdlib.h`_.
 
 
-Question 4. Deuxième programme en langage C
+Question 4. Link State Routing
 -------------------------------------------
 
 Votre deuxième programme en langage C doit afficher à l'écran la chaîne de caractères `SINF1252`. Lequel parmi les programmes ci-dessous affiche-t-il correctement cette chaîne de caractères ?
