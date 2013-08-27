@@ -173,8 +173,32 @@ will happen ?
 Question 4. The count to infinity problem
 ------------------------------------------
 
+Consider that we have the following network where Distance Vector Routing run
+and have reach a stable state where all the routers are known with the best
+route. Which links must be fail and which events must be occur in order to have a
+count to infinity problem between router B and E ?
+
+ .. figure:: ../png/qcm1-4.png 
+     :align: center
+     :scale: 100
+
+.. class:: positive
+
+- links A-B, C-E and D-E must fail, then 
+
+.. class:: negative
+
+- The link between B and E and the link between C and E must fail, then
+  consider that all message sending by B and E are lost. B and E will have the
+  count to infinity problem when receiving distance vector by A and D
+  respectively.
+ 
+- links A-B, C-E and D-E must fail then both B and E notice the failures
+  exactely at the same time. The count to infinity problem begin when B and E
+  start to exchange distance vector.
 
 
+  
 Question 5. Link State Routing
 -------------------------------------------
 
