@@ -197,7 +197,7 @@ Link state routing is the second type of routing protocols. When a router use li
 
 
 
-Question 5. Differencies between Distance Vector Routing and Link State Routing
+Question 6. Differencies between Distance Vector Routing and Link State Routing
 ---------------------------------------------
 
 Distance Vector Routing and Link State Routing are two different protocols. Find the correct affirmations.
