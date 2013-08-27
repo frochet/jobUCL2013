@@ -6,9 +6,9 @@
   <script type="text/javascript">$nmbr_prop = 4</script>
 
 
-=========================
+=========================================
 Mission X : The Network Layer, Principles
-=========================
+=========================================
 
 Ces questions ont pour objectif de vous permettre de tester vous-même votre compréhension de la matière couverte par cette mission de mise en route.
 
@@ -20,30 +20,30 @@ Question 1. Shortest Path Tree
 
 Analyse the network given. What is the shortest path tree for the router A?
 
-  .. figure:: ../png/qcm1-1.png
+  .. figure:: ../../png/qcm1-1.png
      :align: center
      :scale: 100
 
 .. class:: positive
 
 -
-  .. figure:: ../png/Q1-solution1.png 
+  .. figure:: ../../png/Q1-solution1.png 
      :align: center
      :scale: 100
   
 -
-  .. figure:: ../png/Q1-solution2.png 
+  .. figure:: ../../png/Q1-solution2.png 
      :align: center
      :scale: 100
 
 .. class:: negative
 
 -
- .. figure:: ../png/Q1-mauvais1.png 
+ .. figure:: ../../png/Q1-mauvais1.png 
      :align: center
      :scale: 100
 -
- .. figure:: ../png/Q1-mauvais2.png 
+ .. figure:: ../../png/Q1-mauvais2.png 
      :align: center
      :scale: 100
  
@@ -227,7 +227,7 @@ distance vector from each of them. For an unknown reason, these routers have
 never heard about B and E. Then, the link between the router A and D fail. What
 will happen ?
 
- .. figure:: ../png/qcm1-3.png 
+ .. figure:: ../../png/qcm1-3.png 
      :align: center
      :scale: 100
  
@@ -265,7 +265,7 @@ and has reach a stable state where all the routers are known with the best
 route. Which links must fail and which events must occur in order to have a
 count to infinity problem between router B and E ?
 
- .. figure:: ../png/qcm1-4.png 
+ .. figure:: ../../png/qcm1-4.png 
      :align: center
      :scale: 120
 
