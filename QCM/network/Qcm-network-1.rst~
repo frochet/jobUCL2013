@@ -365,9 +365,9 @@ count to infinity problem between router B and E ?
   C-E and D-E. E update its routing table and its vector to [E=0, B=4, A=8, C=inf, D=inf]
   and sent it to its neighbors (B here). But the vector is lost. B, which
   doesn't have noticed yet the failure with the link A-B, sent its vector 
-  [B=0, A=4, E=4, C=7, D=10] to E. After have send its vector, B notice the
+  [B=0, A=4, E=4, C=7, D=10] to E. After have sent its vector, B notice the
   failure and update its table routing. The count to infinity appears when B
-  and E start to exchange their vector.
+  and E start to exchange their vectors.
 
 .. class:: negative
 
@@ -395,12 +395,12 @@ count to infinity problem between router B and E ?
 Question 7. Link State Routing
 ------------------------------
 
-Link state routing is the second type of routing protocols. When a router use link state routing, it sends message on the network. Wich of theses affirmations are corrects?
+Link state routing is an other type of routing protocols. When a router use link state routing, it sends message on the network. Which of theses affirmations are corrects?
 
 .. class:: positive
 
 -
-    A link state router sends periodically a ``HELLO`` message to all it's neighbourgs.
+    A link state router sends periodically a ``HELLO`` message to all its neighbours.
 
 -
     A link-state router sends link-state packets to its neighbours. If this lsp is newer than the one stored in the link state database of the neighbours, they forwards the lsp on all links except the one over which the LSP was received.
@@ -411,7 +411,7 @@ Link state routing is the second type of routing protocols. When a router use li
 .. class:: negative
 
 -
-    A link state router sends periodically a ``HELLO`` message to all it's neighbourgs. This ``HELLO`` message is forwarded all over the network.
+    A link state router sends periodically a ``HELLO`` message to all it's neighbours. This ``HELLO`` message is forwarded all over the network.
    
  	 .. class:: comment
 
@@ -423,7 +423,7 @@ Link state routing is the second type of routing protocols. When a router use li
     
  	 .. class:: comment
 
-	 	 The ``HELLO`` message are sends periodically.
+	 	 The ``HELLO`` message are send periodically.
 
 
 -
@@ -476,7 +476,7 @@ Distance Vector Routing and Link State Routing are two different protocols. Find
  
  	 .. class:: comment
 
-	 	 Distance vector does'nt use the flood method. Flooding is used with link state routing.
+	 	 Distance vector doesn't use the flood method. Flooding is used with link state routing.
 
 -
     A router that implement distance vector routing has a database where distance vector are saved.
@@ -490,10 +490,10 @@ Distance Vector Routing and Link State Routing are two different protocols. Find
 
   	.. class:: comment
 
-	 	 Link state packet contains only information about the neighbourg of the router who sends the LSP.
+	 	 Link state packet contains only information about the neighbours of the router who sends the LSP.
 
 -
-    The link state  database eliminates the need of a routing table.
+    The link state database eliminates the need of a routing table.
 
 
     

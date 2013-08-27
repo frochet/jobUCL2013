@@ -10,10 +10,12 @@
 Mission X : The Network Layer, Principles
 =========================================
 
-Ces questions ont pour objectif de vous permettre de tester vous-même votre compréhension de la matière couverte par cette mission de mise en route.
+These questions aim to let you train yourself on your understanding of the
+course material. Be aware that the following questions doesn't cover all the
+chapter.
 
-Ces questions supposent que vous avez lu le cinquième chapitre du syllabus contenant l'introduction à la Network Layer.
-
+These questions suppose that you have read the control plane part of the fifth
+chapter
 
 Question 1. Shortest Path Tree
 ------------------------------
