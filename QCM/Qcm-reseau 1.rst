@@ -60,6 +60,12 @@ Question 3. Link state routing
 .. class:: positive
 
 -
+  .. code-block:: c
+
+      LSP : A [C:3];[D:10];[B:4]
+
+
+-
   ..code-block:: c
 
       LSP : A [C:3];[D:10];[B:4]
