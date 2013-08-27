@@ -74,7 +74,7 @@ Which of these routing tables are correct ?
 -
   .. code-block:: c
 
-        distance vector from D: (D=0[local], A=6[South-West], C=3[South-West], B=10[South-West], E=8[South-West])
+        Router D: (D=0[local], A=6[South-West], C=3[South-West], B=10[South-West], E=8[South-West])
      
 
 .. class:: negative
@@ -96,7 +96,7 @@ Which of these routing tables are correct ?
 -
   .. code-block:: c
 
-        distance vector from D: (D=0[West], A=6[South-West], C=3[South-West], B=8[South-West], E=8[South-West])
+        Router D: (D=0[West], A=6[South-West], C=3[South-West], B=8[South-West], E=8[South-West])
      
 
 

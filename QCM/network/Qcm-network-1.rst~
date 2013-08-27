@@ -51,35 +51,30 @@ Question 2. Distance Vector Routing
 ------------------------------------
 
 Assume that the network from question 1 uses Distance Vector Routing. After
-some time, the routers have the following tables
-
- .. figure:: ../../png/network/qcm1-2-vectorRouting.png
-    :align: center
-    :scale: 100
-
- Which of the following distance vector are correct ?
+some time, the routers have build their routing tables.
+Which of these routing tables are correct ?
 
 .. class:: positive
 
 -
   .. code-block:: c
 
-        distance vector from A: [TODO]
+        Router A: (A=0[local], B=4[South], C=3[South-East], D=6[South-East], E=8[South])
 
 -
   .. code-block:: c
 
-        distance vector from B: [TODO]
+        Router A: (A=0[local], B=4[South], C=3[South-East], D=6[South-East], E=8[South-East])
      
 -
   .. code-block:: c
 
-        distance vector from C: [TODO]
+        Router C: (C=0[local], A=3[North-West], B=7[North-West], D=3[Noth-East], E=5[South-East])
      
 -
   .. code-block:: c
 
-        distance vector from D: [TODO]
+        distance vector from D: (D=0[local], A=6[South-West], C=3[South-West], B=10[South-West], E=8[South-West])
      
 
 .. class:: negative
@@ -87,28 +82,23 @@ some time, the routers have the following tables
 -
   .. code-block:: c
 
-        distance vector from A: [TODO]
+        Router A: (B=4[South], C=3[South-East], D=6[South-East], E=8[South])
+-
+  .. code-block:: c
+
+        Router A: (A=0[local], B=4[South], C=3[South-East], D=10[West], E=8[South-East])
      
 -
   .. code-block:: c
 
-        distance vector from C: [TODO]
+        Router C: (C=0[local], A=3[North-West], B=7[East], D=3[Noth-East], E=5[South-East])
      
 -
   .. code-block:: c
 
-        distance vector from E: [TODO]
+        distance vector from D: (D=0[West], A=6[South-West], C=3[South-West], B=8[South-West], E=8[South-West])
      
--
-  .. code-block:: c
 
-        distance vector from D: [TODO]
-     
--
-  .. code-block:: c
-
-        distance vector from A: [TODO]
-     
 
 Question 3. Link state routing
 -------------------------------
