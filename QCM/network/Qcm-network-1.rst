@@ -27,23 +27,23 @@ Analyse the network given. What is the shortest path tree for the router A?
 .. class:: positive
 
 -
-  .. figure:: ../../png/network/Q1-solution1.png 
+  .. figure:: ../../png/network/qcm1-1-solution1.png 
      :align: center
      :scale: 100
   
 -
-  .. figure:: ../../png/network/Q1-solution2.png 
+  .. figure:: ../../png/network/qcm1-1-solution2.png 
      :align: center
      :scale: 100
 
 .. class:: negative
 
 -
- .. figure:: ../../png/network/Q1-mauvais1.png 
+ .. figure:: ../../png/network/qcm1-1-mauvais1.png 
      :align: center
      :scale: 100
 -
- .. figure:: ../../png/network/Q1-mauvais2.png 
+ .. figure:: ../../png/network/qcm1-1-mauvais2.png 
      :align: center
      :scale: 100
  
@@ -227,7 +227,7 @@ distance vector from each of them. For an unknown reason, these routers have
 never heard about B and E. Then, the link between the router A and D fail. What
 will happen ?
 
- .. figure:: ../../png/qcm1-3.png 
+ .. figure:: ../../png/network/qcm1-3.png 
      :align: center
      :scale: 100
  
