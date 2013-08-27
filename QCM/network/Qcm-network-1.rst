@@ -39,11 +39,11 @@ Analyse the network given. What is the shortest path tree for the router A?
 .. class:: negative
 
 -
- .. figure:: ../../png/network/qcm1-1-mauvais1.png 
+ .. figure:: ../../png/network/qcm1-1-wrong1.png 
      :align: center
      :scale: 100
 -
- .. figure:: ../../png/network/qcm1-1-mauvais2.png 
+ .. figure:: ../../png/network/qcm1-1-wrong2.png 
      :align: center
      :scale: 100
  
