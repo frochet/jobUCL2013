@@ -160,7 +160,12 @@ will happen ?
       It could be useful to read again the chapter Distance Vector Routing, where you will find a complete example about failure. The pseudo-code in this chapter could help you to understand correctly the algorithm.
 
 
-Question 4. Link State Routing
+Question 4. The count to infinity problem
+------------------------------------------
+
+
+
+Question 5. Link State Routing
 -------------------------------------------
 
 Link state routing is the second type of routing protocols. When a router use link state routing, it sends message on the network. Wich of theses affirmations are corrects?
