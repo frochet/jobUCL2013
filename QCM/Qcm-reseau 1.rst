@@ -183,7 +183,7 @@ Link state routing is the second type of routing protocols. When a router use li
 .. class:: positive
 
 -
-    A link state router sends periodically a `HELLO`_ message to all it's neighbourgs.
+    A link state router sends periodically a ``HELLO`` message to all it's neighbourgs.
 
 -
     A link-state router sends link-state packets to its neighbours. If this lsp is newer than the one stored in the link state database of the neighbours, they forwards the lsp on all links except the one over which the LSP was received.
@@ -194,10 +194,10 @@ Link state routing is the second type of routing protocols. When a router use li
 .. class:: negative
 
 -
-    A link state router sends periodically a `HELLO`_ message to all it's neighbourgs. This `HELLO`_ message is forwarded all over the network.
+    A link state router sends periodically a ``HELLO`` message to all it's neighbourgs. This ``HELLO`` message is forwarded all over the network.
 
 -
-    A link state router sends a `HELLO`_ message once when it boots.
+    A link state router sends a ``HELLO`` message once when it boots.
 
 -
     A link-state router sends link-state packets only to its neighbours. (They are not forwarded further)
