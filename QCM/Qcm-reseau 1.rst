@@ -180,7 +180,7 @@ count to infinity problem between router B and E ?
 
  .. figure:: ../png/qcm1-4.png 
      :align: center
-     :scale: 100
+     :scale: 120
 
 .. class:: positive
 
