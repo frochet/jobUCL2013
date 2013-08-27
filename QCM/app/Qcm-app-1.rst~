@@ -47,63 +47,13 @@ Analyse the network given. What is the shortest path tree for the router A?
      :align: center
      :scale: 100
 
-Question 2. Distance Vector Routing
+Question 2. Distance vector routing
 ------------------------------------
-
-Assume that the network from question 1 uses Distance Vector Routing. After
-some time, the routers have build their routing tables.
-Which of these routing tables are correct ?
-
-.. class:: positive
-
--
-  .. code-block:: c
-
-        Router A: (A=0[local], B=4[South], C=3[South-East], D=6[South-East], E=8[South])
-
--
-  .. code-block:: c
-
-        Router A: (A=0[local], B=4[South], C=3[South-East], D=6[South-East], E=8[South-East])
-     
--
-  .. code-block:: c
-
-        Router C: (C=0[local], A=3[North-West], B=7[North-West], D=3[Noth-East], E=5[South-East])
-     
--
-  .. code-block:: c
-
-        Router D: (D=0[local], A=6[South-West], C=3[South-West], B=10[South-West], E=8[South-West])
-     
-
-.. class:: negative
-
--
-  .. code-block:: c
-
-        Router A: (B=4[South], C=3[South-East], D=6[South-East], E=8[South])
--
-  .. code-block:: c
-
-        Router A: (A=0[local], B=4[South], C=3[South-East], D=10[West], E=8[South-East])
-     
--
-  .. code-block:: c
-
-        Router C: (C=0[local], A=3[North-West], B=7[East], D=3[Noth-East], E=5[South-East])
-     
--
-  .. code-block:: c
-
-        Router D: (D=0[West], A=6[South-West], C=3[South-West], B=8[South-West], E=8[South-West])
-     
-
 
 Question 3. Link state routing
 -------------------------------
 
-    Assume that the network from question 1 uses link state routing. After a certain time, all the routers have received all the information about all the routers. Which of these could be a LSP sent by one router of the network?
+    Assume that the network from question 1 uses link state routing. After a certain time, all the routers have received all the information about all the routers. Which of these could be a LSP send by one router of the network?
 
 .. class:: positive
 
@@ -147,7 +97,7 @@ Question 3. Link state routing
 
   .. class:: comment
 
-	 	 A LSP from a router contains informations about the links connected to him and to which neighbour they are connected. It does not compute a shortest path. The cost from A to D is thus 10 not 6.
+	 	 A LSP from a router contains informations about the links connected to him and to wich neighbourg they are connected. It does not compute a shortest path. The cost from A to D is thus 10 not 6.
 
 -
   .. code-block:: c
@@ -156,7 +106,7 @@ Question 3. Link state routing
 
   .. class:: comment
 
-	 	 A LSP from a router contains informations about the links connected to him and to which neighbour they are connected. It does not give information about how he can reach other routers.
+	 	 A LSP from a router contains informations about the links connected to him and to wich neighbourg they are connected. It does not give information about how he can reach other routers.
 
 -
   .. code-block:: c
@@ -165,7 +115,7 @@ Question 3. Link state routing
 
   .. class:: comment
 
-	  	A LSP from a router contains informations about the links connected to him and to which neighbour they are connected. It does not compute a shortest path. The cost from A to D is thus 10 not 6.
+	  	A LSP from a router contains informations about the links connected to him and to wich neighbourg they are connected. It does not compute a shortest path. The cost from A to D is thus 10 not 6.
 
 
 -
@@ -175,7 +125,7 @@ Question 3. Link state routing
 
   .. class:: comment
 
-	 	 A LSP from a router contains informations about the links connected to him and to which neighbour they are connected. It does not give information about how he can reach other routers.
+	 	 A LSP from a router contains informations about the links connected to him and to wich neighbourg they are connected. It does not give information about how he can reach other routers.
 
 
 
@@ -186,7 +136,7 @@ Question 3. Link state routing
 
   .. class:: comment
 
-	 	 A LSP from a router contains informations about the links connected to him and to which neighbour they are connected. It does not give information about how he can reach other routers.
+	 	 A LSP from a router contains informations about the links connected to him and to wich neighbourg they are connected. It does not give information about how he can reach other routers.
 
 -
   .. code-block:: c
@@ -195,7 +145,7 @@ Question 3. Link state routing
 
   .. class:: comment
 
-	  	A LSP from a router contains informations about the links connected to him and to which neighbour they are connected. It does not give information about how he can reach other routers.
+	  	A LSP from a router contains informations about the links connected to him and to wich neighbourg they are connected. It does not give information about how he can reach other routers.
 
 
 -
@@ -205,7 +155,7 @@ Question 3. Link state routing
 
   .. class:: comment
 
-		  A LSP from a router contains informations about the links connected to him and to which neighbour they are connected. It does not compute a shortest path. The cost from E to D is thus 10 not 8.
+		  A LSP from a router contains informations about the links connected to him and to wich neighbourg they are connected. It does not compute a shortest path. The cost from E to D is thus 10 not 8.
 
 -
   .. code-block:: c
@@ -214,15 +164,15 @@ Question 3. Link state routing
 
   .. class:: comment
 
-		  A LSP from a router contains informations about the links connected to him and to which neighbour they are connected. It does not give information about how he can reach other routers.
+		  A LSP from a router contains informations about the links connected to him and to wich neighbourg they are connected. It does not give information about how he can reach other routers.
 
 
 
 Question 4. Distance vector routing
 ------------------------------------
 
-The routers from question 1 uses distance vector routing. They send their distance vector regularly over all their interfaces. 
-Which one of these sequences of message could have been generated by the network from question 1?
+The routers from question 1 uses distance vector routing. They sends their distance vector regularly over all theirs interfaces. Wich one of these 
+sequences of message could have been generated by the network from question 1?
 
 .. class:: positive
 
@@ -267,25 +217,19 @@ Which one of these sequences of message could have been generated by the network
       - [A=0, B=4, C=3, D=6, E=8]
       - [C=0, A=3, D=3, E=5, B=7]
 
-  .. class:: comment
-
-	 	 At line 6: The router D can't know he can reach A with weight 6 until the router C sends its new vector.
 
 -
   .. code-block:: c
 
       - [D=0]
       - [A=0, D=10]
-      - [B=0, A=4]
+      - [B=0]
       - [C=0, A=3, D=3, B=7]
       - [E=0, A=8, B=4, C=5, D=10]
       - [D=0, A=6, B=10, C=3, E=10]
       - [B=0, A=4, C=7, E=4, D=14]
       - [A=0, B=4, C=3, D=6, E=8]
 
-  .. class:: comment
-
-	 	 At line 4: The router C can't know how to reach B. Indeed B has sent his Vector to A and E, B will be reachable by C only when A or E send their Vector.
 -
   .. code-block:: c
 
@@ -298,9 +242,7 @@ Which one of these sequences of message could have been generated by the network
       - [E=0, A=8, C=5, D=5, B=4]
       - [A=0, B=4, C=3, D=6, E=8]
 
-  .. class:: comment
 
-	 	 At line 3: The router D know the route to A with weight 10. He learn later the route with weight 6.
 
 
 Question 5. Failure with Distance Vector Routing
@@ -329,12 +271,6 @@ will happen ?
   is too old. The next distance vector for A will be [A=0, C=3, D=inf B=inf, E=inf] and the next
   distance vector for D will be [D=0, A=inf, C=3, B=inf, E=inf].
 
-  ..class:: comment 
-      
-      How can they know something about B and E ? They never sent any distance
-      vector.
-
-
 
 - Either router A or router D notice first the failure (let's say that A notice
   first) and sent its vector routing to the others with inside D=inf. When router C
@@ -342,9 +278,9 @@ will happen ?
   to D. Thanks to that, D notice the failure and update its distance vector to
   [A=6, C=3, D=0]
 
-  .. class:: comment
+.. class:: comment
 
-      It could be useful to read again the chapter Distance Vector Routing, where you will find a complete example about failure. The pseudo-code in this chapter could help you to understand correctly the algorithm. in the above affirmation, C has nothing to update from A about the A-D failure because the failure is not on its way to reach any routers. Also D doesn't learn a failure by someone else, D must see it by itself.
+      It could be useful to read again the chapter Distance Vector Routing, where you will find a complete example about failure. The pseudo-code in this chapter could help you to understand correctly the algorithm.
 
 
 Question 6. The count to infinity problem
@@ -375,21 +311,11 @@ count to infinity problem between router B and E ?
   consider that all message sending by B and E are lost. B and E will have the
   count to infinity problem when receiving distance vector by A and D
   respectively.
-
-  .. class:: comment
-
-        The link between D and E must also fail. without this fail, the network
-        can eventually recover for any succesion of events.
  
 - links A-B, C-E and D-E must fail then both B and E notice the failures
   exactely at the same time. The count to infinity problem begin when B and E
   start to exchange distance vector.
 
-  .. class:: comment
-
-        if B and E notice the failures at the same time, the count to infinity
-        problem can't occur. The distance vector sent will have infinity value
-        for unreachables routers.
 
   
 Question 7. Link State Routing
