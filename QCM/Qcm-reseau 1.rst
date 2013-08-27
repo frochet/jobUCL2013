@@ -174,8 +174,8 @@ Question 4. The count to infinity problem
 ------------------------------------------
 
 Consider that we have the following network where Distance Vector Routing run
-and have reach a stable state where all the routers are known with the best
-route. Which links must be fail and which events must be occur in order to have a
+and has reach a stable state where all the routers are known with the best
+route. Which links must fail and which events must occur in order to have a
 count to infinity problem between router B and E ?
 
  .. figure:: ../png/qcm1-4.png 
