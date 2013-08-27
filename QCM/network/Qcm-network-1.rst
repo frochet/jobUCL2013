@@ -62,12 +62,44 @@ some time, the routers have the following tables
 .. class:: positive
 
 -
+  .. code-block:: c
+        distance vector from A: [TODO]
+
+-
+  .. code-block:: c
+        distance vector from B: [TODO]
+     
+-
+  .. code-block:: c
+        distance vector from C: [TODO]
+     
+-
+  .. code-block:: c
+        distance vector from D: [TODO]
+     
+
 .. class:: negative
 
 -
-
-
-
+  .. code-block:: c
+        distance vector from A: [TODO]
+     
+-
+  .. code-block:: c
+        distance vector from C: [TODO]
+     
+-
+  .. code-block:: c
+        distance vector from E: [TODO]
+     
+-
+  .. code-block:: c
+        distance vector from D: [TODO]
+     
+-
+  .. code-block:: c
+        distance vector from A: [TODO]
+     
 
 Question 3. Link state routing
 -------------------------------

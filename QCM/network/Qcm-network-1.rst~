@@ -415,6 +415,7 @@ Distance Vector Routing and Link State Routing are two different protocols. Find
  	 .. class:: comment
 
 	 	 You have not that problem in the Link state routing protocol.
+
 -
     Distance vector are flooded on the entire network.
  
@@ -435,7 +436,10 @@ Distance Vector Routing and Link State Routing are two different protocols. Find
   	.. class:: comment
 
 	 	 Link state packet contains only information about the neighbourg of the router who sends the LSP.
+
 -
     The link state  database eliminates the need of a routing table.
+
+
     
 
