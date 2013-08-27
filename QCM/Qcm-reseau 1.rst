@@ -163,78 +163,33 @@ will happen ?
 Question 4. Link State Routing
 -------------------------------------------
 
-Votre deuxième programme en langage C doit afficher à l'écran la chaîne de caractères `SINF1252`. Lequel parmi les programmes ci-dessous affiche-t-il correctement cette chaîne de caractères ?
+Link state routing is the second type of routing protocols. When a router use link state routing, it sends message on the network. Wich of theses affirmations are corrects?
 
 .. class:: positive
 
 -
- .. code:: c
-
-    #include <stdlio.h>
-    int main(int argc, const char *argv[]) {
-        int a = 1252;
-        printf("SINF%d\n", a);
-    }
-
- .. class:: comment
-
-    En C, la fonction `printf(3)`_ prend un nombre variable d'arguments. Le premier est toujours une spécification de formatage qui indique la chaîne de caractères à afficher. Les autres arguments sont des identifiants de variables dont les valeurs seront utilisées pour construire la chaîne de caractères à afficher. Le deuxième argument remplace le premier format `%d`, le troisième argument le deuxième format, etc. La page de manuel de `printf(3)`_ fournit de nombreux détails sur le fonctionnement de cette fonction qui accepte de nombreux paramètres.
+    A link state router sends periodically a HELLO message to all it's neighbourgs.
 
 -
- .. code:: c
+    A link-state router sends link-state packets to its neighbours. If this lsp is newer than the one stored in the link state database of the neighbours, they forwards the lsp on all links except the one over which the LSP was received.
 
-    #include <stdlio.h>
-    int main(int argc, const char *argv[]) {
-        int a = 1252;
-        printf("SINF");
-	printf("%d\n", a);
-    }
-
- .. class:: comment
-
-    En C, la fonction `printf(3)`_ prend un nombre variable d'arguments. Le premier est toujours une spécification de formatage qui indique la chaîne de caractères à afficher. Les autres arguments sont des identifiants de variables dont les valeurs seront utilisées pour construire la chaîne de caractères à afficher. Le deuxième argument remplace le premier format `%d`, le troisième argument le deuxième format, etc. La page de manuel de `printf(3)`_ fournit de nombreux détails sur le fonctionnement de cette fonction qui accepte de nombreux paramètres.
+-
+    The Link state packet send by a router contains information only about the neighbours of this router.
 
 .. class:: negative
 
 -
- .. code:: c
-
-    #include <stdlio.h>
-    int main(int argc, const char *argv[]) {
-        int a = 1252;
-        printf("SINF%a\n", a);
-    }
-
- .. class:: comment
-
-    Dans la fonction `printf(3)`_, ``%a`` est utilisé lorsque l'on veut placer dans une chaîne de caractères un nombre réel en notation hexadécimale. Dans ce cas, ``a`` étant un entier, il aurait fallu utiliser ``%d``.
+    A link state router sends periodically a HELLO message to all it's neighbourgs. This HELLO message is forwarded all over the network.
 
 -
- .. code:: c
-
-    #include <stdlio.h>
-    int main(int argc, const char *argv[]) {
-        int a = 1252;
-        printf(SINF);
-	printf(%d\n, a);
-    }
-
- .. class:: comment
-
-    En C, une chaîne de caractères (ou un descripteur de format pour `printf(3)`_ qui est aussi une chaîne de caractères) commence et se termine par le caractère ``"``.
+    A link state router sends a HELLO message once when it boots.
 
 -
- .. code:: c
+    A link-state router sends link-state packets only to its neighbours. (They are not forwarded further)
 
-    #include <stdlio.h>
-    int main(int argc, const char *argv[]) {
-        int a = 1252;
-        printf("SINF$a\n", a);
-    }
+-
+    When flooding is used on a network, there is a link state database containing the most recent LSP sent by each router shared between all routers. 
 
- .. class:: comment
-
-    Dans la fonction `printf(3)`_ en C, et contrairement à d'autres langages, le caractère ``$`` ne joue pas de rôle particulier. Le programme ci-dessus affichera donc simplement ``SINF$a`` à l'écran.
 
 
 Question 5. Arguments passés à un programme C
