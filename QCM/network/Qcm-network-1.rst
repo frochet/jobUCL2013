@@ -227,7 +227,7 @@ distance vector from each of them. For an unknown reason, these routers have
 never heard about B and E. Then, the link between the router A and D fail. What
 will happen ?
 
- .. figure:: ../../png/network/qcm1-3.png 
+ .. figure:: ../../png/network/qcm1-5-vectorRouting.png 
      :align: center
      :scale: 100
  
@@ -265,7 +265,7 @@ and has reach a stable state where all the routers are known with the best
 route. Which links must fail and which events must occur in order to have a
 count to infinity problem between router B and E ?
 
- .. figure:: ../../png/qcm1-4.png 
+ .. figure:: ../../png/network/qcm1-6-vectorRouting.png 
      :align: center
      :scale: 120
 
