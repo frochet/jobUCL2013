@@ -49,8 +49,27 @@ Analyse the network given. What is the shortest path tree for the router A?
  
  .. class:: comment
 
-Question 2. Distance vector routing
+Question 2. Distance Vector Routing
 ------------------------------------
+
+Assume that the network from question 1 uses Distance Vector Routing. After
+some time, the routers have the following tables
+
+ .. figure:: ../../png/network/qcm1-2-vectorRouting.png
+    :align: center
+    :scale: 100
+
+ Which of the following distance vector are correct ?
+
+.. class:: positive
+
+-
+.. class:: negative
+
+-
+
+
+
 
 Question 3. Link state routing
 -------------------------------
