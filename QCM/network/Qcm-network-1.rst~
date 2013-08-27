@@ -339,7 +339,7 @@ Link state routing is the second type of routing protocols. When a router use li
 -
     A link state router sends periodically a ``HELLO`` message to all it's neighbourgs. This ``HELLO`` message is forwarded all over the network.
    
-  .. class:: comment
+ 	 .. class:: comment
 
 	 	 The ``HELLO`` message are not forwarded all over the network.
 
@@ -347,7 +347,7 @@ Link state routing is the second type of routing protocols. When a router use li
 -
     A link state router sends a ``HELLO`` message once when it boots.
     
-  .. class:: comment
+ 	 .. class:: comment
 
 	 	 The ``HELLO`` message are sends periodically.
 
@@ -355,7 +355,7 @@ Link state routing is the second type of routing protocols. When a router use li
 -
   A link-state router sends link-state packets only to its neighbours. (They are not forwarded further)
 
-  .. class:: comment
+ 	 .. class:: comment
 
 	 	 LSP are forwarded all over the network (if they are newer than the previously LSP received).
 
@@ -363,7 +363,7 @@ Link state routing is the second type of routing protocols. When a router use li
 -
     When flooding is used on a network, there is a link state database containing the most recent LSP sent by each router shared between all routers.
 
-  .. class:: comment
+  	.. class:: comment
 
 	 	 Each router has his own LSDB. 
 
@@ -393,15 +393,29 @@ Distance Vector Routing and Link State Routing are two different protocols. Find
 -
     The count to infinity problem is found in both Distance vector routing and Link state routing.
 
+ 	 .. class:: comment
+
+	 	 You have not that problem in the Link state routing protocol.
 -
     Distance vector are flooded on the entire network.
+ 
+ 	 .. class:: comment
+
+	 	 Distance vector does'nt use the flood method. Flooding is used with link state routing.
 
 -
     A router that implement distance vector routing has a database where distance vector are saved.
 
--
-    A link state packet contains information about the entire topology of the network. 
+ 	 .. class:: comment
 
+	 	 Link state routing use database to store LSP, not distance vector.
+
+-
+    A link state packet contains information about the entire topology of the network.
+
+  	.. class:: comment
+
+	 	 Link state packet contains only information about the neighbourg of the router who sends the LSP.
 -
     The link state  database eliminates the need of a routing table.
     

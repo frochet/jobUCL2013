@@ -688,23 +688,25 @@ start to exchange distance vector.</li>
 <li>The Link state packet send by a router contains information only about the neighbours of this router.</li>
 </ul>
 <ul class="negative">
-<li><blockquote class="first">
-<p>A link state router sends periodically a <tt class="docutils literal">HELLO</tt> message to all it's neighbourgs. This <tt class="docutils literal">HELLO</tt> message is forwarded all over the network.</p>
-</blockquote>
+<li><p class="first">A link state router sends periodically a <tt class="docutils literal">HELLO</tt> message to all it's neighbourgs. This <tt class="docutils literal">HELLO</tt> message is forwarded all over the network.</p>
+<blockquote>
 <p class="comment">The <tt class="docutils literal">HELLO</tt> message are not forwarded all over the network.</p>
-</li>
-<li><blockquote class="first">
-<p>A link state router sends a <tt class="docutils literal">HELLO</tt> message once when it boots.</p>
 </blockquote>
+</li>
+<li><p class="first">A link state router sends a <tt class="docutils literal">HELLO</tt> message once when it boots.</p>
+<blockquote>
 <p class="comment">The <tt class="docutils literal">HELLO</tt> message are sends periodically.</p>
+</blockquote>
 </li>
 <li><p class="first">A link-state router sends link-state packets only to its neighbours. (They are not forwarded further)</p>
+<blockquote>
 <p class="comment">LSP are forwarded all over the network (if they are newer than the previously LSP received).</p>
-</li>
-<li><blockquote class="first">
-<p>When flooding is used on a network, there is a link state database containing the most recent LSP sent by each router shared between all routers.</p>
 </blockquote>
+</li>
+<li><p class="first">When flooding is used on a network, there is a link state database containing the most recent LSP sent by each router shared between all routers.</p>
+<blockquote>
 <p class="comment">Each router has his own LSDB.</p>
+</blockquote>
 </li>
 </ul>
 </div>
@@ -716,12 +718,29 @@ start to exchange distance vector.</li>
 <li>Distance vector are never forwarded.</li>
 <li>Link state packets contains the state of directly connected links.</li>
 </ul>
-<ul class="negative simple">
-<li>The count to infinity problem is found in both Distance vector routing and Link state routing.</li>
-<li>Distance vector are flooded on the entire network.</li>
-<li>A router that implement distance vector routing has a database where distance vector are saved.</li>
-<li>A link state packet contains information about the entire topology of the network.</li>
-<li>The link state  database eliminates the need of a routing table.</li>
+<ul class="negative">
+<li><p class="first">The count to infinity problem is found in both Distance vector routing and Link state routing.</p>
+<blockquote>
+<p class="comment">You have not that problem in the Link state routing protocol.</p>
+</blockquote>
+</li>
+<li><p class="first">Distance vector are flooded on the entire network.</p>
+<blockquote>
+<p class="comment">Distance vector does'nt use the flood method. Flooding is used with link state routing.</p>
+</blockquote>
+</li>
+<li><p class="first">A router that implement distance vector routing has a database where distance vector are saved.</p>
+<blockquote>
+<p class="comment">Link state routing use database to store LSP, not distance vector.</p>
+</blockquote>
+</li>
+<li><p class="first">A link state packet contains information about the entire topology of the network.</p>
+<blockquote>
+<p class="comment">Link state packet contains only information about the neighbourg of the router who sends the LSP.</p>
+</blockquote>
+</li>
+<li><p class="first">The link state  database eliminates the need of a routing table.</p>
+</li>
 </ul>
 </div>
 </div>
