@@ -452,42 +452,33 @@ input[type=radio] {
 <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="js/jquery-shuffle.js"></script>
 <script type="text/javascript" src="js/rst-form.js"></script>
-<script type="text/javascript">$nmbr_prop = 4</script><div class="system-message">
-<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">Qcm-network-1.rst</tt>, line 9)</p>
-<p>Title overline too short.</p>
-<pre class="literal-block">
-=========================
-Mission X : The Network Layer, Principles
-=========================
-</pre>
-</div>
-<p>Ces questions ont pour objectif de vous permettre de tester vous-même votre compréhension de la matière couverte par cette mission de mise en route.</p>
+<script type="text/javascript">$nmbr_prop = 4</script><p>Ces questions ont pour objectif de vous permettre de tester vous-même votre compréhension de la matière couverte par cette mission de mise en route.</p>
 <p>Ces questions supposent que vous avez lu le cinquième chapitre du syllabus contenant l'introduction à la Network Layer.</p>
 <div class="section" id="question-1-shortest-path-tree">
 <h1>Question 1. Shortest Path Tree</h1>
 <p>Analyse the network given. What is the shortest path tree for the router A?</p>
 <blockquote>
 <div class="figure align-center">
-<img alt="../png/qcm1-1.png" src="../png/qcm1-1.png" />
+<img alt="../../png/qcm1-1.png" src="../../png/qcm1-1.png" />
 </div>
 </blockquote>
 <ul class="positive">
 <li><div class="first figure align-center">
-<img alt="../png/Q1-solution1.png" src="../png/Q1-solution1.png" />
+<img alt="../../png/Q1-solution1.png" src="../../png/Q1-solution1.png" />
 </div>
 </li>
 <li><div class="first figure align-center">
-<img alt="../png/Q1-solution2.png" src="../png/Q1-solution2.png" />
+<img alt="../../png/Q1-solution2.png" src="../../png/Q1-solution2.png" />
 </div>
 </li>
 </ul>
 <ul class="negative">
 <li><div class="first figure align-center">
-<img alt="../png/Q1-mauvais1.png" src="../png/Q1-mauvais1.png" />
+<img alt="../../png/Q1-mauvais1.png" src="../../png/Q1-mauvais1.png" />
 </div>
 </li>
 <li><div class="first figure align-center">
-<img alt="../png/Q1-mauvais2.png" src="../png/Q1-mauvais2.png" />
+<img alt="../../png/Q1-mauvais2.png" src="../../png/Q1-mauvais2.png" />
 </div>
 </li>
 </ul>
@@ -518,6 +509,40 @@ Assume that the network from question 1 uses link state routing. After a certain
 </li>
 <li><pre class="code c first literal-block">
 <span class="name">LSP</span> <span class="operator">:</span> <span class="name">E</span> <span class="punctuation">[</span><span class="name">C</span><span class="operator">:</span><span class="literal number integer">5</span><span class="punctuation">];</span><span class="punctuation">[</span><span class="name">D</span><span class="operator">:</span><span class="literal number integer">10</span><span class="punctuation">];</span><span class="punctuation">[</span><span class="name">B</span><span class="operator">:</span><span class="literal number integer">4</span><span class="punctuation">]</span>
+</pre>
+</li>
+</ul>
+<ul class="negative">
+<li><pre class="code c first literal-block">
+<span class="name">LSP</span> <span class="operator">:</span> <span class="name">A</span> <span class="punctuation">[</span><span class="name">C</span><span class="operator">:</span><span class="literal number integer">3</span><span class="punctuation">];</span><span class="punctuation">[</span><span class="name">D</span><span class="operator">:</span><span class="literal number integer">6</span><span class="punctuation">];</span><span class="punctuation">[</span><span class="name">B</span><span class="operator">:</span><span class="literal number integer">4</span><span class="punctuation">];</span>
+</pre>
+</li>
+<li><pre class="code c first literal-block">
+<span class="name">LSP</span> <span class="operator">:</span> <span class="name">A</span> <span class="punctuation">[</span><span class="name">C</span><span class="operator">:</span><span class="literal number integer">3</span><span class="punctuation">];</span><span class="punctuation">[</span><span class="name">D</span><span class="operator">:</span><span class="literal number integer">6</span><span class="punctuation">];</span><span class="punctuation">[</span><span class="name">B</span><span class="operator">:</span><span class="literal number integer">4</span><span class="punctuation">];</span><span class="punctuation">[</span><span class="name">E</span><span class="operator">:</span><span class="literal number integer">8</span><span class="punctuation">]</span>
+</pre>
+</li>
+<li><pre class="code c first literal-block">
+<span class="name">LSP</span> <span class="operator">:</span> <span class="name">D</span> <span class="punctuation">[</span><span class="name">C</span><span class="operator">:</span><span class="literal number integer">3</span><span class="punctuation">];</span><span class="punctuation">[</span><span class="name">A</span><span class="operator">:</span><span class="literal number integer">6</span><span class="punctuation">];</span><span class="punctuation">[</span><span class="name">E</span><span class="operator">:</span><span class="literal number integer">8</span><span class="punctuation">]</span>
+</pre>
+</li>
+<li><pre class="code c first literal-block">
+<span class="name">LSP</span> <span class="operator">:</span> <span class="name">D</span> <span class="punctuation">[</span><span class="name">C</span><span class="operator">:</span><span class="literal number integer">3</span><span class="punctuation">];</span><span class="punctuation">[</span><span class="name">A</span><span class="operator">:</span><span class="literal number integer">6</span><span class="punctuation">];</span><span class="punctuation">[</span><span class="name">E</span><span class="operator">:</span><span class="literal number integer">8</span><span class="punctuation">];</span><span class="punctuation">[</span><span class="name">B</span><span class="operator">:</span><span class="literal number integer">10</span><span class="punctuation">]</span>
+</pre>
+</li>
+<li><pre class="code c first literal-block">
+<span class="name">LSP</span> <span class="operator">:</span> <span class="name">C</span> <span class="punctuation">[</span><span class="name">D</span><span class="operator">:</span><span class="literal number integer">3</span><span class="punctuation">];</span><span class="punctuation">[</span><span class="name">A</span><span class="operator">:</span><span class="literal number integer">3</span><span class="punctuation">];</span><span class="punctuation">[</span><span class="name">E</span><span class="operator">:</span><span class="literal number integer">5</span><span class="punctuation">];</span><span class="punctuation">[</span><span class="name">B</span><span class="operator">:</span><span class="literal number integer">7</span><span class="punctuation">]</span>
+</pre>
+</li>
+<li><pre class="code c first literal-block">
+<span class="name">LSP</span> <span class="operator">:</span> <span class="name">B</span> <span class="punctuation">[</span><span class="name">A</span><span class="operator">:</span><span class="literal number integer">4</span><span class="punctuation">];</span><span class="punctuation">[</span><span class="name">E</span><span class="operator">:</span><span class="literal number integer">4</span><span class="punctuation">];</span><span class="punctuation">[</span><span class="name">C</span><span class="operator">:</span><span class="literal number integer">7</span><span class="punctuation">];</span><span class="punctuation">[</span><span class="name">D</span><span class="operator">:</span><span class="literal number integer">10</span><span class="punctuation">]</span>
+</pre>
+</li>
+<li><pre class="code c first literal-block">
+<span class="name">LSP</span> <span class="operator">:</span> <span class="name">E</span> <span class="punctuation">[</span><span class="name">C</span><span class="operator">:</span><span class="literal number integer">5</span><span class="punctuation">];</span><span class="punctuation">[</span><span class="name">D</span><span class="operator">:</span><span class="literal number integer">8</span><span class="punctuation">];</span><span class="punctuation">[</span><span class="name">B</span><span class="operator">:</span><span class="literal number integer">4</span><span class="punctuation">]</span>
+</pre>
+</li>
+<li><pre class="code c first literal-block">
+<span class="name">LSP</span> <span class="operator">:</span> <span class="name">E</span> <span class="punctuation">[</span><span class="name">C</span><span class="operator">:</span><span class="literal number integer">5</span><span class="punctuation">];</span><span class="punctuation">[</span><span class="name">D</span><span class="operator">:</span><span class="literal number integer">8</span><span class="punctuation">];</span><span class="punctuation">[</span><span class="name">B</span><span class="operator">:</span><span class="literal number integer">4</span><span class="punctuation">];</span><span class="punctuation">[</span><span class="name">A</span><span class="operator">:</span><span class="literal number integer">8</span><span class="punctuation">]</span>
 </pre>
 </li>
 </ul>
@@ -596,7 +621,7 @@ never heard about B and E. Then, the link between the router A and D fail. What
 will happen ?</p>
 <blockquote>
 <div class="figure align-center">
-<img alt="../png/qcm1-3.png" src="../png/qcm1-3.png" />
+<img alt="../../png/qcm1-3.png" src="../../png/qcm1-3.png" />
 </div>
 </blockquote>
 <ul class="positive simple">
@@ -625,7 +650,7 @@ route. Which links must fail and which events must occur in order to have a
 count to infinity problem between router B and E ?</p>
 <blockquote>
 <div class="figure align-center">
-<img alt="../png/qcm1-4.png" src="../png/qcm1-4.png" />
+<img alt="../../png/qcm1-4.png" src="../../png/qcm1-4.png" />
 </div>
 </blockquote>
 <ul class="positive simple">
