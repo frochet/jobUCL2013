@@ -361,11 +361,21 @@ count to infinity problem between router B and E ?
   consider that all message sending by B and E are lost. B and E will have the
   count to infinity problem when receiving distance vector by A and D
   respectively.
+
+  .. class:: comment
+
+        The link between D and E must also fail. without this fail, the network
+        can eventually recover for any succesion of events.
  
 - links A-B, C-E and D-E must fail then both B and E notice the failures
   exactely at the same time. The count to infinity problem begin when B and E
   start to exchange distance vector.
 
+  .. class:: comment
+
+        if B and E notice the failures at the same time, the count to infinity
+        problem can't occur. The distance vector sent will have infinity value
+        for unreachables routers.
 
   
 Question 7. Link State Routing
