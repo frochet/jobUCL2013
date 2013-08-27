@@ -452,42 +452,33 @@ input[type=radio] {
 <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="js/jquery-shuffle.js"></script>
 <script type="text/javascript" src="js/rst-form.js"></script>
-<script type="text/javascript">$nmbr_prop = 4</script><div class="system-message">
-<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">Qcm-network-1.rst</tt>, line 9)</p>
-<p>Title overline too short.</p>
-<pre class="literal-block">
-=========================
-Mission X : The Network Layer, Principles
-=========================
-</pre>
-</div>
-<p>Ces questions ont pour objectif de vous permettre de tester vous-même votre compréhension de la matière couverte par cette mission de mise en route.</p>
+<script type="text/javascript">$nmbr_prop = 4</script><p>Ces questions ont pour objectif de vous permettre de tester vous-même votre compréhension de la matière couverte par cette mission de mise en route.</p>
 <p>Ces questions supposent que vous avez lu le cinquième chapitre du syllabus contenant l'introduction à la Network Layer.</p>
 <div class="section" id="question-1-shortest-path-tree">
 <h1>Question 1. Shortest Path Tree</h1>
 <p>Analyse the network given. What is the shortest path tree for the router A?</p>
 <blockquote>
 <div class="figure align-center">
-<img alt="../png/qcm1-1.png" src="../png/qcm1-1.png" />
+<img alt="../../png/qcm1-1.png" src="../../png/qcm1-1.png" style="width: 300.0px; height: 187.0px;" />
 </div>
 </blockquote>
 <ul class="positive">
 <li><div class="first figure align-center">
-<img alt="../png/Q1-solution1.png" src="../png/Q1-solution1.png" />
+<img alt="../../png/Q1-solution1.png" src="../../png/Q1-solution1.png" style="width: 300.0px; height: 187.0px;" />
 </div>
 </li>
 <li><div class="first figure align-center">
-<img alt="../png/Q1-solution2.png" src="../png/Q1-solution2.png" />
+<img alt="../../png/Q1-solution2.png" src="../../png/Q1-solution2.png" style="width: 300.0px; height: 187.0px;" />
 </div>
 </li>
 </ul>
 <ul class="negative">
 <li><div class="first figure align-center">
-<img alt="../png/Q1-mauvais1.png" src="../png/Q1-mauvais1.png" />
+<img alt="../../png/Q1-mauvais1.png" src="../../png/Q1-mauvais1.png" style="width: 300.0px; height: 187.0px;" />
 </div>
 </li>
 <li><div class="first figure align-center">
-<img alt="../png/Q1-mauvais2.png" src="../png/Q1-mauvais2.png" />
+<img alt="../../png/Q1-mauvais2.png" src="../../png/Q1-mauvais2.png" style="width: 300.0px; height: 187.0px;" />
 </div>
 </li>
 </ul>
@@ -500,25 +491,161 @@ Mission X : The Network Layer, Principles
 <blockquote>
 Assume that the network from question 1 uses link state routing. After a certain time, all the routers have received all the information about all the routers. Which of these could be a LSP send by one router of the network?</blockquote>
 <ul class="positive">
-<li><pre class="code c first literal-block">
-<span class="name">LSP</span> <span class="operator">:</span> <span class="name">A</span> <span class="punctuation">[</span><span class="name">C</span><span class="operator">:</span><span class="literal number integer">3</span><span class="punctuation">];</span><span class="punctuation">[</span><span class="name">D</span><span class="operator">:</span><span class="literal number integer">10</span><span class="punctuation">];</span><span class="punctuation">[</span><span class="name">B</span><span class="operator">:</span><span class="literal number integer">4</span><span class="punctuation">]</span>
+<li><div class="first system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">Qcm-network-1.rst</tt>, line 63)</p>
+<p>Cannot analyze code. Pygments package not found.</p>
+<pre class="literal-block">
+.. code-block:: c
+
+    LSP : A [C:3];[D:10];[B:4]
+
+
+
 </pre>
+</div>
 </li>
-<li><pre class="code c first literal-block">
-<span class="name">LSP</span> <span class="operator">:</span> <span class="name">D</span> <span class="punctuation">[</span><span class="name">C</span><span class="operator">:</span><span class="literal number integer">3</span><span class="punctuation">];</span><span class="punctuation">[</span><span class="name">A</span><span class="operator">:</span><span class="literal number integer">10</span><span class="punctuation">];</span><span class="punctuation">[</span><span class="name">E</span><span class="operator">:</span><span class="literal number integer">10</span><span class="punctuation">]</span>
+<li><div class="first system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">Qcm-network-1.rst</tt>, line 70)</p>
+<p>Cannot analyze code. Pygments package not found.</p>
+<pre class="literal-block">
+.. code-block:: c
+
+    LSP : D [C:3];[A:10];[E:10]
+
+
 </pre>
+</div>
 </li>
-<li><pre class="code c first literal-block">
-<span class="name">LSP</span> <span class="operator">:</span> <span class="name">C</span> <span class="punctuation">[</span><span class="name">D</span><span class="operator">:</span><span class="literal number integer">3</span><span class="punctuation">];</span><span class="punctuation">[</span><span class="name">A</span><span class="operator">:</span><span class="literal number integer">3</span><span class="punctuation">];</span><span class="punctuation">[</span><span class="name">E</span><span class="operator">:</span><span class="literal number integer">5</span><span class="punctuation">]</span>
+<li><div class="first system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">Qcm-network-1.rst</tt>, line 76)</p>
+<p>Cannot analyze code. Pygments package not found.</p>
+<pre class="literal-block">
+.. code-block:: c
+
+    LSP : C [D:3];[A:3];[E:5]
+
+
 </pre>
+</div>
 </li>
-<li><pre class="code c first literal-block">
-<span class="name">LSP</span> <span class="operator">:</span> <span class="name">B</span> <span class="punctuation">[</span><span class="name">A</span><span class="operator">:</span><span class="literal number integer">4</span><span class="punctuation">];</span><span class="punctuation">[</span><span class="name">E</span><span class="operator">:</span><span class="literal number integer">4</span><span class="punctuation">]</span>
+<li><div class="first system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">Qcm-network-1.rst</tt>, line 82)</p>
+<p>Cannot analyze code. Pygments package not found.</p>
+<pre class="literal-block">
+.. code-block:: c
+
+    LSP : B [A:4];[E:4]
+
+
 </pre>
+</div>
 </li>
-<li><pre class="code c first literal-block">
-<span class="name">LSP</span> <span class="operator">:</span> <span class="name">E</span> <span class="punctuation">[</span><span class="name">C</span><span class="operator">:</span><span class="literal number integer">5</span><span class="punctuation">];</span><span class="punctuation">[</span><span class="name">D</span><span class="operator">:</span><span class="literal number integer">10</span><span class="punctuation">];</span><span class="punctuation">[</span><span class="name">B</span><span class="operator">:</span><span class="literal number integer">4</span><span class="punctuation">]</span>
+<li><div class="first system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">Qcm-network-1.rst</tt>, line 88)</p>
+<p>Cannot analyze code. Pygments package not found.</p>
+<pre class="literal-block">
+.. code-block:: c
+
+    LSP : E [C:5];[D:10];[B:4]
+
+
 </pre>
+</div>
+</li>
+</ul>
+<ul class="negative">
+<li><div class="first system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">Qcm-network-1.rst</tt>, line 96)</p>
+<p>Cannot analyze code. Pygments package not found.</p>
+<pre class="literal-block">
+.. code-block:: c
+
+    LSP : A [C:3];[D:6];[B:4];
+
+</pre>
+</div>
+</li>
+<li><div class="first system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">Qcm-network-1.rst</tt>, line 101)</p>
+<p>Cannot analyze code. Pygments package not found.</p>
+<pre class="literal-block">
+.. code-block:: c
+
+    LSP : A [C:3];[D:6];[B:4];[E:8]
+
+</pre>
+</div>
+</li>
+<li><div class="first system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">Qcm-network-1.rst</tt>, line 106)</p>
+<p>Cannot analyze code. Pygments package not found.</p>
+<pre class="literal-block">
+.. code-block:: c
+
+    LSP : D [C:3];[A:6];[E:8]
+
+
+</pre>
+</div>
+</li>
+<li><div class="first system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">Qcm-network-1.rst</tt>, line 112)</p>
+<p>Cannot analyze code. Pygments package not found.</p>
+<pre class="literal-block">
+.. code-block:: c
+
+    LSP : D [C:3];[A:6];[E:8];[B:10]
+
+
+</pre>
+</div>
+</li>
+<li><div class="first system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">Qcm-network-1.rst</tt>, line 118)</p>
+<p>Cannot analyze code. Pygments package not found.</p>
+<pre class="literal-block">
+.. code-block:: c
+
+    LSP : C [D:3];[A:3];[E:5];[B:7]
+
+
+</pre>
+</div>
+</li>
+<li><div class="first system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">Qcm-network-1.rst</tt>, line 124)</p>
+<p>Cannot analyze code. Pygments package not found.</p>
+<pre class="literal-block">
+.. code-block:: c
+
+    LSP : B [A:4];[E:4];[C:7];[D:10]
+
+
+</pre>
+</div>
+</li>
+<li><div class="first system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">Qcm-network-1.rst</tt>, line 130)</p>
+<p>Cannot analyze code. Pygments package not found.</p>
+<pre class="literal-block">
+.. code-block:: c
+
+    LSP : E [C:5];[D:8];[B:4]
+
+</pre>
+</div>
+</li>
+<li><div class="first system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">Qcm-network-1.rst</tt>, line 135)</p>
+<p>Cannot analyze code. Pygments package not found.</p>
+<pre class="literal-block">
+.. code-block:: c
+
+    LSP : E [C:5];[D:8];[B:4];[A:8]
+
+
+</pre>
+</div>
 </li>
 </ul>
 </div>
@@ -527,63 +654,102 @@ Assume that the network from question 1 uses link state routing. After a certain
 <p>The routers from question 1 uses distance vector routing. They sends their distance vector regularly over all theirs interfaces. Wich one of these
 sequences of message could have been generated by the network from question 1?</p>
 <ul class="positive">
-<li><pre class="code c first literal-block">
-<span class="operator">-</span> <span class="punctuation">[</span><span class="name">D</span><span class="operator">=</span><span class="literal number integer">0</span><span class="punctuation">]</span>
-<span class="operator">-</span> <span class="punctuation">[</span><span class="name">A</span><span class="operator">=</span><span class="literal number integer">0</span><span class="punctuation">,</span> <span class="name">D</span><span class="operator">=</span><span class="literal number integer">10</span><span class="punctuation">]</span>
-<span class="operator">-</span> <span class="punctuation">[</span><span class="name">B</span><span class="operator">=</span><span class="literal number integer">0</span><span class="punctuation">]</span>
-<span class="operator">-</span> <span class="punctuation">[</span><span class="name">C</span><span class="operator">=</span><span class="literal number integer">0</span><span class="punctuation">,</span> <span class="name">A</span><span class="operator">=</span><span class="literal number integer">3</span><span class="punctuation">,</span> <span class="name">D</span><span class="operator">=</span><span class="literal number integer">3</span><span class="punctuation">]</span>
-<span class="operator">-</span> <span class="punctuation">[</span><span class="name">E</span><span class="operator">=</span><span class="literal number integer">0</span><span class="punctuation">,</span> <span class="name">A</span><span class="operator">=</span><span class="literal number integer">8</span><span class="punctuation">,</span> <span class="name">B</span><span class="operator">=</span><span class="literal number integer">4</span><span class="punctuation">,</span> <span class="name">C</span><span class="operator">=</span><span class="literal number integer">5</span><span class="punctuation">,</span> <span class="name">D</span><span class="operator">=</span><span class="literal number integer">8</span><span class="punctuation">]</span>
-<span class="operator">-</span> <span class="punctuation">[</span><span class="name">D</span><span class="operator">=</span><span class="literal number integer">0</span><span class="punctuation">,</span> <span class="name">A</span><span class="operator">=</span><span class="literal number integer">6</span><span class="punctuation">,</span> <span class="name">B</span><span class="operator">=</span><span class="literal number integer">14</span><span class="punctuation">,</span> <span class="name">C</span><span class="operator">=</span><span class="literal number integer">3</span><span class="punctuation">,</span> <span class="name">E</span><span class="operator">=</span><span class="literal number integer">10</span><span class="punctuation">]</span>
-<span class="operator">-</span> <span class="punctuation">[</span><span class="name">B</span><span class="operator">=</span><span class="literal number integer">0</span><span class="punctuation">,</span> <span class="name">A</span><span class="operator">=</span><span class="literal number integer">4</span><span class="punctuation">,</span> <span class="name">C</span><span class="operator">=</span><span class="literal number integer">9</span><span class="punctuation">,</span> <span class="name">E</span><span class="operator">=</span><span class="literal number integer">4</span><span class="punctuation">,</span> <span class="name">D</span><span class="operator">=</span><span class="literal number integer">14</span><span class="punctuation">]</span>
-<span class="operator">-</span> <span class="punctuation">[</span><span class="name">A</span><span class="operator">=</span><span class="literal number integer">0</span><span class="punctuation">,</span> <span class="name">B</span><span class="operator">=</span><span class="literal number integer">4</span><span class="punctuation">,</span> <span class="name">C</span><span class="operator">=</span><span class="literal number integer">3</span><span class="punctuation">,</span> <span class="name">D</span><span class="operator">=</span><span class="literal number integer">6</span><span class="punctuation">,</span> <span class="name">E</span><span class="operator">=</span><span class="literal number integer">8</span><span class="punctuation">]</span>
+<li><div class="first system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">Qcm-network-1.rst</tt>, line 149)</p>
+<p>Cannot analyze code. Pygments package not found.</p>
+<pre class="literal-block">
+.. code-block:: c
+
+    - [D=0]
+    - [A=0, D=10]
+    - [B=0]
+    - [C=0, A=3, D=3]
+    - [E=0, A=8, B=4, C=5, D=8]
+    - [D=0, A=6, B=14, C=3, E=10]
+    - [B=0, A=4, C=9, E=4, D=14]
+    - [A=0, B=4, C=3, D=6, E=8]
+
+
 </pre>
+</div>
 </li>
-<li><pre class="code c first literal-block">
-<span class="operator">-</span> <span class="punctuation">[</span><span class="name">C</span><span class="operator">=</span><span class="literal number integer">0</span><span class="punctuation">]</span>
-<span class="operator">-</span> <span class="punctuation">[</span><span class="name">A</span><span class="operator">=</span><span class="literal number integer">0</span><span class="punctuation">,</span> <span class="name">C</span><span class="operator">=</span><span class="literal number integer">3</span><span class="punctuation">]</span>
-<span class="operator">-</span> <span class="punctuation">[</span><span class="name">D</span><span class="operator">=</span><span class="literal number integer">0</span><span class="punctuation">,</span> <span class="name">C</span><span class="operator">=</span><span class="literal number integer">3</span><span class="punctuation">,</span> <span class="name">A</span><span class="operator">=</span><span class="literal number integer">10</span><span class="punctuation">]</span>
-<span class="operator">-</span> <span class="punctuation">[</span><span class="name">E</span><span class="operator">=</span><span class="literal number integer">0</span><span class="punctuation">,</span> <span class="name">A</span><span class="operator">=</span><span class="literal number integer">20</span><span class="punctuation">,</span> <span class="name">C</span><span class="operator">=</span><span class="literal number integer">5</span><span class="punctuation">,</span> <span class="name">D</span><span class="operator">=</span><span class="literal number integer">10</span><span class="punctuation">]</span>
-<span class="operator">-</span> <span class="punctuation">[</span><span class="name">B</span><span class="operator">=</span><span class="literal number integer">0</span><span class="punctuation">,</span> <span class="name">A</span><span class="operator">=</span><span class="literal number integer">4</span><span class="punctuation">,</span> <span class="name">E</span><span class="operator">=</span><span class="literal number integer">4</span><span class="punctuation">,</span> <span class="name">C</span><span class="operator">=</span><span class="literal number integer">7</span><span class="punctuation">,</span> <span class="name">D</span><span class="operator">=</span><span class="literal number integer">14</span><span class="punctuation">]</span>
-<span class="operator">-</span> <span class="punctuation">[</span><span class="name">C</span><span class="operator">=</span><span class="literal number integer">0</span><span class="punctuation">,</span> <span class="name">A</span><span class="operator">=</span><span class="literal number integer">3</span><span class="punctuation">,</span> <span class="name">D</span><span class="operator">=</span><span class="literal number integer">3</span><span class="punctuation">,</span> <span class="name">E</span><span class="operator">=</span><span class="literal number integer">5</span><span class="punctuation">]</span>
-<span class="operator">-</span> <span class="punctuation">[</span><span class="name">E</span><span class="operator">=</span><span class="literal number integer">0</span><span class="punctuation">,</span> <span class="name">A</span><span class="operator">=</span><span class="literal number integer">8</span><span class="punctuation">,</span> <span class="name">C</span><span class="operator">=</span><span class="literal number integer">5</span><span class="punctuation">,</span> <span class="name">D</span><span class="operator">=</span><span class="literal number integer">8</span><span class="punctuation">,</span> <span class="name">B</span><span class="operator">=</span><span class="literal number integer">4</span><span class="punctuation">]</span>
-<span class="operator">-</span> <span class="punctuation">[</span><span class="name">A</span><span class="operator">=</span><span class="literal number integer">0</span><span class="punctuation">,</span> <span class="name">B</span><span class="operator">=</span><span class="literal number integer">4</span><span class="punctuation">,</span> <span class="name">C</span><span class="operator">=</span><span class="literal number integer">3</span><span class="punctuation">,</span> <span class="name">D</span><span class="operator">=</span><span class="literal number integer">6</span><span class="punctuation">,</span> <span class="name">E</span><span class="operator">=</span><span class="literal number integer">8</span><span class="punctuation">]</span>
+<li><div class="first system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">Qcm-network-1.rst</tt>, line 162)</p>
+<p>Cannot analyze code. Pygments package not found.</p>
+<pre class="literal-block">
+.. code-block:: c
+
+    - [C=0]
+    - [A=0, C=3]
+    - [D=0, C=3, A=10]
+    - [E=0, A=20, C=5, D=10]
+    - [B=0, A=4, E=4, C=7, D=14]
+    - [C=0, A=3, D=3, E=5]
+    - [E=0, A=8, C=5, D=8, B=4]
+    - [A=0, B=4, C=3, D=6, E=8]
+
+
 </pre>
+</div>
 </li>
 </ul>
 <ul class="negative">
-<li><pre class="code c first literal-block">
-<span class="operator">-</span> <span class="punctuation">[</span><span class="name">B</span><span class="operator">=</span><span class="literal number integer">0</span><span class="punctuation">]</span>
-<span class="operator">-</span> <span class="punctuation">[</span><span class="name">C</span><span class="operator">=</span><span class="literal number integer">0</span><span class="punctuation">]</span>
-<span class="operator">-</span> <span class="punctuation">[</span><span class="name">D</span><span class="operator">=</span><span class="literal number integer">0</span><span class="punctuation">,</span> <span class="name">C</span><span class="operator">=</span><span class="literal number integer">3</span><span class="punctuation">]</span>
-<span class="operator">-</span> <span class="punctuation">[</span><span class="name">A</span><span class="operator">=</span><span class="literal number integer">0</span><span class="punctuation">,</span> <span class="name">B</span><span class="operator">=</span><span class="literal number integer">4</span><span class="punctuation">,</span> <span class="name">C</span><span class="operator">=</span><span class="literal number integer">3</span><span class="punctuation">,</span> <span class="name">D</span><span class="operator">=</span><span class="literal number integer">10</span><span class="punctuation">]</span>
-<span class="operator">-</span> <span class="punctuation">[</span><span class="name">E</span><span class="operator">=</span><span class="literal number integer">0</span><span class="punctuation">,</span> <span class="name">C</span><span class="operator">=</span><span class="literal number integer">5</span><span class="punctuation">,</span> <span class="name">B</span><span class="operator">=</span><span class="literal number integer">4</span><span class="punctuation">,</span> <span class="name">D</span><span class="operator">=</span><span class="literal number integer">10</span><span class="punctuation">]</span>
-<span class="operator">-</span> <span class="punctuation">[</span><span class="name">D</span><span class="operator">=</span><span class="literal number integer">0</span><span class="punctuation">,</span> <span class="name">A</span><span class="operator">=</span><span class="literal number integer">6</span><span class="punctuation">,</span> <span class="name">B</span><span class="operator">=</span><span class="literal number integer">14</span><span class="punctuation">,</span> <span class="name">C</span><span class="operator">=</span><span class="literal number integer">3</span><span class="punctuation">,</span> <span class="name">E</span><span class="operator">=</span><span class="literal number integer">10</span><span class="punctuation">]</span>
-<span class="operator">-</span> <span class="punctuation">[</span><span class="name">B</span><span class="operator">=</span><span class="literal number integer">0</span><span class="punctuation">,</span> <span class="name">A</span><span class="operator">=</span><span class="literal number integer">4</span><span class="punctuation">,</span> <span class="name">C</span><span class="operator">=</span><span class="literal number integer">7</span><span class="punctuation">,</span> <span class="name">E</span><span class="operator">=</span><span class="literal number integer">4</span><span class="punctuation">,</span> <span class="name">D</span><span class="operator">=</span><span class="literal number integer">14</span><span class="punctuation">]</span>
-<span class="operator">-</span> <span class="punctuation">[</span><span class="name">A</span><span class="operator">=</span><span class="literal number integer">0</span><span class="punctuation">,</span> <span class="name">B</span><span class="operator">=</span><span class="literal number integer">4</span><span class="punctuation">,</span> <span class="name">C</span><span class="operator">=</span><span class="literal number integer">3</span><span class="punctuation">,</span> <span class="name">D</span><span class="operator">=</span><span class="literal number integer">6</span><span class="punctuation">,</span> <span class="name">E</span><span class="operator">=</span><span class="literal number integer">8</span><span class="punctuation">]</span>
-<span class="operator">-</span> <span class="punctuation">[</span><span class="name">C</span><span class="operator">=</span><span class="literal number integer">0</span><span class="punctuation">,</span> <span class="name">A</span><span class="operator">=</span><span class="literal number integer">3</span><span class="punctuation">,</span> <span class="name">D</span><span class="operator">=</span><span class="literal number integer">3</span><span class="punctuation">,</span> <span class="name">E</span><span class="operator">=</span><span class="literal number integer">5</span><span class="punctuation">,</span> <span class="name">B</span><span class="operator">=</span><span class="literal number integer">7</span><span class="punctuation">]</span>
+<li><div class="first system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">Qcm-network-1.rst</tt>, line 177)</p>
+<p>Cannot analyze code. Pygments package not found.</p>
+<pre class="literal-block">
+.. code-block:: c
+
+    - [B=0]
+    - [C=0]
+    - [D=0, C=3]
+    - [A=0, B=4, C=3, D=10]
+    - [E=0, C=5, B=4, D=10]
+    - [D=0, A=6, B=14, C=3, E=10]
+    - [B=0, A=4, C=7, E=4, D=14]
+    - [A=0, B=4, C=3, D=6, E=8]
+    - [C=0, A=3, D=3, E=5, B=7]
+
+
 </pre>
+</div>
 </li>
-<li><pre class="code c first literal-block">
-<span class="operator">-</span> <span class="punctuation">[</span><span class="name">D</span><span class="operator">=</span><span class="literal number integer">0</span><span class="punctuation">]</span>
-<span class="operator">-</span> <span class="punctuation">[</span><span class="name">A</span><span class="operator">=</span><span class="literal number integer">0</span><span class="punctuation">,</span> <span class="name">D</span><span class="operator">=</span><span class="literal number integer">10</span><span class="punctuation">]</span>
-<span class="operator">-</span> <span class="punctuation">[</span><span class="name">B</span><span class="operator">=</span><span class="literal number integer">0</span><span class="punctuation">]</span>
-<span class="operator">-</span> <span class="punctuation">[</span><span class="name">C</span><span class="operator">=</span><span class="literal number integer">0</span><span class="punctuation">,</span> <span class="name">A</span><span class="operator">=</span><span class="literal number integer">3</span><span class="punctuation">,</span> <span class="name">D</span><span class="operator">=</span><span class="literal number integer">3</span><span class="punctuation">,</span> <span class="name">B</span><span class="operator">=</span><span class="literal number integer">7</span><span class="punctuation">]</span>
-<span class="operator">-</span> <span class="punctuation">[</span><span class="name">E</span><span class="operator">=</span><span class="literal number integer">0</span><span class="punctuation">,</span> <span class="name">A</span><span class="operator">=</span><span class="literal number integer">8</span><span class="punctuation">,</span> <span class="name">B</span><span class="operator">=</span><span class="literal number integer">4</span><span class="punctuation">,</span> <span class="name">C</span><span class="operator">=</span><span class="literal number integer">5</span><span class="punctuation">,</span> <span class="name">D</span><span class="operator">=</span><span class="literal number integer">10</span><span class="punctuation">]</span>
-<span class="operator">-</span> <span class="punctuation">[</span><span class="name">D</span><span class="operator">=</span><span class="literal number integer">0</span><span class="punctuation">,</span> <span class="name">A</span><span class="operator">=</span><span class="literal number integer">6</span><span class="punctuation">,</span> <span class="name">B</span><span class="operator">=</span><span class="literal number integer">10</span><span class="punctuation">,</span> <span class="name">C</span><span class="operator">=</span><span class="literal number integer">3</span><span class="punctuation">,</span> <span class="name">E</span><span class="operator">=</span><span class="literal number integer">10</span><span class="punctuation">]</span>
-<span class="operator">-</span> <span class="punctuation">[</span><span class="name">B</span><span class="operator">=</span><span class="literal number integer">0</span><span class="punctuation">,</span> <span class="name">A</span><span class="operator">=</span><span class="literal number integer">4</span><span class="punctuation">,</span> <span class="name">C</span><span class="operator">=</span><span class="literal number integer">7</span><span class="punctuation">,</span> <span class="name">E</span><span class="operator">=</span><span class="literal number integer">4</span><span class="punctuation">,</span> <span class="name">D</span><span class="operator">=</span><span class="literal number integer">14</span><span class="punctuation">]</span>
-<span class="operator">-</span> <span class="punctuation">[</span><span class="name">A</span><span class="operator">=</span><span class="literal number integer">0</span><span class="punctuation">,</span> <span class="name">B</span><span class="operator">=</span><span class="literal number integer">4</span><span class="punctuation">,</span> <span class="name">C</span><span class="operator">=</span><span class="literal number integer">3</span><span class="punctuation">,</span> <span class="name">D</span><span class="operator">=</span><span class="literal number integer">6</span><span class="punctuation">,</span> <span class="name">E</span><span class="operator">=</span><span class="literal number integer">8</span><span class="punctuation">]</span>
+<li><div class="first system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">Qcm-network-1.rst</tt>, line 191)</p>
+<p>Cannot analyze code. Pygments package not found.</p>
+<pre class="literal-block">
+.. code-block:: c
+
+    - [D=0]
+    - [A=0, D=10]
+    - [B=0]
+    - [C=0, A=3, D=3, B=7]
+    - [E=0, A=8, B=4, C=5, D=10]
+    - [D=0, A=6, B=10, C=3, E=10]
+    - [B=0, A=4, C=7, E=4, D=14]
+    - [A=0, B=4, C=3, D=6, E=8]
+
 </pre>
+</div>
 </li>
-<li><pre class="code c first literal-block">
-<span class="operator">-</span> <span class="punctuation">[</span><span class="name">C</span><span class="operator">=</span><span class="literal number integer">0</span><span class="punctuation">]</span>
-<span class="operator">-</span> <span class="punctuation">[</span><span class="name">A</span><span class="operator">=</span><span class="literal number integer">0</span><span class="punctuation">,</span> <span class="name">C</span><span class="operator">=</span><span class="literal number integer">3</span><span class="punctuation">]</span>
-<span class="operator">-</span> <span class="punctuation">[</span><span class="name">D</span><span class="operator">=</span><span class="literal number integer">0</span><span class="punctuation">,</span> <span class="name">C</span><span class="operator">=</span><span class="literal number integer">3</span><span class="punctuation">,</span> <span class="name">A</span><span class="operator">=</span><span class="literal number integer">6</span><span class="punctuation">]</span>
-<span class="operator">-</span> <span class="punctuation">[</span><span class="name">E</span><span class="operator">=</span><span class="literal number integer">0</span><span class="punctuation">,</span> <span class="name">A</span><span class="operator">=</span><span class="literal number integer">8</span><span class="punctuation">,</span> <span class="name">C</span><span class="operator">=</span><span class="literal number integer">5</span><span class="punctuation">,</span> <span class="name">D</span><span class="operator">=</span><span class="literal number integer">10</span><span class="punctuation">]</span>
-<span class="operator">-</span> <span class="punctuation">[</span><span class="name">B</span><span class="operator">=</span><span class="literal number integer">0</span><span class="punctuation">,</span> <span class="name">A</span><span class="operator">=</span><span class="literal number integer">4</span><span class="punctuation">,</span> <span class="name">E</span><span class="operator">=</span><span class="literal number integer">4</span><span class="punctuation">,</span> <span class="name">C</span><span class="operator">=</span><span class="literal number integer">9</span><span class="punctuation">,</span> <span class="name">D</span><span class="operator">=</span><span class="literal number integer">14</span><span class="punctuation">]</span>
-<span class="operator">-</span> <span class="punctuation">[</span><span class="name">C</span><span class="operator">=</span><span class="literal number integer">0</span><span class="punctuation">,</span> <span class="name">A</span><span class="operator">=</span><span class="literal number integer">3</span><span class="punctuation">,</span> <span class="name">D</span><span class="operator">=</span><span class="literal number integer">3</span><span class="punctuation">,</span> <span class="name">E</span><span class="operator">=</span><span class="literal number integer">5</span><span class="punctuation">]</span>
-<span class="operator">-</span> <span class="punctuation">[</span><span class="name">E</span><span class="operator">=</span><span class="literal number integer">0</span><span class="punctuation">,</span> <span class="name">A</span><span class="operator">=</span><span class="literal number integer">8</span><span class="punctuation">,</span> <span class="name">C</span><span class="operator">=</span><span class="literal number integer">5</span><span class="punctuation">,</span> <span class="name">D</span><span class="operator">=</span><span class="literal number integer">5</span><span class="punctuation">,</span> <span class="name">B</span><span class="operator">=</span><span class="literal number integer">4</span><span class="punctuation">]</span>
-<span class="operator">-</span> <span class="punctuation">[</span><span class="name">A</span><span class="operator">=</span><span class="literal number integer">0</span><span class="punctuation">,</span> <span class="name">B</span><span class="operator">=</span><span class="literal number integer">4</span><span class="punctuation">,</span> <span class="name">C</span><span class="operator">=</span><span class="literal number integer">3</span><span class="punctuation">,</span> <span class="name">D</span><span class="operator">=</span><span class="literal number integer">6</span><span class="punctuation">,</span> <span class="name">E</span><span class="operator">=</span><span class="literal number integer">8</span><span class="punctuation">]</span>
+<li><div class="first system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">Qcm-network-1.rst</tt>, line 203)</p>
+<p>Cannot analyze code. Pygments package not found.</p>
+<pre class="literal-block">
+.. code-block:: c
+
+    - [C=0]
+    - [A=0, C=3]
+    - [D=0, C=3, A=6]
+    - [E=0, A=8, C=5, D=10]
+    - [B=0, A=4, E=4, C=9, D=14]
+    - [C=0, A=3, D=3, E=5]
+    - [E=0, A=8, C=5, D=5, B=4]
+    - [A=0, B=4, C=3, D=6, E=8]
+
+
 </pre>
+</div>
 <p class="comment">Read Computer Networking : Principles, Protocols and Practice section 5.1.2 : The control plane.</p>
 </li>
 </ul>
@@ -596,7 +762,7 @@ never heard about B and E. Then, the link between the router A and D fail. What
 will happen ?</p>
 <blockquote>
 <div class="figure align-center">
-<img alt="../png/qcm1-3.png" src="../png/qcm1-3.png" />
+<img alt="../../png/qcm1-3.png" src="../../png/qcm1-3.png" style="width: 300.0px; height: 187.0px;" />
 </div>
 </blockquote>
 <ul class="positive simple">
@@ -625,7 +791,7 @@ route. Which links must fail and which events must occur in order to have a
 count to infinity problem between router B and E ?</p>
 <blockquote>
 <div class="figure align-center">
-<img alt="../png/qcm1-4.png" src="../png/qcm1-4.png" />
+<img alt="../../png/qcm1-4.png" src="../../png/qcm1-4.png" style="width: 468.0px; height: 265.2px;" />
 </div>
 </blockquote>
 <ul class="positive simple">
