@@ -7,11 +7,11 @@
 
 QCM=1
 
-EXNAME=../../html/qcm$(QCM).html
+EXNAME=../html/qcm$(QCM).html
 
 RST_FILES=Qcm-network-$(QCM).rst
 
-CSS=../../rst-form/css/html4css1.css,../../rst-form/css/rst-form.css,../../rst-form/css/pygments.css
+CSS=../rst-form/css/html4css1.css, ../rst-form/css/rst-form.css, ../rst-form/css/pygments.css
 
 .PHONY : qcm all
 
