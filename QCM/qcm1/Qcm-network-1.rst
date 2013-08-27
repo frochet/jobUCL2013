@@ -315,6 +315,3 @@ Distance Vector Routing and Link State Routing are two different protocols. Find
     The link state  database eliminates the need of a routing table.
     
 
-.. include:: ../../../links.rst
-.. include:: ../../../man_links.rst
-.. include:: ../../../incl_links.rst

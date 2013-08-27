@@ -7,7 +7,7 @@
 
 QCM=1
 
-EXNAME=../html/qcm($QCM).html
+EXNAME=../html/qcm$(QCM).html
 
 RST_FILES=Qcm-network-$(QCM).rst
 
