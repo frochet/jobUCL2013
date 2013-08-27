@@ -158,44 +158,6 @@ will happen ?
 
       It could be useful to read again the chapter Distance Vector Routing, where you will find a complete example about failure. The pseudo-code in this chapter could help you to understand correctly the algorithm.
 
--
- .. code:: c
-
-    int main(int argc, const char *argv[]) {
-        printf("Hello, world\n");
-    }
-
-
- .. class:: comment
-
-       La fonction `printf(3)`_ utilisée par ce programme fait partie de la librairie standard de gestion des I/O. Pour l'utiliser, il faut inclure le header `stdio.h`_. Même si certains compilateurs pouvaient l'inclure par défaut, il est préférable de spécifier ce header explicitement.
-
--
- .. code:: c
-
-    #include <stdlib.h>
-    int main() {
-        printf("Hello, world\n");
-    }
-
-
- .. class:: comment
-
-    En C, la signature de la fonction ``main`` est ``int main(int argc, const char *argv[])`` même si certains compilateurs peuvent être tolérants. `printf(3)`_ est défini via `stdio.h`_ et non `stdlib.h`_.
-
--
- .. code:: c
-
-    #include <stdlib.h>
-    void main()
-        printf("Hello, world\n");
-    }
-
-
- .. class:: comment
-
-    En C, la signature de la fonction ``main`` est ``int main(int argc, const char *argv[])`` même si certains compilateurs peuvent être tolérants. `printf(3)`_ est défini via `stdio.h`_ et non `stdlib.h`_.
-
 
 Question 4. Link State Routing
 -------------------------------------------
