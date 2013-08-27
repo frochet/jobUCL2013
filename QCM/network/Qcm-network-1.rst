@@ -46,8 +46,6 @@ Analyse the network given. What is the shortest path tree for the router A?
  .. figure:: ../../png/network/qcm1-1-wrong2.png 
      :align: center
      :scale: 100
- 
- .. class:: comment
 
 Question 2. Distance vector routing
 ------------------------------------
@@ -98,7 +96,8 @@ Question 3. Link state routing
       LSP : A [C:3];[D:6];[B:4];
 
   .. class:: comment
-	  A LSP from a router contains informations about the links connected to him and to wich neighbourg they are connected. It does not compute a shortest path. The cost from A to D is thus 10 not 6.
+
+	 	 A LSP from a router contains informations about the links connected to him and to wich neighbourg they are connected. It does not compute a shortest path. The cost from A to D is thus 10 not 6.
 
 -
   .. code-block:: c
@@ -106,7 +105,8 @@ Question 3. Link state routing
       LSP : A [C:3];[D:6];[B:4];[E:8]
 
   .. class:: comment
-	  A LSP from a router contains informations about the links connected to him and to wich neighbourg they are connected. It does not give information about how he can reach other routers.
+
+	 	 A LSP from a router contains informations about the links connected to him and to wich neighbourg they are connected. It does not give information about how he can reach other routers.
 
 -
   .. code-block:: c
@@ -114,7 +114,8 @@ Question 3. Link state routing
       LSP : D [C:3];[A:6];[E:8]
 
   .. class:: comment
-	  A LSP from a router contains informations about the links connected to him and to wich neighbourg they are connected. It does not compute a shortest path. The cost from A to D is thus 10 not 6.
+
+	  	A LSP from a router contains informations about the links connected to him and to wich neighbourg they are connected. It does not compute a shortest path. The cost from A to D is thus 10 not 6.
 
 
 -
@@ -123,7 +124,8 @@ Question 3. Link state routing
       LSP : D [C:3];[A:6];[E:8];[B:10]
 
   .. class:: comment
-	  A LSP from a router contains informations about the links connected to him and to wich neighbourg they are connected. It does not give information about how he can reach other routers.
+
+	 	 A LSP from a router contains informations about the links connected to him and to wich neighbourg they are connected. It does not give information about how he can reach other routers.
 
 
 
@@ -133,7 +135,8 @@ Question 3. Link state routing
       LSP : C [D:3];[A:3];[E:5];[B:7]
 
   .. class:: comment
-	  A LSP from a router contains informations about the links connected to him and to wich neighbourg they are connected. It does not give information about how he can reach other routers.
+
+	 	 A LSP from a router contains informations about the links connected to him and to wich neighbourg they are connected. It does not give information about how he can reach other routers.
 
 -
   .. code-block:: c
@@ -141,7 +144,8 @@ Question 3. Link state routing
       LSP : B [A:4];[E:4];[C:7];[D:10]
 
   .. class:: comment
-	  A LSP from a router contains informations about the links connected to him and to wich neighbourg they are connected. It does not give information about how he can reach other routers.
+
+	  	A LSP from a router contains informations about the links connected to him and to wich neighbourg they are connected. It does not give information about how he can reach other routers.
 
 
 -
@@ -150,7 +154,8 @@ Question 3. Link state routing
       LSP : E [C:5];[D:8];[B:4]
 
   .. class:: comment
-	  A LSP from a router contains informations about the links connected to him and to wich neighbourg they are connected. It does not compute a shortest path. The cost from E to D is thus 10 not 8.
+
+		  A LSP from a router contains informations about the links connected to him and to wich neighbourg they are connected. It does not compute a shortest path. The cost from E to D is thus 10 not 8.
 
 -
   .. code-block:: c
@@ -158,7 +163,8 @@ Question 3. Link state routing
       LSP : E [C:5];[D:8];[B:4];[A:8]
 
   .. class:: comment
-	  A LSP from a router contains informations about the links connected to him and to wich neighbourg they are connected. It does not give information about how he can reach other routers.
+
+		  A LSP from a router contains informations about the links connected to him and to wich neighbourg they are connected. It does not give information about how he can reach other routers.
 
 
 
@@ -333,27 +339,33 @@ Link state routing is the second type of routing protocols. When a router use li
 -
     A link state router sends periodically a ``HELLO`` message to all it's neighbourgs. This ``HELLO`` message is forwarded all over the network.
    
-    .. class:: comment
-		``HELLO`` message are not forwarded all over the network.
+  .. class:: comment
+
+	 	 The ``HELLO`` message are not forwarded all over the network.
+
 
 -
     A link state router sends a ``HELLO`` message once when it boots.
     
-	.. class:: comment
-		``HELLO`` message are sends periodically.
+  .. class:: comment
+
+	 	 The ``HELLO`` message are sends periodically.
+
 
 -
-    A link-state router sends link-state packets only to its neighbours. (They are not forwarded further)
+  A link-state router sends link-state packets only to its neighbours. (They are not forwarded further)
 
-    .. class:: comment
-		LSP are forwarded all over the network (if they are newer than the previously LSP received).
+  .. class:: comment
+
+	 	 LSP are forwarded all over the network (if they are newer than the previously LSP received).
+
 
 -
     When flooding is used on a network, there is a link state database containing the most recent LSP sent by each router shared between all routers.
 
-	.. class:: comment
-		Each router has his own LSDB. 
+  .. class:: comment
 
+	 	 Each router has his own LSDB. 
 
 
 Question 8. Differencies between Distance Vector Routing and Link State Routing
@@ -381,11 +393,22 @@ Distance Vector Routing and Link State Routing are two different protocols. Find
 -
     The count to infinity problem is found in both Distance vector routing and Link state routing.
 
+  .. class:: comment
+
+	 	 You have not that problem in the Link state routing protocol.
 -
     Distance vector are flooded on the entire network.
+ 
+  .. class:: comment
+
+	 	 Distance vector does'nt use the flood method. Flooding is used with link state routing.
 
 -
     A router that implement distance vector routing has a database where distance vector are saved.
+
+  .. class:: comment
+
+	 	 Link state routing use database to store lsp, not distance vector.
 
 -
     A link state packet contains information about the entire topology of the network. 
