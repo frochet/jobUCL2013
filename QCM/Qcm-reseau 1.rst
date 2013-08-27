@@ -149,11 +149,14 @@ will happen ?
 
 
 - Either router A or router D notice first the failure (let's say that A notice
-  first) and sent its vector routing to the others with inside C=inf. When router C receive 
+  first) and sent its vector routing to the others with inside D=inf. When router C
+  receive the distance vector, it updates its own distance vector and sent it
+  to D. Thanks to that, D notice the failure and update its distance vector to
+  [TODO]
 
 .. class:: comment
 
-      En C, contrairement à Java, la fonction ``main`` retourne une valeur de type ``int``.
+      It could be useful to read again the chapter Distance Vector Routing, where you will find a complete example about failure. The pseudo-code in this chapter could help you to understand correctly the algorithm.
 
 -
  .. code:: c
