@@ -197,18 +197,32 @@ will happen ?
 Question 4. Link State Routing
 -------------------------------------------
 
-Votre deuxième programme en langage C doit afficher à l'écran la chaîne de caractères `SINF1252`. Lequel parmi les programmes ci-dessous affiche-t-il correctement cette chaîne de caractères ?
+Link state routing is the second type of routing protocols. When a router use link state routing, it sends message on the network. Wich of theses affirmations are corrects?
 
 .. class:: positive
 
 -
- .. code:: c
+    A link state router sends periodically a HELLO message to all it's neighbourgs.
 
-    #include <stdlio.h>
-    int main(int argc, const char *argv[]) {
-        int a = 1252;
-        printf("SINF%d\n", a);
-    }
+-
+    A link-state router sends link-state packets to its neighbours. If this lsp is newer than the one stored in the link state database of the neighbours, they forwards the lsp on all links except the one over which the LSP was received.
+
+-
+    The Link state packet send by a router contains information only about the neighbours of this router.
+
+.. class:: negative
+
+-
+    A link state router sends periodically a HELLO message to all it's neighbourgs. This HELLO message is forwarded all over the network.
+
+-
+    A link state router sends a HELLO message once when it boots.
+
+-
+    A link-state router sends link-state packets only to its neighbours. (They are not forwarded further)
+
+-
+    When flooding is used on a network, there is a link state database containing the most recent LSP sent by each router shared between all routers. 
 
  .. class:: comment
 
