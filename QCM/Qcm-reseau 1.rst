@@ -191,60 +191,43 @@ Link state routing is the second type of routing protocols. When a router use li
 
 
 
-Question 5. Arguments passés à un programme C
+Question 5. Differencies between Distance Vector Routing and Link State Routing
 ---------------------------------------------
 
-Considérons le programme C ci-dessous qui permet de manipuler les arguments passés en ligne de commande.
-
-        .. code-block:: c
-
-                #include <stdlio.h>
-                #include <stdlib.h>
-                int main(int argc, const char *argv[])
-                {
-                        int a = atoi(argv[1]);
-                        printf("%d\n", a);
-                }
-
-Parmi les groupes d'affirmations ci-dessous, un seul ne contient que des affirmations qui sont toutes vraies. Lequel ?
+Distance Vector Routing and Link State Routing are two different protocols. Find the correct affirmations.
 
 
 .. class:: positive
 
 -
+    The link state routing uses a shorthest path algorithm.
 
-  - Lors de l'exécution de la fonction ``main``, ``argc`` est initialisé au nombre d'arguments passés au programme (y compris le nom de l'exécutable lui-même).
-  - Lors de l'exécution de la fonction ``main``, le tableau ``argv[]`` contient dans ```argv[0]`` le nom du programme, dans ``argv[1]`` le premier argument, etc.
-  - La fonction ``atoi`` permet de convertir une chaîne de caractères en l'entier équivalent.
+-
+    Distance vector are never forwarded.
+
+-
+    Link state packets contains the state of directly connected links.
+    
+
 
 
 .. class:: negative
 
 -
-  - Lors de l'exécution de la fonction ``main``, ``argc`` est initialisé à zéro.
-  - Lors de l'exécution de la fonction ``main``, le tableau ``argv[]`` contient dans ``argv[0]`` le premier argument, dans ``argv[1]`` le second argument, etc.
-  - La fonction ``atoi`` calcule la taille de son argument.
-
-  .. class:: comment
-
-     Les trois affirmations sont fausses. ``argc`` sera toujours initialisé à un vu que le nom du programme est toujours passé en argument. Le premier élément du tableau ``argv[]``, ``argv[0]``, est le nom du programme qui est exécuté. Enfin, la fonction ``atoi`` permet de convertir une chaîne de caractères en l'entier équivalent.
+    The count to infinity problem is found in both Distance vector routing and Link state routing.
 
 -
-  - Lors de l'exécution de la fonction ``main``, ``argc`` est le nombre maximum d'arguments que l'on peut lui passer.
-  - Lors de l'exécution de la fonction ``main``, le tableau ``argv[]`` contient dans ``argv[0]`` le premier argument, dans ``argv[1]`` le second argument, etc.
-  - La fonction ``atoi`` doit prendre comme argument une chaîne de caractères qui ne contient que des chiffres.
-
-  .. class:: comment
-
-     Les deux premières affirmations sont fausses. ``argc`` contient le nombre d'arguments passés effectivement au programme. Le premier élément du tableau ``argv[]``, ``argv[0]``, est le nom du programme qui est exécuté.
+    Distance vector are flooded on the entire network.
 
 -
-  - Lors de l'exécution de la fonction ``main``, le tableau ``argv[]`` contient dans ```argv[0]`` le premier argument, dans ``argv[1]`` le second argument, etc.
-  - La fonction ``atoi`` permet de convertir une chaîne de caractères en l'entier équivalent.
+    A router that implement distance vector routing has a database where distance vector are saved.
 
-  .. class:: comment
+-
+    A link state packet contains information about the entire topology of the network. 
 
-     Le premier élément du tableau ``argv[]``, ``argv[0]``, est le nom du programme qui est exécuté.
+-
+    The link state  database eliminates the need of a routing table.
+    
 
 .. include:: ../../../links.rst
 .. include:: ../../../man_links.rst
