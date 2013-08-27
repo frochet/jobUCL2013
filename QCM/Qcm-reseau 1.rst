@@ -149,49 +149,14 @@ will happen ?
 
 
 - Either router A or router D notice first the failure (let's say that A notice
-  first) and sent its vector routing to the others with inside C=inf. When router C receive 
+  first) and sent its vector routing to the others with inside D=inf. When router C
+  receive the distance vector, it updates its own distance vector and sent it
+  to D. Thanks to that, D notice the failure and update its distance vector to
+  [TODO]
 
 .. class:: comment
 
-      En C, contrairement à Java, la fonction ``main`` retourne une valeur de type ``int``.
-
--
- .. code:: c
-
-    int main(int argc, const char *argv[]) {
-        printf("Hello, world\n");
-    }
-
-
- .. class:: comment
-
-       La fonction `printf(3)`_ utilisée par ce programme fait partie de la librairie standard de gestion des I/O. Pour l'utiliser, il faut inclure le header `stdio.h`_. Même si certains compilateurs pouvaient l'inclure par défaut, il est préférable de spécifier ce header explicitement.
-
--
- .. code:: c
-
-    #include <stdlib.h>
-    int main() {
-        printf("Hello, world\n");
-    }
-
-
- .. class:: comment
-
-    En C, la signature de la fonction ``main`` est ``int main(int argc, const char *argv[])`` même si certains compilateurs peuvent être tolérants. `printf(3)`_ est défini via `stdio.h`_ et non `stdlib.h`_.
-
--
- .. code:: c
-
-    #include <stdlib.h>
-    void main()
-        printf("Hello, world\n");
-    }
-
-
- .. class:: comment
-
-    En C, la signature de la fonction ``main`` est ``int main(int argc, const char *argv[])`` même si certains compilateurs peuvent être tolérants. `printf(3)`_ est défini via `stdio.h`_ et non `stdlib.h`_.
+      It could be useful to read again the chapter Distance Vector Routing, where you will find a complete example about failure. The pseudo-code in this chapter could help you to understand correctly the algorithm.
 
 
 Question 4. Link State Routing
