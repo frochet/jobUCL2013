@@ -126,7 +126,7 @@ Question 3. Failure with Distance Vector Routing
 --------------------------------------------------------------
 
 Consider that the network reach a state where the router A, C, D have receive
-distance vector from each of them. For an unknow reason, these routers have
+distance vector from each of them. For an unknown reason, these routers have
 never heard about B and E. Then, the link between the router A and D fail. What
 will happen ?
 
@@ -137,29 +137,35 @@ will happen ?
 .. class:: positive
 
 - Routers A and D notice after a sufficient delay (How much ?) that they own a route which
-  is too old. The next distance vector for A will be [ TODO ] and the next
-  distance vector for D will be [ TODO ].
+  is too old. The next distance vector for A will be [A=0, D=inf, C=3] and the next
+  distance vector for D will be [ D=0, A=inf, C=3]. Then C share its distance vector
+  to A and D and the failure is recovered.
 
 
 .. class:: negative
 
 - Routers A and D notice after a sufficient delay (How much ?) that they own a route which
-  is too old. The next distance vector for A will be [ TODO B=inf, E=inf ] and the next
-  distance vector for D will be [ TODO B=inf, E=inf ].
+  is too old. The next distance vector for A will be [A=0, C=3, D=inf B=inf, E=inf] and the next
+  distance vector for D will be [D=0, A=inf, C=3, B=inf, E=inf].
 
 
 - Either router A or router D notice first the failure (let's say that A notice
   first) and sent its vector routing to the others with inside D=inf. When router C
   receive the distance vector, it updates its own distance vector and sent it
   to D. Thanks to that, D notice the failure and update its distance vector to
-  [TODO]
+  [A=6, C=3, D=0]
 
 .. class:: comment
 
       It could be useful to read again the chapter Distance Vector Routing, where you will find a complete example about failure. The pseudo-code in this chapter could help you to understand correctly the algorithm.
 
 
-Question 4. Link State Routing
+Question 4. The count to infinity problem
+------------------------------------------
+
+
+
+Question 5. Link State Routing
 -------------------------------------------
 
 Link state routing is the second type of routing protocols. When a router use link state routing, it sends message on the network. Wich of theses affirmations are corrects?
