@@ -90,6 +90,53 @@ Question 3. Link state routing
       LSP : E [C:5];[D:10];[B:4]
 
 
+.. class:: negative
+
+-
+  .. code-block:: c
+
+      LSP : A [C:3];[D:6];[B:4];
+
+-
+  .. code-block:: c
+
+      LSP : A [C:3];[D:6];[B:4];[E:8]
+
+-
+  .. code-block:: c
+
+      LSP : D [C:3];[A:6];[E:8]
+
+
+-
+  .. code-block:: c
+
+      LSP : D [C:3];[A:6];[E:8];[B:10]
+
+
+-
+  .. code-block:: c
+
+      LSP : C [D:3];[A:3];[E:5];[B:7]
+
+
+-
+  .. code-block:: c
+
+      LSP : B [A:4];[E:4];[C:7];[D:10]
+
+
+-
+  .. code-block:: c
+
+      LSP : E [C:5];[D:8];[B:4]
+
+-
+  .. code-block:: c
+
+      LSP : E [C:5];[D:8];[B:4];[A:8]
+
+
 Question 4. Distance vector routing
 -----------------------------
 
