@@ -1,3 +1,11 @@
+.. raw:: html
+
+  <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+  <script type="text/javascript" src="js/jquery-shuffle.js"></script>
+  <script type="text/javascript" src="js/rst-form.js"></script>
+  <script type="text/javascript">$nmbr_prop = 4</script>
+
+
 ==========================================================
 Mission X : The datalink layer and the Local Area Network
 ==========================================================
@@ -9,19 +17,23 @@ Question 1. Type of errors in the physical layer.
 Which of the following sentences is not an error in the physical layer
 ?
 
-.. class:: postive
+.. class:: positive
 
-- The value of a bit transmitted is modified.
+- 
+  The value of a bit transmitted is modified.
 
-- The layer may deliver more bits to the receiver than the number of bits sent
+- 
+  The layer may deliver more bits to the receiver than the number of bits sent
   by the sender.
-- The layer may deliver fewer bits to the receiver than the number of bits sent
+- 
+  The layer may deliver fewer bits to the receiver than the number of bits sent
   by the sender
 
 
 .. class:: negative
 
-- An inversion of all the bits.
+- 
+  An inversion of all the bits.
   
   .. class:: comment
         
@@ -29,7 +41,8 @@ Which of the following sentences is not an error in the physical layer
         the bits, it's highly unlikely that this kind of error is caused by the
         physical layer.
 
-- a sequence of bit shifting
+- 
+  a sequence of bit shifting
 
 Question 2. Framing problem - Bit stuffing.
 --------------------------------------------
@@ -54,6 +67,7 @@ boundary marker is 01111110)
 -  ===============================  ========================================================
    1111110110111100110101101110101  01111110111110101101111000111111011010110111010101111110
    ===============================  ========================================================
+
 .. class:: negative
 
 -  ================ ================================
@@ -99,5 +113,6 @@ A software-based datalink layer use character stuffing with DLE, STX and ETX as 
 -  =========================================== =========================================================================
    DLE A Z R STX DLE ETX ETX DLE 1 1 1 1 0 0 4 DLE STX DLE DLE A Z R DLE STX DLE DLE ETX ETX DLE 1 1 1 1 0 0 4 DLE ETX
    =========================================== =========================================================================
+
 
 
