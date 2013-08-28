@@ -124,7 +124,7 @@ where each parity bits of this bloc refer to the bits occupying the same positio
 The parity bloc is therefore used to verify the integrity of the 3 previous
 blocs, using XOR on the parity bloc received with the parity bloc rebuilded.
 
-Which of these parity blocs is correct ?
+Which one of these parity blocs is correct ?
 
 .. class:: positive
         
@@ -179,4 +179,52 @@ Which of these parity blocs is correct ?
         1011101001100111 => parity bloc
 
 
+Question 5. Error detection code (suite)
+----------------------------------------
+We consider here 16-bits blocs. For each sequence of 4 blocs, we compute parity
+bloc where each parity bits of this bloc refer to the bits occupying the same
+position in the previous blocs. The parity bloc is therefore used to verify the
+integrity of the 4 previous block.
+One of the 4 blocs has been lost. Can you find wich one using the three other
+blocs and the parity bloc?
+  
+  .. code-block::
+        
+        1001011010100101
+        0001000111001000
+        0101001011101001
+        ................ =>missing bloc
+        1001100110011010 =>parity bloc
 
+.. class:: positive
+
+-
+  ..code-block::
+
+        0100110000011110
+
+  ..code-block::
+
+        1011001111100001
+
+.. class:: negative
+
+-
+  ..code-block::
+
+        1011001100011110
+
+-
+  ..code-block::
+        
+        0100110001100001
+           
+-
+  ..code-block::
+        
+        1001011010100101
+
+-
+  ..code-block::
+        
+        0100111000011110
