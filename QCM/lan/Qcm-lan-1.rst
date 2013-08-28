@@ -116,3 +116,5 @@ A software-based datalink layer use character stuffing with DLE, STX and ETX as 
 
 
 
+ Question 4.
+ ------------
