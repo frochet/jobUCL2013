@@ -199,32 +199,32 @@ blocs and the parity bloc?
 .. class:: positive
 
 -
-  ..code-block::
+  .. code-block::
 
         0100110000011110
 
-  ..code-block::
+  .. code-block::
 
         1011001111100001
 
 .. class:: negative
 
 -
-  ..code-block::
+  .. code-block::
 
         1011001100011110
 
 -
-  ..code-block::
+  .. code-block::
         
         0100110001100001
            
 -
-  ..code-block::
+  .. code-block::
         
         1001011010100101
 
 -
-  ..code-block::
+  .. code-block::
         
         0100111000011110
