@@ -18,9 +18,6 @@ Which of the following sentences is not an error in the physical layer
 - The layer may deliver fewer bits to the receiver than the number of bits sent
   by the sender
 
-- A packet with a length greater than 1518 bytes.
-
-- A packet with a length smaller than 64 bytes.
 
 .. class:: negative
 
@@ -32,7 +29,7 @@ Which of the following sentences is not an error in the physical layer
         the bits, it's highly unlikely that this kind of error is caused by the
         physical layer.
 
-- An inversion of frames.
+- An inversion of bits.
 
 
 
