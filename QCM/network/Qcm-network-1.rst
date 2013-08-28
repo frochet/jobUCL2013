@@ -363,8 +363,13 @@ Question 6. The count to infinity problem
 
 Consider that we have the following network where Distance Vector Routing run
 and has reach a stable state where all the routers are known with the best
-route. Which links must fail and which events must occur in order to have a
-count to infinity problem between router B and E ?
+route. 
+Which sequence of events must appear to cause a count to infinity probleme
+between router B and E ?
+
+
+(Which links must fail and which events must occur in order to have a
+count to infinity problem between router B and E ?)
 
  .. figure:: ../../png/network/qcm1-6-vectorRouting.png 
      :align: center
