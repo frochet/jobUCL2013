@@ -171,7 +171,7 @@ Which of these parity blocs is correct ?
         1010000011111111 => parity bloc
 
 -
-  ..code-block::
+  .. code-block::
         
         1011101001100111
         1010101010010101
