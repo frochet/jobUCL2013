@@ -19,17 +19,21 @@ Which of the following sentences is not an error in the physical layer
 
 .. class:: postive
 
-- The value of a bit transmitted is modified.
+- 
+  The value of a bit transmitted is modified.
 
-- The layer may deliver more bits to the receiver than the number of bits sent
+- 
+  The layer may deliver more bits to the receiver than the number of bits sent
   by the sender.
-- The layer may deliver fewer bits to the receiver than the number of bits sent
+- 
+  The layer may deliver fewer bits to the receiver than the number of bits sent
   by the sender
 
 
 .. class:: negative
 
-- An inversion of all the bits.
+- 
+  An inversion of all the bits.
   
   .. class:: comment
         
@@ -37,7 +41,8 @@ Which of the following sentences is not an error in the physical layer
         the bits, it's highly unlikely that this kind of error is caused by the
         physical layer.
 
-- a sequence of bit shifting
+- 
+  a sequence of bit shifting
 
 Question 2. Framing problem - Bit stuffing.
 --------------------------------------------
