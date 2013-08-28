@@ -1,3 +1,11 @@
+.. raw:: html
+
+  <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+  <script type="text/javascript" src="js/jquery-shuffle.js"></script>
+  <script type="text/javascript" src="js/rst-form.js"></script>
+  <script type="text/javascript">$nmbr_prop = 4</script>
+
+
 ==========================================================
 Mission X : The datalink layer and the Local Area Network
 ==========================================================
@@ -54,6 +62,7 @@ boundary marker is 01111110)
 -  ===============================  ========================================================
    1111110110111100110101101110101  01111110111110101101111000111111011010110111010101111110
    ===============================  ========================================================
+
 .. class:: negative
 
 -  ================ ================================
