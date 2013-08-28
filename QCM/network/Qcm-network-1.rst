@@ -378,10 +378,10 @@ count to infinity problem between router B and E ?)
 .. class:: positive
 
 - links A-B, C-E and D-E must fail, then E could notice the failures with the link
-  C-E and D-E. E update its routing table and its vector to [E=0, B=4, A=8, C=inf, D=inf]
+  C-E and D-E. E update its routing table and its vector to [E=0, B=2, A=4, C=inf, D=6]
   and sent it to its neighbors (B here). But the vector is lost. B, which
   doesn't have noticed yet the failure with the link A-B, sent its vector 
-  [B=0, A=4, E=4, C=7, D=10] to E. After have sent its vector, B notice the
+  [B=0, A=2, E=2, C=3, D=4] to E. After have sent its vector, B notice the
   failure and update its table routing. The count to infinity appears when B
   and E start to exchange their vectors.
 
