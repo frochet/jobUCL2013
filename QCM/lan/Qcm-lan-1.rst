@@ -17,7 +17,7 @@ Question 1. Type of errors in the physical layer.
 Which of the following sentences is not an error in the physical layer
 ?
 
-.. class:: postive
+.. class:: positive
 
 - 
   The value of a bit transmitted is modified.
