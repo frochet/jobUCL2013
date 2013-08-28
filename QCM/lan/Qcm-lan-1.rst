@@ -271,3 +271,31 @@ One timing diagram is displaying a correct transfert of 3 frames with the one bi
   .. figure:: ../../png/lan/qcm1-1-wrong4.png
      :align: center
      :scale: 100
+
+Question 7. The One Bit Protocol (suite)
+----------------------------------------
+Observe the following time diagram. What's the next frame send by the sender?
+
+  .. figure:: ../../png/lan/qcm1-7-nextstep.png
+     :align: center
+     :scale: 100
+.. class:: positive
+
+  .. figure:: ../../png/lan/qcm1-7-solution.png
+     :align: center
+     :scale: 100
+
+.. class:: negative
+
+  .. figure:: ../../png/lan/qcm1-7-wrong1.png
+     :align: center
+     :scale: 100
+
+  .. figure:: ../../png/lan/qcm1-7-wrong2.png
+     :align: center
+     :scale: 100
+
+  .. figure:: ../../png/lan/qcm1-7-wrong3.png
+     :align: center
+     :scale: 100
+ 
