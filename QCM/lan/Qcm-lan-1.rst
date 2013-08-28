@@ -121,7 +121,7 @@ Question 4. Error detection code
 
 We considere here 16-bits blocs. For each sequence of 3 blocs, we compute parity bloc
 where each parity bits of this bloc refer to the bits occupying the same position in the 3 previous blocs.
-The parity bloc is therefore used to verify the integrity of the 3 preceiding
+The parity bloc is therefore used to verify the integrity of the 3 previous
 blocs, using XOR on the parity bloc received with the parity bloc rebuilded.
 
 Which of these parity blocs is correct ?
