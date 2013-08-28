@@ -116,5 +116,67 @@ A software-based datalink layer use character stuffing with DLE, STX and ETX as 
 
 
 
- Question 4.
- ------------
+ Question 4. Error detection code
+ -----------------------------------
+
+We considere here 16-bits blocs. For each sequence of 3 blocs, we compute parity bloc
+where each parity bits of this bloc refer to the bits occupying the same position in the 3 previous blocs.
+The parity bloc is therefore used to verify the integrity of the 3 preceiding
+blocs, using XOR on the parity bloc received with the parity bloc rebuilded.
+
+Which of these parity blocs is correct ?
+
+.. class:: positive
+        
+- 
+  ..code-block::
+        
+        1010111011110101
+        1110101010101011 
+        1111111011111111  
+        1011101010100001 => parity bloc
+
+-
+  ..code-block::
+        
+        1010111011110101
+        1110101010101011 
+        1111111011111111  
+        0100010101011110 => parity bloc
+        
+.. class:: negative
+
+- 
+  ..code-block::
+
+        1010101011111001
+        0101110110011011
+        1010111011111010
+        1111111111111111 => parity bloc
+-
+  ..code-block::
+
+        
+        1010111011110101
+        1110101010101011 
+        1111111011111111  
+        1011101001011110 => parity bloc
+  
+- 
+  ..code-block::
+
+        1011101111&10111
+        1001011101010101
+        1010000011111111
+        1010000011111111 => parity bloc
+
+-
+  ..code-block::
+        
+        1011101001100111
+        1010101010010101
+        1001010111111111
+        1011101001100111 => parity bloc
+
+
+
