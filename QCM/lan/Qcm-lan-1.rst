@@ -29,7 +29,7 @@ Which of the following sentences is not an error in the physical layer
         the bits, it's highly unlikely that this kind of error is caused by the
         physical layer.
 
-- An inversion of bits.
+- a sequence of bit shifting
 
 
 
