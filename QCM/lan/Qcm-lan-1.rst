@@ -31,5 +31,27 @@ Which of the following sentences is not an error in the physical layer
 
 - a sequence of bit shifting
 
+Question 2. Framing problem - Bit stuffing.
+--------------------------------------------
 
+Let's say that a frame is fixed and composed of 16 bits (In practice this is
+not the case).
+Using the generic solution called bit stuffing to recover from errors caused by
+the physical layer, which of the following frame is correct.
+
+.. class:: positive
+
+-  ===========================   =============================================
+   Original frame                 Transmitted frame
+   ===========================   =============================================
+   0001001001001001001000011     01111110000100100100100100100001101111110
+   0110111111111111111110010     01111110011011111011111011111011001001111110
+   01111110                      0111111001111101001111110
+   ===========================   =============================================
+
+.. class:: negative
+
+
+
+  
 
