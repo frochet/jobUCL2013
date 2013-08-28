@@ -116,8 +116,8 @@ A software-based datalink layer use character stuffing with DLE, STX and ETX as 
 
 
 
- Question 4. Error detection code
- -----------------------------------
+Question 4. Error detection code
+-----------------------------------
 
 We considere here 16-bits blocs. For each sequence of 3 blocs, we compute parity bloc
 where each parity bits of this bloc refer to the bits occupying the same position in the 3 previous blocs.
