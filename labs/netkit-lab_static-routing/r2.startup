@@ -1,3 +1,5 @@
-ifconfig eth0 200.1.1.1 netmask 255.255.255.0 broadcast 200.1.1.255 up
-ifconfig eth1 100.0.0.10 netmask 255.255.255.252 broadcast 100.0.0.11 up
-#route add -net 195.11.14.0 netmask 255.255.255.0 gw 100.0.0.9 dev eth1
+ifconfig eth0 inet6 add A110:BABE::1/64 up
+ifconfig eth1 inet6 add DEAD:BEEF::1/64 up
+route -A inet6 add -net B00B:1E5::1/64 gw DEAD:BEEF::1/64 dev eth1
+route -A inet6 add -net PC2 gw A110:BABE::1/64 dev eth0
+
