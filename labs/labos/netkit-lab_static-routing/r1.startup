@@ -1,6 +1,0 @@
-ifconfig eth0 up
-ifconfig eth0 add 2001:C1::1/64
-ifconfig eth1 up
-ifconfig eth1 add 2001:C2::1/64
-route -A inet6 add -net 2001:C2::/64 gw 2001:C2::1 dev eth1
-route -A inet6 add -net 2001:C1::/64 gw 2001:C1::1 dev eth0
