@@ -129,7 +129,7 @@ Which of these parity blocs is correct ?
 .. class:: positive
         
 - 
-  ..code-block::
+  .. code-block::
         
         1010111011110101
         1110101010101011 
@@ -137,7 +137,7 @@ Which of these parity blocs is correct ?
         1011101010100001 => parity bloc
 
 -
-  ..code-block::
+  .. code-block::
         
         1010111011110101
         1110101010101011 
@@ -147,14 +147,14 @@ Which of these parity blocs is correct ?
 .. class:: negative
 
 - 
-  ..code-block::
+  .. code-block::
 
         1010101011111001
         0101110110011011
         1010111011111010
         1111111111111111 => parity bloc
 -
-  ..code-block::
+  .. code-block::
 
         
         1010111011110101
@@ -163,7 +163,7 @@ Which of these parity blocs is correct ?
         1011101001011110 => parity bloc
   
 - 
-  ..code-block::
+  .. code-block::
 
         1011101111&10111
         1001011101010101
