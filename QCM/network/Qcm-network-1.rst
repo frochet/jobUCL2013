@@ -109,8 +109,7 @@ Only one of these routing tables is correct. Which one?
 Question 3. Link state routing
 -------------------------------
 
-    Assume that the network from question 1 uses link state routing. After a certain time, all the routers have received all the information about all the routers. Which of these could be a LSP sent by one router of the network? The format of LSP messages is: LSP : [Sender Name] [Age] [Sequence Number] [List
-of Adjacent Active Links].
+    Assume that the network from question 1 uses link state routing. After a certain time, all the routers have received all the information about all the routers. Which of these could be a LSP sent by one router of the network? The format of LSP messages is: LSP : [Sender Name] [Age] [Sequence Number] [List of Adjacent Active Links].
 
 .. class:: positive
 
