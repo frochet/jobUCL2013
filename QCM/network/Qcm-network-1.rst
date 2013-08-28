@@ -109,39 +109,40 @@ Only one of these routing tables is correct. Which one?
 Question 3. Link state routing
 -------------------------------
 
-    Assume that the network from question 1 uses link state routing. After a certain time, all the routers have received all the information about all the routers. Which of these could be a LSP sent by one router of the network?
+    Assume that the network from question 1 uses link state routing. After a certain time, all the routers have received all the information about all the routers. Which of these could be a LSP sent by one router of the network? The format of LSP messages is: LSP : [Sender Name] [Age] [Sequence Number] [List
+of Adjacent Active Links].
 
 .. class:: positive
 
 -
   .. code-block:: c
 
-      LSP : A [C:3];[D:10];[B:4]
+      LSP : A 60 31 [C:3];[D:10];[B:4]
 
 
 
 -
   .. code-block:: c
 
-      LSP : D [C:3];[A:10];[E:10]
+      LSP : D 15 5 [C:3];[A:10];[E:10]
 
 
 -
   .. code-block:: c
 
-      LSP : C [D:3];[A:3];[E:5]
+      LSP : C 24 26 [D:3];[A:3];[E:5]
 
 
 -
   .. code-block:: c
 
-      LSP : B [A:4];[E:4]
+      LSP : B 12 1 [A:4];[E:4]
 
 
 -
   .. code-block:: c
 
-      LSP : E [C:5];[D:10];[B:4]
+      LSP : E 10 18 [C:5];[D:10];[B:4]
 
 
 .. class:: negative
@@ -149,7 +150,7 @@ Question 3. Link state routing
 -
   .. code-block:: c
 
-      LSP : A [C:3];[D:6];[B:4];
+      LSP : A 15 24 [C:3];[D:6];[B:4];
 
   .. class:: comment
 
@@ -158,7 +159,7 @@ Question 3. Link state routing
 -
   .. code-block:: c
 
-      LSP : A [C:3];[D:6];[B:4];[E:8]
+      LSP : A 60 19 [C:3];[D:6];[B:4];[E:8]
 
   .. class:: comment
 
@@ -167,7 +168,7 @@ Question 3. Link state routing
 -
   .. code-block:: c
 
-      LSP : D [C:3];[A:6];[E:8]
+      LSP : D 21 60 [C:3];[A:6];[E:8]
 
   .. class:: comment
 
@@ -177,7 +178,7 @@ Question 3. Link state routing
 -
   .. code-block:: c
 
-      LSP : D [C:3];[A:6];[E:8];[B:10]
+      LSP : D 15 63 [C:3];[A:6];[E:8];[B:10]
 
   .. class:: comment
 
@@ -188,7 +189,7 @@ Question 3. Link state routing
 -
   .. code-block:: c
 
-      LSP : C [D:3];[A:3];[E:5];[B:7]
+      LSP : C 32 1 [D:3];[A:3];[E:5];[B:7]
 
   .. class:: comment
 
@@ -197,7 +198,7 @@ Question 3. Link state routing
 -
   .. code-block:: c
 
-      LSP : B [A:4];[E:4];[C:7];[D:10]
+      LSP : B 47 62 [A:4];[E:4];[C:7];[D:10]
 
   .. class:: comment
 
@@ -207,7 +208,7 @@ Question 3. Link state routing
 -
   .. code-block:: c
 
-      LSP : E [C:5];[D:8];[B:4]
+      LSP : E 25 25 [C:5];[D:8];[B:4]
 
   .. class:: comment
 
@@ -216,7 +217,7 @@ Question 3. Link state routing
 -
   .. code-block:: c
 
-      LSP : E [C:5];[D:8];[B:4];[A:8]
+      LSP : E 14 18 [C:5];[D:8];[B:4];[A:8]
 
   .. class:: comment
 
