@@ -2,7 +2,7 @@
 #coding=utf-8
 #
 #Script to modify tcp options in netkit
-#
+#Author: F.Rochet
 #indentation in 4 espace
 
 import os
@@ -85,17 +85,28 @@ def modify_options(host, keys):
 	sys.exit()
 
 def usage():
-    print " for default configuration: python set_tcp_options.py "
+    print " for default configuration: python set_tcp_options.py -d "
     print " to give the same set of options to each host: python
     set_tcp_option.py --all [option1]=[value] [option2]=[value] "
     print " to add an option to a particular host: python set_tcp_options.py -a
-    host=[hostname] [option1]=[value] [option2]=[value] ...  "
+    [hostname] [option1]=[value] [option2]=[value] ...  "
     print " to modify an option to a particular host: python set_tcp_option.py
-    -m host=[hostname] [option1]=[value] [option2]=[value] ... "
+    -m [hostname] [option1]=[value] [option2]=[value] ... "
 
 #main function
 def main(argv):
-    parse_option(argv)
+   if argv[0] == "-a" :
+     add_option(argv[1], get_keys(argv[2:]))
+   elif argv[0] == "--all":
+     write_options(["r", "server", "client1", "client2"], get_keys(argv[2:]))
+   elif argv[0] == "-m":
+     modify_options(argv[1], get_keys(argv[2:]))
+   elif argv[0] == "-d" :
+       default() #TODO 
+   elif argv[0] == "-h" :
+       usage()
+   else
+       usage()
     
 if __name__=="__main__":
     main(sys.argv[1:])
