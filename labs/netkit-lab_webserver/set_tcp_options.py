@@ -16,7 +16,7 @@ tcp_options = dict()
 def parse_option():
     pass
 
-def default():
+def default(onHosts):
     global tcp_options
     tcp_options['tcp_abc'] = 0
     tcp_options['tcp_abort_on_overflow']= False
@@ -28,15 +28,16 @@ def default():
     tcp_options['tcp_bic']=False
     tcp_options['tcp_bic_low_window']=14
 
+    write_options(onHosts)
 
 
-def add_options(host, keys)
+
+def add_options(host, keys):
     global tcp_options
     if os.path.isfile(host+".startup"):
         for option in keys:
 	    f = opent(host+".startup","a")
-	    f.write("sysctl -w
-		net.ipv4."+option+"={value}".format(value=tcp_options[option]))
+	    f.write("sysctl -w net.ipv4."+option+"={value}".format(value=tcp_options[option]))
 	    f.close()
     else:
         print "Host name %s incorrect, the corresponding .startup file doesn't exit" % (host)
@@ -56,12 +57,10 @@ def write_options(onHosts):
 	if os.path.isfile(host+".startup"):
 	    f = open(host+".startup",'w')
 	    for option in tcp_options.keys():
-	        f.write("sysctl -w
-		    net.ipv4."+option+"={value}".format(value=tcp_options[option]))
+	        f.write("sysctl -w net.ipv4."+option+"={value}".format(value=tcp_options[option]))
 	    f.close()
 	else:
-	    print "Host name %s incorrect, the corresponding .startup file
-		doesn't exit" % (host)
+	    print "Host name %s incorrect, the corresponding .startup file doesn't exit" % (host)
 	    sys.exit()
 
 def modify_options(host, keys):
@@ -70,18 +69,16 @@ def modify_options(host, keys):
         for option in keys:
 	    f = open(host+".startup","r")
 	    modif = ""
-	    for line in f :
-		if option not in line
+	    for line in f:
+	        if option not in line:
 		    modif+=line
 	    f.close()
 	    f = open(host+".startup","w")
-	    modif+= "sysctl -w
-	    net.ipv4."+option+"={value}".format(value=tcp_options[option])
+	    modif+= "sysctl -w net.ipv4."+option+"={value}".format(value=tcp_options[option])
 	    f.write(modif)
 	    f.close()
     else:
-	print "Host name %s incorrect, the corresponding .startup file
-	doesn't exit" % (host)
+	print "Host name %s incorrect, the corresponding .startup file doesn't exit" % (host)
 	sys.exit()
 
 ##
@@ -89,7 +86,7 @@ def modify_options(host, keys):
 #return the list of options given by the user.
 ##
 
-def get_keys(key_value_list)
+def get_keys(key_value_list):
     global tcp_options
     keys = []
     for key_value in key_value_list:
@@ -101,26 +98,23 @@ def get_keys(key_value_list)
 
 def usage():
     print " for default configuration: python set_tcp_options.py -d "
-    print " to give the same set of options to each host: python
-    set_tcp_option.py --all [option1]=[value] [option2]=[value] "
-    print " to add an option to a particular host: python set_tcp_options.py -a
-    [hostname] [option1]=[value] [option2]=[value] ...  "
-    print " to modify an option to a particular host: python set_tcp_option.py
-    -m [hostname] [option1]=[value] [option2]=[value] ... "
+    print " to give the same set of options to each host: python set_tcp_option.py --all [option1]=[value] [option2]=[value] "
+    print " to add an option to a particular host: python set_tcp_options.py -a [hostname] [option1]=[value] [option2]=[value] ...  "
+    print " to modify an option to a particular host: python set_tcp_option.py -m [hostname] [option1]=[value] [option2]=[value] ... "
 
 #main function
 def main(argv):
    if argv[0] == "-a" :
      add_option(argv[1], get_keys(argv[2:]))
    elif argv[0] == "--all":
-     write_options(["r", "server", "client1", "client2"], get_keys(argv[2:]))
+     write_options( ["r", "server", "client1", "client2"], get_keys(argv[2:]))
    elif argv[0] == "-m":
      modify_options(argv[1], get_keys(argv[2:]))
    elif argv[0] == "-d" :
-       default() #TODO 
+       default(["r", "server", "client1", "client2"]) 
    elif argv[0] == "-h" :
        usage()
-   else
+   else:
        usage()
     
 if __name__=="__main__":
