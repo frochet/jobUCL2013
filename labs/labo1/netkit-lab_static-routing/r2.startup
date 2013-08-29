@@ -1,0 +1,6 @@
+ifconfig eth0 up
+ifconfig eth0 add 2001:DB8:A110:BABE::1/64
+ifconfig eth1 up
+ifconfig eth1 add 2001:DB8:DEAD:BEEF::2/64
+route -A inet6 add 2001:DB8:cafe:babe::/64 gw 2001:DB8:dead:beef::1
+sysctl -w net.ipv6.conf.all.forwarding=1
