@@ -24,8 +24,8 @@ def create_router():
     f=open('r.startup','w')
     f.write('ifconfig eth0 2001:db8:0b0:15:da:b055::1/96 up\nifconfig eth1
 	2001:db8:be:600d::1/64 up\nsysctl -w net.ipv6.conf.all.forwarding=1\n
-	tc qdisc add dev eth0 root handle 1: htb default 12 \n tc class add dev
-	eth0 parent 1: classid 1:1 htb rate 100kbps ceil 100kbps ')
+	tc qdisc add dev eth0 root handle 1: htb default 12 \n insmod htb \n tc class add dev
+	eth0 parent 1: classid 1:1 htb rate 1000kbps ceil 1000kbps ')
     f.close()
 
 def create_webserver():

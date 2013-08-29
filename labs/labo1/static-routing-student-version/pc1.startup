@@ -1,0 +1,3 @@
+#lancer avec lstart -o '-M 128' pour pouvoir utiliser tcpdump
+ifconfig eth0 up
+ifconfig eth0 add 2001:DB8:CAFE:BABE::2/64
