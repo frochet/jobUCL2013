@@ -84,6 +84,21 @@ def modify_options(host, keys):
 	doesn't exit" % (host)
 	sys.exit()
 
+##
+#Add to the dict the keys and the values and 
+#return the list of options given by the user.
+##
+
+def get_keys(key_value_list)
+    global tcp_options
+    keys = []
+    for key_value in key_value_list:
+	elems = key_value.split("=")
+	tcp_options[elems[0]] = elems[1]
+	keys.append(elems[0])
+    
+    return keys 
+
 def usage():
     print " for default configuration: python set_tcp_options.py -d "
     print " to give the same set of options to each host: python
