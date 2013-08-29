@@ -1,0 +1,4 @@
+Launch lab with
+$ lstart -o '-M 256'
+
+To be sure to have enough memory to use apache.
