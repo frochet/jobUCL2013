@@ -11,9 +11,10 @@ Basic configuration is already done, interface and IP on each host is set. First
 To manipulate routes inside the network, use the command route. You can use
 this command in each virtual machine to manipulate routing tables.
 
+After have set correctly all routes, you must be able to ping any machine in
+the network (use ping6)
 
-
-
+Enjoy !
 
 
 
