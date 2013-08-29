@@ -1,8 +1,21 @@
 
+# This file is used to create topologies for the webserver lab.
+#
+#
+
+
 import os
 import sys
 import getopt
 
+def create_router():
+    pass
+
+def create_webserver():
+    pass
+
+def create_hosts(hostnames):
+    pass
 
 def create_basic_topology():
     f=open('client1.startup','w')
