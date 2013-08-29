@@ -30,11 +30,11 @@ def default():
 
 
 
-def add_option(host, keys)
+def add_options(host, keys)
     global tcp_options
     if os.path.isfile(host+".startup"):
         for option in keys:
-	    f = opent(host+".startup","w")
+	    f = opent(host+".startup","a")
 	    f.write("sysctl -w
 		net.ipv4."+option+"={value}".format(value=tcp_options[option]))
 	    f.close()
@@ -64,8 +64,30 @@ def write_options(onHosts):
 		doesn't exit" % (host)
 	    sys.exit()
 
+def modify_options(host, keys):
+    global tcp_options
+    if os.path.isfile(host+".startup"):
+        for option in keys:
+	    f = open(host+".startup","r")
+	    modif = ""
+	    for line in f :
+		if option not in line
+		    modif+=line
+	    f.close()
+	    f = open(host+".startup","w")
+	    modif+= "sysctl -w
+	    net.ipv4."+option+"={value}".format(value=tcp_options[option])
+	    f.write(modif)
+	    f.close()
+    else:
+	print "Host name %s incorrect, the corresponding .startup file
+	doesn't exit" % (host)
+	sys.exit()
+
 def usage():
-    print " for default configuration: python set_tcp_options.py  "
+    print " for default configuration: python set_tcp_options.py "
+    print " to give the same set of options to each host: python
+    set_tcp_option.py --all [option1]=[value] [option2]=[value] "
     print " to add an option to a particular host: python set_tcp_options.py -a
     host=[hostname] [option1]=[value] [option2]=[value] ...  "
     print " to modify an option to a particular host: python set_tcp_option.py
