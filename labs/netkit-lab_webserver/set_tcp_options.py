@@ -33,7 +33,7 @@ def add_options(host, keys):
     global tcp_options
     if os.path.isfile(host+".startup"):
         for option in keys:
-	    f = opent(host+".startup","a")
+	    f = open(host+".startup","a")
 	    f.write("sysctl -w net.ipv4."+option+"={value} \n".format(value=tcp_options[option]))
 	    f.close()
     else:
@@ -71,7 +71,7 @@ def modify_options(host, keys):
 		    modif+=line
 	    f.close()
 	    f = open(host+".startup","w")
-	    modif+= "sysctl -w net.ipv4."+option+"={value}".format(value=tcp_options[option])
+	    modif+= "sysctl -w net.ipv4."+option+"={value}\n".format(value=tcp_options[option])
 	    f.write(modif)
 	    f.close()
     else:
@@ -102,9 +102,13 @@ def usage():
 #main function
 def main(argv):
    if argv[0] == "-a" :
-     add_option(argv[1], get_keys(argv[2:]))
+     add_options(argv[1], get_keys(argv[2:]))
    elif argv[0] == "--all":
-     write_options( ["r", "server", "client1", "client2"], get_keys(argv[2:]))
+     global tcp_options
+     for key_value in argv[1:] :
+       elems = key_value.split("=")
+       tcp_options[elems[0]] = elems[1]
+     write_options( ["r", "server", "client1", "client2"])
    elif argv[0] == "-m":
      modify_options(argv[1], get_keys(argv[2:]))
    elif argv[0] == "-d" :
