@@ -1,7 +1,8 @@
 ============================
 Labo 2: Hack on tcp behavior
 ============================
-
+Rajouter tcptrace dans les modules netkit
+------------------------------------------
 
 Situation
 ---------
