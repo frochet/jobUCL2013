@@ -3,3 +3,17 @@ ifconfig eth0 add 2001:db8:be:600d::2/64
 /etc/init.d/apache2 start
 route -A inet6 add default gw 2001:DB8:be:600d::1
 sysctl -w net.ipv4.tcp_abc=3 
+ifconfig eth0 up
+ifconfig eth0 add 2001:db8:be:600d::2/64
+/etc/init.d/apache2 start
+route -A inet6 add default gw 2001:DB8:be:600d::1
+dd if=/dev/zero of=/var/www/1Mo.zero bs=1K count=1000
+dd if=/dev/zero of=/var/www/10Mo.zero bs=1K count=10000
+dd if=/dev/zero of=/var/www/100Mo.zero bs=1K count=100000
+sysctl -w net.ipv4.tcp_bic_low_window=14 
+sysctl -w net.ipv4.tcp_bic=False 
+sysctl -w net.ipv4.tcp_abc=0 
+sysctl -w net.ipv4.tcp_abort_on_overflow=False 
+sysctl -w net.ipv4.tcp_app_win=31 
+sysctl -w net.ipv4.tcp_base_mss=512 
+sysctl -w net.ipv4.tcp_adv_win_scale=2 

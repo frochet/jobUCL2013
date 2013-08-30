@@ -26,23 +26,25 @@ def create_router():
     f.close()
 
 def create_webserver():
-    f=open('server.startup','w')
+    f=open('server.startup','a')
     f.write('ifconfig eth0 up\nifconfig eth0 add 2001:db8:be:600d::2/64\n/etc/init.d/apache2 start\nroute -A inet6 add default gw 2001:DB8:be:600d::1\n')
-    #crée des fichiers de taille 1 Mo, 10 Mo, 100Mo sur le webserver tres
+    #cree des fichiers de taille 1 Mo, 10 Mo, 100Mo sur le webserver tres
     #rapidement
-    f.write('time dd if=/dev/zero of=/var/www/1Mo.fic2 bs=1K seek=999 count=1\n')
-    f.write('time dd if=/dev/zero of=/var/www/10Mo.fic2 bs=1K seek=9999 count=1\n')
-    f.write('time dd if=/dev/zero of=/var/www/100Mo.fic2 bs=1K seek=99999 count=1\n')
+    f.write('dd if=/dev/zero of=/var/www/1Mo.zero bs=1K count=1000\n')
+    f.write('dd if=/dev/zero of=/var/www/10Mo.zero bs=1K count=10000\n')
+    f.write('dd if=/dev/zero of=/var/www/100Mo.zero bs=1K count=100000\n')
     f.close()
 
 def create_client2():
-    f=open('client2.startup','w')
+    f=open('client2.startup','a')
     f.write('ifconfig eth0 up\nifconfig eth0 add 2001:db8:0b0:15:da:b055::3/96\nroute -A inet6 add default gw 2001:DB8:0b0:15:da:b055::1\n')
+    f.write('echo "2001:db8:be:600d::2 webserver" > /etc/hosts\n')
     f.close()
 
 def create_client1():
-    f=open('client1.startup','w')
+    f=open('client1.startup','a')
     f.write('ifconfig eth0 up\nifconfig eth0 add 2001:db8:0b0:15:da:b055::2/96 \nroute -A inet6 add default gw 2001:DB8:0b0:15:da:b055::1\n')
+    f.write('echo "2001:db8:be:600d::2 webserver" > /etc/hosts\n')
     f.close()
 
 def create_conf():

@@ -5,4 +5,10 @@ sysctl -w net.ipv6.conf.all.forwarding=1
 tc qdisc add dev eth0 root handle 1: htb default 1 
 insmod htb 
 tc class add dev eth0 parent 1: classid 1:1 htb rate 1000kbps ceil 1000kbps
-sysctl -w net.ipv4.tcp_abc=3 
+sysctl -w net.ipv4.tcp_bic_low_window=14 
+sysctl -w net.ipv4.tcp_bic=False 
+sysctl -w net.ipv4.tcp_abc=0 
+sysctl -w net.ipv4.tcp_abort_on_overflow=False 
+sysctl -w net.ipv4.tcp_app_win=31 
+sysctl -w net.ipv4.tcp_base_mss=512 
+sysctl -w net.ipv4.tcp_adv_win_scale=2 

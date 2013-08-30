@@ -1,2 +1,0 @@
-ifconfig eth0 2001:bd8:0b0:15:da:b055::2/96 up
-
