@@ -12,8 +12,9 @@ there is a webserver on a different collision domain than the hosts.
 On the webserver, you have files you can download. The router has a fixed
 maximum  bandwidth of 1 Mb/s, do not change it.
 
-TODO: Image here
-
+  .. figure:: webserver.png
+     :align: center
+     :scale: 100
 
 Instructions
 ------------
