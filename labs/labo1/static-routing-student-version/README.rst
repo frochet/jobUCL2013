@@ -11,7 +11,7 @@ see below:
      :align: center
      :scale: 100
 
-asic configuration is already done, interface and IP on each host are set. First, you will have to understand how works the ifconfig command. Then you will have to create routes inside the network. To help you do that. Make a new sketch with address of the routers. You can find them using the ifconfig commands.
+Basic configuration is already done, interface and IP on each host are set. First, you will have to understand how works the ifconfig command. Then you will have to create routes inside the network. To help you do that. Make a new sketch with address of the routers. You can find them using the ifconfig commands.
 
 To manipulate routes inside the network, use the command route. You can use this command in each virtual machine to manipulate routing tables.
 Dont forget you are working with ipv6. To see your routing table use the command :
