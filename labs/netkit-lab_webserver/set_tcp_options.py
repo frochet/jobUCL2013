@@ -3,7 +3,7 @@
 #
 #Script to modify tcp options in netkit
 #Author: F.Rochet
-#indentation in 4 espace
+#indentation in 4 space
 
 import os
 import sys
