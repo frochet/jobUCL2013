@@ -25,3 +25,8 @@ and makes some conclusion about the value given to some particular options.
 tcp is highly modifiable, and as you will see, some change can improve network
 performance or lose network performance.
 
+To modify tcp options, use the python script set_tcp_options.py. You can print
+the help with the command python set_tcp_options.py -h
+
+After that the tcp options have been set as you want, you can start netkit.
+Each hosts will be configured as you requested.
