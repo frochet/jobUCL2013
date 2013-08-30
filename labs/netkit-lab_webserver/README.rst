@@ -20,7 +20,8 @@ Instructions
 
 
 The goal of this lab is to have a better understanding of TCP by modifiyng its
-options. You will have to analyse tcpdump traces of your download (man tcpdump) with tcptrace
+options. You will have to analyse tcpdump traces of your download (man tcpdump) with tcptrace (http://www.tcptrace.org/manual.html)
 and makes some conclusion about the value given to some particular options.
 tcp is highly modifiable, and as you will see, some change can improve network
 performance or lose network performance.
+
