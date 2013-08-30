@@ -1,6 +1,7 @@
 ifconfig eth0 up
 ifconfig eth0 add 2001:db8:0b0:15:da:b055::2/96 
 route -A inet6 add default gw 2001:DB8:0b0:15:da:b055::1
+echo "2001:db8:be:600d::2 webserver" > /etc/hosts
 sysctl -w net.ipv4.tcp_bic_low_window=14 
 sysctl -w net.ipv4.tcp_bic=False 
 sysctl -w net.ipv4.tcp_abc=0 
