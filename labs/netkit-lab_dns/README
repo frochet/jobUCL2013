@@ -1,2 +1,2 @@
-dig @2001:db8:ba1:b0a::2 -t AAAA pc2.nanoinside.net
+dig @2001:db8:ba1:b0a::11 -t AAAA pc2.nanoinside.net
 chgmt dans dnsnet/db.net=>ok
