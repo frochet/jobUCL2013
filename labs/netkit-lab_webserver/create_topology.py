@@ -28,6 +28,11 @@ def create_router():
 def create_webserver():
     f=open('server.startup','w')
     f.write('ifconfig eth0 up\nifconfig eth0 add 2001:db8:be:600d::2/64\n/etc/init.d/apache2 start\nroute -A inet6 add default gw 2001:DB8:be:600d::1\n')
+    #crée des fichiers de taille 1 Mo, 10 Mo, 100Mo sur le webserver tres
+    #rapidement
+    f.write('time dd if=/dev/zero of=/var/www/1Mo.fic2 bs=1K seek=999 count=1\n')
+    f.write('time dd if=/dev/zero of=/var/www/10Mo.fic2 bs=1K seek=9999 count=1\n')
+    f.write('time dd if=/dev/zero of=/var/www/100Mo.fic2 bs=1K seek=99999 count=1\n')
     f.close()
 
 def create_client2():
