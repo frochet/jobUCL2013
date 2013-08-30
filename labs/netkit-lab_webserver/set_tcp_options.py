@@ -13,9 +13,6 @@ import create_topology
 tcp_options = dict()
 
 
-def parse_option():
-    pass
-
 def default(onHosts):
     global tcp_options
     tcp_options['tcp_abc'] = 0
@@ -37,7 +34,7 @@ def add_options(host, keys):
     if os.path.isfile(host+".startup"):
         for option in keys:
 	    f = opent(host+".startup","a")
-	    f.write("sysctl -w net.ipv4."+option+"={value}".format(value=tcp_options[option]))
+	    f.write("sysctl -w net.ipv4."+option+"={value} \n".format(value=tcp_options[option]))
 	    f.close()
     else:
         print "Host name %s incorrect, the corresponding .startup file doesn't exit" % (host)
@@ -51,13 +48,13 @@ def add_options(host, keys):
 
 def write_options(onHosts):
     global tcp_options
-    configure(onHosts) # TODO: in create_topology.py
+    create_topology.configure(onHosts) # TODO: in create_topology.py
     for host in onHosts :
         # add tcp options for host
 	if os.path.isfile(host+".startup"):
-	    f = open(host+".startup",'w')
+	    f = open(host+".startup",'a')
 	    for option in tcp_options.keys():
-	        f.write("sysctl -w net.ipv4."+option+"={value}".format(value=tcp_options[option]))
+	        f.write("sysctl -w net.ipv4."+option+"={value} \n".format(value=tcp_options[option]))
 	    f.close()
 	else:
 	    print "Host name %s incorrect, the corresponding .startup file doesn't exit" % (host)
