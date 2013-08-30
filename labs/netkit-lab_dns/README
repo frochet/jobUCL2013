@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 =================================
 LABO 2: DNS, BIND and IPV6
 =================================
@@ -60,3 +61,7 @@ with ipv6 the ipv6 address you want to resolve.
 
 
 Enjoy !
+=======
+dig @2001:db8:ba1:b0a::11 -t AAAA pc2.nanoinside.net
+chgmt dans dnsnet/db.net=>ok
+>>>>>>> c2614f4742262b2b02b5dfcd99b34242978b77e2

@@ -22,11 +22,11 @@ def configure(onHosts):
 
 def create_router():
     f=open('r.startup','w')
-    f.write('ifconfig eth0 up \nifconfig eth0 add 2001:db8:0b0:15:da:b055::1/96\nifconfig eth1 2001:db8:be:600d::1/64 up\nsysctl -w net.ipv6.conf.all.forwarding=1\ntc qdisc add dev eth0 root handle 1: htb default 1 \ninsmod htb \ntc class add dev eth0 parent 1: classid 1:1 htb rate 1000kbps ceil 1000kbps\n')
+    f.write('ifconfig eth0 up \nifconfig eth0 add 2001:db8:0b0:15:da:b055::1/96\nifconfig eth1 up\nifconfig eth1 add 2001:db8:be:600d::1/64 \nsysctl -w net.ipv6.conf.all.forwarding=1\ntc qdisc add dev eth0 root handle 1: htb default 1 \ninsmod htb \ntc class add dev eth0 parent 1: classid 1:1 htb rate 1000kbps ceil 1000kbps\n')
     f.close()
 
 def create_webserver():
-    f=open('server.startup','a')
+    f=open('server.startup','w')
     f.write('ifconfig eth0 up\nifconfig eth0 add 2001:db8:be:600d::2/64\n/etc/init.d/apache2 start\nroute -A inet6 add default gw 2001:DB8:be:600d::1\n')
     #cree des fichiers de taille 1 Mo, 10 Mo, 100Mo sur le webserver tres
     #rapidement
@@ -36,13 +36,13 @@ def create_webserver():
     f.close()
 
 def create_client2():
-    f=open('client2.startup','a')
+    f=open('client2.startup','w')
     f.write('ifconfig eth0 up\nifconfig eth0 add 2001:db8:0b0:15:da:b055::3/96\nroute -A inet6 add default gw 2001:DB8:0b0:15:da:b055::1\n')
     f.write('echo "2001:db8:be:600d::2 webserver" > /etc/hosts\n')
     f.close()
 
 def create_client1():
-    f=open('client1.startup','a')
+    f=open('client1.startup','w')
     f.write('ifconfig eth0 up\nifconfig eth0 add 2001:db8:0b0:15:da:b055::2/96 \nroute -A inet6 add default gw 2001:DB8:0b0:15:da:b055::1\n')
     f.write('echo "2001:db8:be:600d::2 webserver" > /etc/hosts\n')
     f.close()

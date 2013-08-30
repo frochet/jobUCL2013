@@ -7,6 +7,8 @@
 
 options {
         directory "/var/cache/bind";
+	listen-on-v6 { any; };
+	listen-on { any; }; 
         // If there is a firewall between you and nameservers you want
         // to talk to, you might need to uncomment the query-source
         // directive below.  Previous versions of BIND always asked
@@ -41,9 +43,9 @@ zone "localhost" {
 	file "/etc/bind/db.local";
 	};
 
-zone "0.168.192.in-addr.arpa" {
+zone "a.0.b.0.1.a.b.0.8.b.d.0.1.0.0.2.ip6.arpa." {
         type master;
-        file "/etc/bind/db.192.168.0";
+        file "/etc/bind/db.2001:db8:ba1:b0a";
 };
 
 // add entries for other zones below here
