@@ -38,16 +38,16 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1855"
-     inkscape:window-height="1056"
+     inkscape:window-width="513"
+     inkscape:window-height="406"
      id="namedview657"
      showgrid="false"
      inkscape:zoom="0.018910369"
      inkscape:cx="-2432.5869"
      inkscape:cy="9055.3711"
-     inkscape:window-x="65"
-     inkscape:window-y="525"
-     inkscape:window-maximized="1"
+     inkscape:window-x="2209"
+     inkscape:window-y="223"
+     inkscape:window-maximized="0"
      inkscape:current-layer="g6678" />
   <defs
      id="defs4">
@@ -1630,9 +1630,20 @@
        y="20391.045" /></text>
   <g
      id="g6678">
+    <path
+       style="fill:none;stroke:#000000;stroke-width:40;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       d="m 2850.34,13239.825 c 0,0 0,0 4923.173,-8527.1857 4572.616,7920.0027 4572.616,7920.0027 4572.616,7920.0027"
+       id="path3714"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/justin/Reseau/jobUCL2013/png/labs/webserver/figure.png"
+       inkscape:export-xdpi="2.4178157"
+       inkscape:export-ydpi="2.4178157" />
     <g
        id="g5648"
-       transform="matrix(10.514827,0,0,10.514827,-725.12086,11324.375)">
+       transform="matrix(10.514827,0,0,10.514827,-725.12086,11324.375)"
+       inkscape:export-filename="/home/justin/Reseau/jobUCL2013/png/labs/webserver/figure.png"
+       inkscape:export-xdpi="2.4178157"
+       inkscape:export-ydpi="2.4178157">
       <path
          d="m 165.05086,181.31432 -23.72163,-91.688035 90.90856,-38.962391 23.86782,1.609993 16.39102,3.542068 4.27146,28.014388 117.79311,19.083717 7.9502,8.45758 -0.0435,33.25182 -5.20001,48.38626 -10.61497,58.69003 -11.38876,8.77981 -22.73345,-7.32059 -6.48967,10.06758 -10.9175,8.73434 -10.918,2.61629 -10.40166,0.0403 -11.17543,-4.14581 -9.62892,-6.3999 -7.30752,-8.65382 -1.37722,-7.36571 9.02435,-21.97956 -34.03569,-13.60724 -44.93438,44.11462 -36.68325,-20.93035 -12.63494,-54.33536 z"
          id="svg_2"
@@ -1665,7 +1676,10 @@
     </g>
     <g
        transform="matrix(10.514827,0,0,10.514827,10053.573,11268.837)"
-       id="g6307">
+       id="g6307"
+       inkscape:export-filename="/home/justin/Reseau/jobUCL2013/png/labs/webserver/figure.png"
+       inkscape:export-xdpi="2.4178157"
+       inkscape:export-ydpi="2.4178157">
       <path
          style="fill:#fcfcfd"
          inkscape:connector-curvature="0"
@@ -1696,9 +1710,20 @@
            style="fill:#4d4d4d" />
       </g>
     </g>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:40;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       d="m 9624.3495,3866.5427 c 14542.2865,0 14542.2865,0 14542.2865,0 l 0,52.881 52.881,-105.7621"
+       id="path3712"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/justin/Reseau/jobUCL2013/png/labs/webserver/figure.png"
+       inkscape:export-xdpi="2.4178157"
+       inkscape:export-ydpi="2.4178157" />
     <g
        transform="matrix(20.479521,0,0,18.724122,15184.089,1701.0845)"
-       id="g5893-4">
+       id="g5893-4"
+       inkscape:export-filename="/home/justin/Reseau/jobUCL2013/png/labs/webserver/figure.png"
+       inkscape:export-xdpi="2.4178157"
+       inkscape:export-ydpi="2.4178157">
       <g
          transform="matrix(0.72727272,0,0,0.7242883,121.58435,-199.97936)"
          id="g5745-2">
@@ -1846,9 +1871,9 @@
     <g
        id="g13778"
        transform="matrix(1.1832747,0,0,1.0705264,-1376.1294,-2700.4775)"
-       inkscape:export-filename="/home/justin/Reseau/jobUCL2013/png/Q1-solution2.png"
-       inkscape:export-xdpi="4.7328749"
-       inkscape:export-ydpi="4.7328749">
+       inkscape:export-filename="/home/justin/Reseau/jobUCL2013/png/labs/webserver/figure.png"
+       inkscape:export-xdpi="2.4178157"
+       inkscape:export-ydpi="2.4178157">
       <g
          id="g13780"
          style="visibility:visible">
@@ -1954,33 +1979,29 @@
            id="tspan13820"
            sodipodi:role="line">A</tspan></text>
     </g>
-    <path
-       style="fill:none;stroke:#000000;stroke-width:40;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
-       d="m 9624.3495,3866.5427 c 14542.2865,0 14542.2865,0 14542.2865,0 l 0,52.881 52.881,-105.7621"
-       id="path3712"
-       inkscape:connector-curvature="0" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:40;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
-       d="m 2850.34,13239.825 c 0,0 0,0 4923.173,-8527.1857 4572.616,7920.0027 4572.616,7920.0027 4572.616,7920.0027"
-       id="path3714"
-       inkscape:connector-curvature="0" />
     <flowRoot
        xml:space="preserve"
        id="flowRoot4484"
        style="font-size:1000px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       transform="translate(1057.6208,-158.64312)"><flowRegion
+       transform="translate(-264.40523,-105.76208)"
+       inkscape:export-filename="/home/justin/Reseau/jobUCL2013/png/labs/webserver/figure.png"
+       inkscape:export-xdpi="2.4178157"
+       inkscape:export-ydpi="2.4178157"><flowRegion
          id="flowRegion4486"><rect
            id="rect4488"
-           width="5182.3418"
-           height="1374.9071"
+           width="6187.0815"
+           height="1374.9072"
            x="22262.918"
            y="6034.6655"
            style="font-size:1000px" /></flowRegion><flowPara
-         id="flowPara4490">Server</flowPara></flowRoot>    <flowRoot
+         id="flowPara4490">Webserver</flowPara></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot4484-8"
        style="font-size:1000px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       transform="translate(-10662.861,8621.4559)"><flowRegion
+       transform="translate(-10662.861,8621.4559)"
+       inkscape:export-filename="/home/justin/Reseau/jobUCL2013/png/labs/webserver/figure.png"
+       inkscape:export-xdpi="2.4178157"
+       inkscape:export-ydpi="2.4178157"><flowRegion
          id="flowRegion4486-1"><rect
            id="rect4488-7"
            width="5182.3418"
@@ -1992,7 +2013,10 @@
        xml:space="preserve"
        id="flowRoot4484-5"
        style="font-size:1000px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       transform="translate(-21767.879,8357.0506)"><flowRegion
+       transform="translate(-21767.879,8357.0506)"
+       inkscape:export-filename="/home/justin/Reseau/jobUCL2013/png/labs/webserver/figure.png"
+       inkscape:export-xdpi="2.4178157"
+       inkscape:export-ydpi="2.4178157"><flowRegion
          id="flowRegion4486-8"><rect
            id="rect4488-2"
            width="5182.3418"
