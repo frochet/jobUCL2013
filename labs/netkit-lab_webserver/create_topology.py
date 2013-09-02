@@ -22,7 +22,7 @@ def configure(onHosts):
 
 def create_router():
     f=open('r.startup','w')
-    f.write('ifconfig eth0 up \nifconfig eth0 add 2001:db8:0b0:15:da:b055::1/96\nifconfig eth1 up\nifconfig eth1 add 2001:db8:be:600d::1/64 \nsysctl -w net.ipv6.conf.all.forwarding=1\ntc qdisc add dev eth0 root handle 1: htb default 1 \ninsmod htb \ntc class add dev eth0 parent 1: classid 1:1 htb rate 1000kbps ceil 1000kbps\n')
+    f.write('ifconfig eth0 up \nifconfig eth0 add 2001:db8:0b0:15:da:b055::1/96\nifconfig eth1 up\nifconfig eth1 add 2001:db8:be:600d::1/64 \nsysctl -w net.ipv6.conf.all.forwarding=1\ninsmod sch_htb\ntc qdisc del dev eth0\ntc qdisc add dev eth0 root handle 1: htb default 1 \ntc class add dev eth0 parent 1: classid 1:1 htb rate 1000kbit\n')
     f.close()
 
 def create_webserver():
