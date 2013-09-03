@@ -36,7 +36,7 @@ beginning of each line isd given by the following figure.
 
 
   .. figure:: ../../png/labs/packetdrill/syntax_packetdrill.png
-     :align:center
+     :align: center
      :scale: 100
 
 
