@@ -15,16 +15,19 @@ With packetdrill, you can test the TCP network stack. In other words packetdrill
 Below is a quick example of a TCP connection :
 
  .. code:: C
-
-   	// Establish a connection
+        // The script starts by setting up a socket and then, establish a
+        connection
 	0 socket(..., SOCK_STREAM, IPPROTO_TCP) = 3 		//create a socket
 	+0 setsockopt(3, SOL_SOCKET, SO_REUSEADDR, [1], 4) = 0 	//avoid binding issues
-	+0 bind(3, ..., ...) = 0 				// bind socket
-	+0 listen(3, 1) = 0 					//start listening
-	+0 < S 0:0(0) win 32792 <mss 1000,sackOK,nop,nop,nop,wscale 7> 	//inject a SYN
+	+0 bind(3, ..., ...) = 0 				// bind socke
+        +0 listen(3, 1) = 0 					//start listening
+       
+        //Establish a connection
+
+	+0 < S 0:0(0) win 32792 <mss 1000> 	//inject a SYN
 	+0 > S. 0:0(0) ack 1 <...>					//expect a SYN/ACK
-	+.1 < . 1:1(0) ack 1 win 257					//inject an ACK
-	+0 accept (3, ..., ...) = 4					//accept conection.
+	+.1 < . 1:1(0) ack 1 win 100					//inject an ACK
+	+0 accept (3, ..., ...) = 4					//accept connection.
 
 
 
