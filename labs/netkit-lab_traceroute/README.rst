@@ -5,7 +5,9 @@ Labo X: Bad Routing Tables
 Situation
 ---------
 
+
 In this lab, you'll work on a network that has some undefined problems. Using Traceroute :
+
  .. code:: console
 
     traceroute6 [IPv6]
