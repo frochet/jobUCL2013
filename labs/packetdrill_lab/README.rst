@@ -14,9 +14,8 @@ With packetdrill, you can test the TCP network stack. In other words packetdrill
 
 Below is a quick example of a TCP connection :
 
- .. code-block:: C
-        // The script starts by setting up a socket and then, establish a
-        connection
+ .. code:: C
+        // The script starts by setting up a socket and then, establish a connection
 	0 socket(..., SOCK_STREAM, IPPROTO_TCP) = 3 		//create a socket
 	+0 setsockopt(3, SOL_SOCKET, SO_REUSEADDR, [1], 4) = 0 	//avoid binding issues
 	+0 bind(3, ..., ...) = 0 				// bind socke
