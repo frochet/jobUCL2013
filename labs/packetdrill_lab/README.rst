@@ -39,6 +39,7 @@ beginning of each line is given by the following figure.
      :scale: 100
 
 "<" denotes an incoming packet going to the kernel
+
 ">" denotes an outgoing packet comming from the kernel
 
 Then you have a synthax close to a tcpdump output. When TCP doesn't behave like
