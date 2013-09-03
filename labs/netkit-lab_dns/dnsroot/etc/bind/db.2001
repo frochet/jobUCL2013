@@ -1,0 +1,22 @@
+; reverse lookup database 
+$TTL    3600
+$ORIGIN a.0.b.0.1.a.b.0.8.b.d.0.1.0.0.2.ip6.arpa.
+
+@               IN      SOA     5.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.a.0.b.0.1.a.b.0.8.b.d.0.1.0.0.2.ip6.arpa.    nobody.nowhere. (
+                        2006031201 ; serial
+                        28 ; refresh
+                        14 ; retry
+                        3600000 ; expire
+                        0 ; negative cache ttl 
+                        )
+@               IN      NS      5.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.a.0.b.0.1.a.b.0.8.b.d.0.1.0.0.2.ip6.arpa.
+
+5.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.a.0.b.0.1.a.b.0.8.b.d.0.1.0.0.2.ip6.arpa. 	IN      AAAA       2001:db8:ba1:b0a::5
+5.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0    PTR        .
+1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0    PTR        dnsorg.org.
+2.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0    PTR        dnsnet.net.
+1.1.0.0.0.0.0.0.0.0.0.0.0.0.0.0    PTR        dnslug.lugroma3.org.
+2.2.0.0.0.0.0.0.0.0.0.0.0.0.0.0    PTR        dnsnano.nanoinside.net.
+1.1.1.0.0.0.0.0.0.0.0.0.0.0.0.0    PTR        pc1.lugroma3.org.
+2.2.2.0.0.0.0.0.0.0.0.0.0.0.0.0    PTR        pc2.nanoinside.net.
+
