@@ -31,14 +31,19 @@ Below is a quick example of a TCP connection :
 
 
 Packetdrill has a syntax close to the output of tcpdump. The syntax of the
-beginning of each line isd given by the following figure.
+beginning of each line is given by the following figure.
 
 
   .. figure:: ../../png/labs/packetdrill/syntax_packetdrill.png
      :align: center
      :scale: 100
 
+"<" denotes an incoming packet going to the kernel
+">" denotes an outgoing packet comming from the kernel
 
+Then you have a synthax close to a tcpdump output. When TCP doesn't behave like
+your script, packetdrill raise an error and prints the actual packet and the
+desired packet.
 
 Instructions
 ------------
