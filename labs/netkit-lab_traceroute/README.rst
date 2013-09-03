@@ -14,7 +14,7 @@ where IPv6 is the address of the machine you want to know the route to.
 
 Here is the topology of the network:
 
-  .. figure:: ../../png/labs/traceroute/figure.png
+  .. figure:: ../../png/labs/traceroute/topology.png
      :align: center
      :scale: 100
 
