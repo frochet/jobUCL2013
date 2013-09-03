@@ -29,11 +29,7 @@ Below is a quick example of a TCP connection :
 
 
 
-Here is the topology of the network:
 
-  .. figure:: ../../png/labs/traceroute/topology.png
-     :align: center
-     :scale: 100
 
 Instructions
 ------------
