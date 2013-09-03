@@ -24,10 +24,11 @@ Below is a quick example of a TCP connection :
        
         //Establish a connection
 
-	+0 < S 0:0(0) win 32792 <mss 1000> 	//inject a SYN
-	+0 > S. 0:0(0) ack 1 <...>					//expect a SYN/ACK
-	+.1 < . 1:1(0) ack 1 win 100					//inject an ACK
-	+0 accept (3, ..., ...) = 4					//accept connection.
+	+0 < S 0:0(0) win 32792 <mss 1000>      //inject a SYN into the kernel
+	+0 > S. 0:0(0) ack 1 <...>		//expect a SYN/ACK from the
+        kernel
+	+.1 < . 1:1(0) ack 1 win 100		//inject an ACK  
+	+0 accept (3, ..., ...) = 4		//accept connection.
 
 
 
