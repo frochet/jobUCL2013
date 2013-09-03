@@ -1,6 +1,9 @@
+//
+// This script establish a connection and sent 42 bytes of data
+// then receive does a graceful connection release
+//
 
 
-// Establish a connection
 
 0 socket(..., SOCK_STREAM, IPPROTO_TCP) = 3
 
@@ -23,4 +26,8 @@
 
 +.1 < . 1:1(0) ack 43 win 100
 
++.01 close(4) = 0
 
++0 > F. 43:43(0) ack 1
++.01 < F. 1:1(0) ack 44 win 100 // F flag consumes one sequence number
++0 > . 44:44(0) ack 2
