@@ -31,6 +31,13 @@ Below is a quick example of a TCP connection :
 
 
 
+Packetdrill has a syntax close to the output of tcpdump. The syntax of the
+beginning of each line isd given by the following figure.
+
+
+  .. figure:: ../../png/labs/packetdrill/syntax_packetdrill.png
+     :align:center
+     :scale: 100
 
 
 
