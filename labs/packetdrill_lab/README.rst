@@ -44,7 +44,7 @@ beginning of each line isd given by the following figure.
 Instructions
 ------------
 
-For this lab, we ask you to use netkit to test all the possible scenario for an etablishment of a TCP connection.
+For this lab, we ask you to use packetdrill to test all the possible scenario for an etablishment of a TCP connection.
 You have one example given above.
 
 Quick reminder :
