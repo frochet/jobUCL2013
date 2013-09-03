@@ -49,8 +49,14 @@ desired packet.
 Instructions
 ------------
 
-For this lab, we ask you to use packetdrill to test all the possible scenario for an etablishment of a TCP connection.
-You have one example given above.
+First, we ask you to understand the tcpdump trace produce by the given scripts.
+Use packetdrill in sudo mode to produce the trace. Listen on the interface
+[TODO: TUN interface not here => Ask to fabian duchenne]
+
+Now that you are familiar with the packetdrill syntax, we ask you to use it to test all the possible scenario for an etablishment of a TCP connection.
+You have the exemple above and an exemple showing how to  initiate a connection
+from the kernel (it's slightly different, you have to write a syscall for that)
+in the tcp_connection_retransmit.pkt 
 
 Quick reminder :
 
@@ -69,4 +75,5 @@ works. Do not hesitate to try other TCP functionalities or experiment situation
 you're not sure you have well understood.
 
 Have fun!
+
 
