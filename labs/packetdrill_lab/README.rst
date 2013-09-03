@@ -49,9 +49,9 @@ Go further
 ------------
 
 
-Packetdrill is very interesting to test if you have well understood how tcp work. Do not hesitate to try other TCP functionalities. (fast retransmit ...)
-
+Packetdrill is very interesting to test if you have well understood how tcp
+works. Do not hesitate to try other TCP functionalities or experiment situation
+you're not sure you have well understood.
 
 Have fun!
-
 
