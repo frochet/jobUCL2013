@@ -48,7 +48,7 @@
      showgrid="false"
      inkscape:zoom="0.0534866"
      inkscape:cx="3525.0904"
-     inkscape:cy="13445.969"
+     inkscape:cy="14941.671"
      inkscape:window-x="1431"
      inkscape:window-y="24"
      inkscape:window-maximized="1"
@@ -21152,7 +21152,7 @@
      xml:space="preserve"
      id="flowRoot28046-2"
      style="font-size:500px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-     transform="translate(3026.8503,-2272.1224)"
+     transform="translate(3064.2428,-2290.8187)"
      inkscape:export-filename="/home/justin/Reseau/jobUCL2013/png/labs/ospf/topology.png"
      inkscape:export-xdpi="7.4462652"
      inkscape:export-ydpi="7.4462652"><flowRegion
@@ -21163,7 +21163,7 @@
          x="9102.1494"
          y="6411.4424"
          style="font-size:500px" /></flowRegion><flowPara
-       id="flowPara28052-8">C</flowPara></flowRoot>  <path
+       id="flowPara28052-8">B</flowPara></flowRoot>  <path
      sodipodi:type="arc"
      style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:40;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
      id="path27150-1"
@@ -21180,7 +21180,7 @@
      xml:space="preserve"
      id="flowRoot28046-5"
      style="font-size:500px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-     transform="translate(-3498.1486,-2010.3746)"
+     transform="translate(-3460.7561,-2010.3746)"
      inkscape:export-filename="/home/justin/Reseau/jobUCL2013/png/labs/ospf/topology.png"
      inkscape:export-xdpi="7.4462652"
      inkscape:export-ydpi="7.4462652"><flowRegion
@@ -21191,7 +21191,7 @@
          x="9102.1494"
          y="6411.4424"
          style="font-size:500px" /></flowRegion><flowPara
-       id="flowPara28052-6">C</flowPara></flowRoot>  <path
+       id="flowPara28052-6">D</flowPara></flowRoot>  <path
      sodipodi:type="arc"
      style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:40;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
      id="path27150-5"
@@ -21208,7 +21208,7 @@
      xml:space="preserve"
      id="flowRoot28046-8"
      style="font-size:500px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-     transform="translate(-1.9457145,-4403.4973)"
+     transform="translate(35.446829,-4422.1936)"
      inkscape:export-filename="/home/justin/Reseau/jobUCL2013/png/labs/ospf/topology.png"
      inkscape:export-xdpi="7.4462652"
      inkscape:export-ydpi="7.4462652"><flowRegion
@@ -21219,7 +21219,7 @@
          x="9102.1494"
          y="6411.4424"
          style="font-size:500px" /></flowRegion><flowPara
-       id="flowPara28052-89">C</flowPara></flowRoot>  <flowRoot
+       id="flowPara28052-89">A</flowPara></flowRoot>  <flowRoot
      transform="translate(1638.1617,3268.0024)"
      xml:space="preserve"
      id="flowRoot35933-5-4-0"
