@@ -10,7 +10,7 @@ In this lab, you'll work on a network with routers that use OSPFv3 to build thei
 
 Here is the topology of the network:
 
-  .. figure:: ../../png/labs/ospf/topology.png
+  .. figure:: ../../png/labs/ospfnord/topology.png
      :align: center
      :scale: 100
 
@@ -34,8 +34,9 @@ To install it (under debian):
     sudo apt-get install wireshark
 
 To use it with netkit :
+
 -
-    When you have launched a lab, you can acces your home directory or the lab directory from a netkit machine. These directories are located in ``/hosthome`` and ``/hostlab``. Go in that directory :
+    When you have launched a lab, you can acces your home directory or the lab directory from a       netkit machine. These directories are located in ``/hosthome`` and ``/hostlab``. Go in that directory :
 
  .. code:: console
 
@@ -53,7 +54,7 @@ Now we can launch wireshark on our computer with the realtime input file aaa.out
 
  .. code:: console
 
-    wireshark -k -i<tail -f aaa.out)&
+    wireshark -k -i<(tail -f aaa.out)&
 
 Note: you don't need to understand that line.
 
@@ -62,6 +63,7 @@ Note: you don't need to understand that line.
 
 Launching the daemon
 --------------------
+
 We will launch the daemon on each router one by one. This will permits us to carefully look at the exchanged packets between the different routers. (It's the good moment to launch wireshark)
 
 Launch first the daemon on bb1. To do that enter the following command line in the bb1 terminal :
