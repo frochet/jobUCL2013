@@ -15,7 +15,7 @@ Here is the topology of the network:
      :scale: 100
 
 
-To use OSPF, theses routers uses daemons called ``zebra`` and ``ospf6d`` .
+To use OSPF, these routers uses daemons called ``zebra`` and ``ospf6d`` .
 
 Instructions
 ------------
