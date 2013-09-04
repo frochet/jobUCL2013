@@ -49,7 +49,7 @@ Instructions
 
 First, we ask you to understand the tcpdump trace produce by the given scripts.
 Use packetdrill in sudo mode to produce the trace. Listen on the interface
-[TODO: TUN interface not here => Ask to fabian duchenne]
+[TODO: TUN interface not here => Ask to fabien duchenne]
 
 Now that you are familiar with the packetdrill syntax, we ask you to use it to test all the possible scenario for an etablishment of a TCP connection.
 You have the exemple above and an exemple showing how to  initiate a connection
