@@ -35,13 +35,12 @@ Observations
 ------------
 
 -
-
     When your lab is launched, try to ping the other routers. Did it works immediately? Why?
 
 -
-Perform traceroutes from/to different interfaces. 
-Think about the path the traceroute is expected to take, and the path ICMP replies are expected to take.
-Does the traceroute confirm your expetations?
+    Perform traceroutes from/to different interfaces. 
+    Think about the path the traceroute is expected to take, and the path ICMP replies are expected to take.
+    Does the traceroute confirm your expetations?
 
 Now we will access the ospf6d daemon. This will help us to see the ospf database, neighbor and route.
 
@@ -66,7 +65,7 @@ Now you can ask some cool stuff at the ospf daemon:
     exit
 
 -
-Is the lsdb the same for all routers? should it be?
+    Is the lsdb the same for all routers? should it be?
 
 
 Tests
@@ -74,25 +73,25 @@ Tests
 Now it's time to play with the topology.
 
 -
-Try to make some links fail and observe what is happening. You can do that by stoping one interface on a router :
+    Try to make some links fail and observe what is happening. You can do that by stoping one interface on a router :
 
  .. code:: console
 
     ifconfig IF down
 
-where IF is the name of your interface.
+    where IF is the name of your interface.
 
 -
-When you are in the daemon, change link cost and try some traceroute.
+    When you are in the daemon, change link cost and try some traceroute.
 
  .. code:: console
 
     interface IF
     ospf6 cost X
 
-where IF is the interface and X the new cost.
+    where IF is the interface and X the new cost.
 
-When you have finished with one, clean your directory by using :
+    When you have finished with one, clean your directory by using :
 
  .. code:: console
 
