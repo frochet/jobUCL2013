@@ -10,7 +10,7 @@ In this lab, you'll work on a network with routers that use RIPng to build their
 
 Here is the topology of the network:
 
-  .. figure:: ../../png/labs/ripng/topology.png
+  .. figure:: ../../png/labs/rip/topology.png
      :align: center
      :scale: 100
 
