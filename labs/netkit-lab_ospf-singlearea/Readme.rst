@@ -35,7 +35,8 @@ Observations
 ------------
 
 -
-When your lab is launched, try to ping the other routers. Did it works immediately? Why?
+
+    When your lab is launched, try to ping the other routers. Did it works immediately? Why?
 
 -
 Perform traceroutes from/to different interfaces. 
