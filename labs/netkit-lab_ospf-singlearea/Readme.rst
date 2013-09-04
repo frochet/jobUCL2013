@@ -67,6 +67,9 @@ Now you can ask some cool stuff at the ospf daemon:
 -
     Is the lsdb the same for all routers? should it be?
 
+-
+    Observe the neighbor, you can find information about the Designated Router.
+
 
 Tests
 -----
@@ -79,7 +82,7 @@ Now it's time to play with the topology.
 
     ifconfig IF down
 
-    where IF is the name of your interface.
+where IF is the name of your interface.
 
 -
     When you are in the daemon, change link cost and try some traceroute.
@@ -89,9 +92,11 @@ Now it's time to play with the topology.
     interface IF
     ospf6 cost X
 
-    where IF is the interface and X the new cost.
+where IF is the interface and X the new cost.
 
-    When you have finished with one, clean your directory by using :
+The End
+--------
+When you have finished clean your directory by using :
 
  .. code:: console
 
