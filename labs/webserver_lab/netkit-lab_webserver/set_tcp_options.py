@@ -22,6 +22,7 @@ def default(onHosts):
     tcp_options['tcp_fack'] = 0
     tcp_options['tcp_frto'] = 0
     tcp_options['tcp_keepalive_time'] = 7200
+    tcp_options['tcp_keepalive_intvl'] = 15
     tcp_options['tcp_low_latency'] = 0
     tcp_options['tcp_moderate_rcvbuf'] = 0
     tcp_options['tcp_mtu_probing'] = 2
