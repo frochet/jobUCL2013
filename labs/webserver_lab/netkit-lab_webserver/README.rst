@@ -30,5 +30,29 @@ performance or lose network performance.
 To modify tcp options, use the python script set_tcp_options.py. You can print
 the help with the command python set_tcp_options.py -h
 
+Our default options are 
+
+ tcp_adv_win_scale'] = 0
+ tcp_allowed_congestion_control'] = "reno"
+ tcp_dsack = 0
+ tcp_ecn = 0
+ tcp_fack = 0
+ tcp_frt = 0
+ tcp_keepalive_time = 7200
+ tcp_options['tcp_keepalive_intvl'] = 15
+ tcp_options['tcp_low_latency'] = 0
+ tcp_moderate_rcvbuf = 0
+ tcp_mtu_probing = 2
+ tcp_no_metrics_save = 1
+ tcp_reordering = 3
+ tcp_rmem = '4096 4096 4096'
+ tcp_sack = 0
+ tcp_slow_start_after_idle = 1
+ tcp_timestamps = 0
+ tcp_window_scaling = 0
+ tcp_wmem = '4096 4096 4096'
+
+ All others are set to their default value
+
 After that the tcp options have been set as you want, you can start netkit.
 Each hosts will be configured as you requested.
