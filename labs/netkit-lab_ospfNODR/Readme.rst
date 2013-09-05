@@ -35,7 +35,6 @@ To install it (under debian):
 
 To use it with netkit :
 
--
     When you have launched a lab, you can acces your home directory or the lab directory from a       netkit machine. These directories are located in ``/hosthome`` and ``/hostlab``. Go in that directory :
 
  .. code:: console
@@ -50,7 +49,7 @@ Now we will launch a tcpdump capture that we will save on a file in our hostlab(
 
 where aaa.out is our output file, IF the interface we want to listen on (any for all interfaces) and we add the "&" symbol so we can continue to work in the netkit shell.
 
-Now we can launch wireshark on our computer with the realtime input file aaa.out. You can do that with :
+Now we can launch wireshark on our computer with the input file aaa.out. You can do that with :
 
  .. code:: console
 
