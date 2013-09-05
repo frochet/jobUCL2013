@@ -45,10 +45,10 @@ int download()
     exit(errno);
   }
   int loop = TRUE;
-  char buffer[100];
+  char buffer[10000];
   int n = 0;
   int bytereceived = 0;
-  while(loop)
+  while(bytereceived < 1024000)
   {
     if((n = recv(sock, buffer, sizeof(buffer), 0)) < 0)
     {
@@ -56,11 +56,6 @@ int download()
       exit(errno);
     }
     bytereceived += n;
-    if(n < sizeof(buffer)-1)
-    {
-      loop = FALSE;
-      fprintf(stdout, "number of bytes received: %i\n", bytereceived);
-    }
     sleep(1); // 1 second
   }
   close(sock);
