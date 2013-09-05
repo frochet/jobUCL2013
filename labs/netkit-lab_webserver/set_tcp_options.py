@@ -15,15 +15,24 @@ tcp_options = dict()
 
 def default(onHosts):
     global tcp_options
-    tcp_options['tcp_abc'] = 0
-    tcp_options['tcp_abort_on_overflow']= False
-    tcp_options['tcp_adv_win_scale'] = 2
-    #tcp_options['tcp_allowed_congestion_control']="reno"
-    #tcp_options['tcp_available_congestion_control']
-    tcp_options['tcp_app_win'] = 31
-    tcp_options['tcp_base_mss'] = 512
-    tcp_options['tcp_bic']=False
-    tcp_options['tcp_bic_low_window']=14
+    tcp_options['tcp_adv_win_scale'] = 0
+    tcp_options['tcp_allowed_congestion_control'] = "reno"
+    tcp_options['tcp_dsack'] = 0
+    tcp_options['tcp_ecn'] = 0
+    tcp_options['tcp_fack'] = 0
+    tcp_options['tcp_frto'] = 0
+    tcp_options['tcp_keepalive_time'] = 7200
+    tcp_options['tcp_low_latency'] = 0
+    tcp_options['tcp_moderate_rcvbuf'] = 0
+    tcp_options['tcp_mtu_probing'] = 2
+    tcp_options['tcp_no_metrics_save'] = 1
+    tcp_options['tcp_reordering'] = 3
+    tcp_options['tcp_rmem'] = "'4096 4096 4096'"
+    tcp_options['tcp_sack'] = 0
+    tcp_options['tcp_slow_start_after_idle'] = 1
+    tcp_options['tcp_timestamps'] = 0
+    tcp_options['tcp_window_scaling'] = 0
+    tcp_options['tcp_wmem'] = "'4096 4096 4096'"
 
     write_options(onHosts)
 
