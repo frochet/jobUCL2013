@@ -31,7 +31,7 @@ To modify tcp options, use the python script set_tcp_options.py. You can print
 the help with the command python set_tcp_options.py -h
 
 Our default options are 
-
+.. code-block::
  tcp_adv_win_scale'] = 0
  tcp_allowed_congestion_control'] = "reno"
  tcp_dsack = 0
