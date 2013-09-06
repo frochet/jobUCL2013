@@ -10,31 +10,24 @@ In this lab, you'll work on a network with routers that use RIPng to build their
 
 Here is the topology of the network:
 
-  .. figure:: ../../png/labs/rip/topology.png
+  .. figure:: ../../../png/labs/rip/topology.png
      :align: center
      :scale: 100
 
 
-To use RIP, these routers uses daemons called ``zebra`` and ``ripngd`` .
+To use RIP, these routers use daemons called ``zebra`` and ``ripngd`` .
 
 Instructions
 ------------
 
-The goal of this lab is to have a better understanding of the rip protocol. You'll have the possibility to watch how this protocol work.
+The goal of this lab is to have a better understanding of the rip protocol. You'll have the possibility to watch how this protocol works.
 
-To launch the labs you have to execute the python scrypt "xx.py"
-
- .. code:: console
-
-    python xx.py -option
-
-
-Then, as usual, launch the lab with netkit using lstart.
+As usual, launch the lab with netkit using lstart.
 
 Observations
 ------------
 -
-    When your lab is launched, try to ping the other routers. Did it works?
+    When your lab is launched, try to ping the other routers (using ping6). Did it works?
 
 It's because the daemon is not launched yet. You can look at the routing table and see that there is not yet all the informations about the network.
 
@@ -75,12 +68,5 @@ where IF is the name of your interface.
 
 Obsere what's happening. Is the network recovering fast? Why?
 
-The End
---------
-When you have finished clean your directory by using :
-
- .. code:: console
-
-    python xx.py -clean
 
 Have fun!

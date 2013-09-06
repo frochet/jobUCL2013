@@ -10,7 +10,7 @@ In this lab, you'll work on a network with routers that use OSPFv3 to build thei
 
 Here is the topology of the network:
 
-  .. figure:: ../../png/labs/ospfnord/topology.png
+  .. figure:: ../../../png/labs/ospfnord/topology.png
      :align: center
      :scale: 100
 
@@ -20,10 +20,10 @@ To use OSPF, these routers uses daemons called ``zebra`` and ``ospf6d`` .
 Instructions
 ------------
 
-The goal of this lab is to have a better understanding of OSPF. You'll have the possibility to watch how this protocol work.
+The goal of this lab is to have a better understanding of OSPF. You'll have the possibility to watch how this protocol works.
 
-To launch the labs you have to go in the repertory of the lab and launch it with netkit using lstart. 
-You can see that the 5 machines are launched. For the moment, if you try to ping from a router to a non adjacent one, you'll see a destination unreachable. It's because the ospf deamon is not launched yet.
+To launch the lab you have to go in the directory of the lab and launch it with netkit using lstart. 
+You can see that the 5 machines are launched. For the moment, if you try to ping6 from a router to a non adjacent one, you'll see a destination unreachable. It's because the ospf deamon is not launched yet.
 
 For this lab, you will use the "Wireshark" tool. It's a packet sniffer (like tcpdump) but it is more convenient to use.
 
@@ -35,7 +35,7 @@ To install it (under debian):
 
 To use it with netkit :
 
-    When you have launched a lab, you can acces your home directory or the lab directory from a       netkit machine. These directories are located in ``/hosthome`` and ``/hostlab``. Go in that directory :
+    When you have launched a lab, you can access to your home directory or the lab directory from a netkit machine. These directories are located in ``/hosthome`` and ``/hostlab`` in netkit. Go in that directory :
 
  .. code:: console
 
@@ -54,10 +54,6 @@ Now we can launch wireshark on our computer with the input file aaa.out. You can
  .. code:: console
 
     wireshark -k -i<(tail -f aaa.out)&
-
-Note: you don't need to understand that line.
-
-
 
 
 Launching the daemon
@@ -93,7 +89,7 @@ In netkit, type :
 
     telnet ::1 ospf6d
 
-Reminder: "::1" is ipv6 address for localhost. ospf6d is the daemon our router use for ofps.
+Reminder: "::1" is ipv6 address for localhost. ospf6d is the daemon our router use for ospf.
 
 A password is asked, "zebra" should work.
 
@@ -125,7 +121,7 @@ Now it's time to play with the topology.
 where IF is the name of your interface.
 
 -
-    When you are in the daemon (telnet ::1 ...) , change link cost and try some traceroute.
+    When you are in the daemon (telnet ::1 ospf6d) , change link cost and try some traceroute.
 
  .. code:: console
 
@@ -134,12 +130,5 @@ where IF is the name of your interface.
 
 where IF is the interface and X the new cost.
 
-The End
---------
-When you have finished clean your directory by using :
-
- .. code:: console
-
-    python xx.py -clean
 
 Have fun!
