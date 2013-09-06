@@ -100,4 +100,10 @@ This is the configuration file of our bgpd daemon. Let's see what all these line
 Knowing that, you should be able to play with the topology and even create new routers that use bgp. Try some different configurations, try to change how the filters work and observe what's happening.
 
 
+Tests
+-----
+
+On the original lab, make fail the AS9-AS1 link (ifconfig ... down). Observe which BGP messages are exchanged and the evolution of the router r7. What are your expectations? Does the experimentations confirm them?
+
+
 Have fun!
