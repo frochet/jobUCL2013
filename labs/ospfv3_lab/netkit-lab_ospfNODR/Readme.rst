@@ -10,7 +10,7 @@ In this lab, you'll work on a network with routers that use OSPFv3 to build thei
 
 Here is the topology of the network:
 
-  .. figure:: ../../png/labs/ospfnord/topology.png
+  .. figure:: ../../../png/labs/ospfnord/topology.png
      :align: center
      :scale: 100
 
