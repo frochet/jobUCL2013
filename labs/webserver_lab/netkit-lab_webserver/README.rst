@@ -11,9 +11,9 @@ Situation
 In this lab, you will find 2 hosts connected to a router. Behind this router
 there is a webserver on a different collision domain than the hosts.
 On the webserver, you have files you can download. The router has a fixed
-maximum  bandwidth of 1 Mb/s, do not change it.
+maximum bandwidth of 1 Mb/s.
 
-  .. figure:: ../../png/labs/webserver/figure.png
+  .. figure:: ../../../png/labs/webserver/figure.png
      :align: center
      :scale: 100
 
@@ -52,7 +52,15 @@ Our default options are
  tcp_window_scaling = 0
  tcp_wmem = '4096 4096 4096'
 
- All others are set to their default value
+All others are set to their default value
 
 After that the tcp options have been set as you want, you can start netkit.
 Each hosts will be configured as you requested.
+
+Inside netkit, you can use the script "download" located to /root/client_download which will simulate a download of a file from the webserver with lack of performance from the client side.
+
+From any pc, you can do a wget http://webserver/download.php to simulate a
+download with lack of performance from the server.
+
+
+
