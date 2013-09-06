@@ -20,27 +20,26 @@ maximum bandwidth of 1 Mb/s.
 Instructions
 ------------
 
-::
- The goal of this lab is to have a better understanding of TCP by modifiyng its
- options. You will have to analyse tcpdump traces of your download (man tcpdump) with tcptrace (http://www.tcptrace.org/manual.html)
- and makes some conclusion about the value given to some particular options.
- tcp is highly modifiable, and as you will see, some change can improve network
- performance or lose network performance.
+The goal of this lab is to have a better understanding of TCP by modifiyng its
+options. You will have to analyse tcpdump traces of your download (man tcpdump) with tcptrace (http://www.tcptrace.org/manual.html)
+and makes some conclusion about the value given to some particular options.
+tcp is highly modifiable, and as you will see, some change can improve network
+performance or lose network performance.
 
- To modify tcp options, use the python script set_tcp_options.py. You can print
- the help with the command python set_tcp_options.py -h
+To modify tcp options, use the python script set_tcp_options.py. You can print
+the help with the command python set_tcp_options.py -h
 
- Our default options are 
+Our default options are 
 .. code-block::
- tcp_adv_win_scale'] = 0
- tcp_allowed_congestion_control'] = "reno"
+ tcp_adv_win_scale = 0
+ tcp_allowed_congestion_control = "reno"
  tcp_dsack = 0
  tcp_ecn = 0
  tcp_fack = 0
  tcp_frt = 0
  tcp_keepalive_time = 7200
- tcp_options['tcp_keepalive_intvl'] = 15
- tcp_options['tcp_low_latency'] = 0
+ tcp_keepalive_intvl = 15
+ tcp_low_latency = 0
  tcp_moderate_rcvbuf = 0
  tcp_mtu_probing = 2
  tcp_no_metrics_save = 1
