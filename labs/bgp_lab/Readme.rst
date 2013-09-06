@@ -99,28 +99,5 @@ This is the configuration file of our bgpd daemon. Let's see what all these line
 
 Knowing that, you should be able to play with the topology and even create new routers that use bgp. Try some different configurations, try to change how the filters work and observe what's happening.
 
-Tests
------
-Now it's time to play with the topology.
-
--
-    Try to make some links fail and observe what is happening. You can do that by stoping one interface on a router :
-
- .. code:: console
-
-    ifconfig IF down
-
-where IF is the name of your interface.
-
--
-    When you are in the daemon (telnet localhost bgpd).
-
- .. code:: console
-
-    interface IF
-    ospf6 cost X
-
-where IF is the interface and X the new cost.
-
 
 Have fun!
