@@ -97,7 +97,7 @@ This is the configuration file of our bgpd daemon. Let's see what all these line
      :align: center
      :scale: 100
 
-Knowing that, you should be abble to play with the topology and even create new routers that use bgp. Try some different configurations, try to change how the filters work and observe what's happening.
+Knowing that, you should be able to play with the topology and even create new routers that use bgp. Try some different configurations, try to change how the filters work and observe what's happening.
 
 Tests
 -----
