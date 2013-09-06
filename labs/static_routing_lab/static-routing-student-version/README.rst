@@ -30,4 +30,10 @@ Dont forget you are working with ipv6:
 
 After have set correctly all routes, you must be able to ping any machine in the network (use ping6)
 
+Hint: To add a route, the command is :
+
+ .. code:: console
+
+    route -A inet6 add [IPV6/prefix] gw [IPV6]
+
 Enjoy !
