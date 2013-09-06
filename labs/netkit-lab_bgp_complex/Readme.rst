@@ -61,6 +61,25 @@ Observations
 
 If you look at the routing table of the routers, you can see that they all have an entry for their subnetworks and for the network shared by r9 with the nexthop defined. But they have no knowledge of the others subnetworks and routers.
 
+You can have more advanced informations about how bgp runs on the routers by connecting the daemon.
+
+ .. code:: console
+
+    telnet localhost bgpd
+
+password is zebra as usual.
+
+In this terminal you can use:
+
+ .. code:: console
+
+    show ip bgp neighbors
+    show ip community-list
+    show ip bgp summary
+
+to get more infos.
+
+
 Analyzing the configuration
 ---------------------------
 
@@ -78,6 +97,7 @@ This is the configuration file of our bgpd daemon. Let's see what all these line
      :align: center
      :scale: 100
 
+Knowing that, you should be abble to play with the topology and even create new router that uses bgp. Try some different configurations, try to change how the filters works and observe what happens.
 
 Tests
 -----
