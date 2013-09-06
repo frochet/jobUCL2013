@@ -1,6 +1,6 @@
 //
 // This script establish a connection and sent 42 bytes of data
-// then receive does a graceful connection release
+// then does a graceful connection release
 //
 
 
