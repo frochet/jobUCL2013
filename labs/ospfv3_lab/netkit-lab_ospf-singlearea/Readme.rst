@@ -15,34 +15,27 @@ Here is the topology of the network:
      :scale: 100
 
 
-To use OSPF, these routers uses daemons called ``zebra`` and ``ospf6d`` .
+To use OSPF, these routers use daemons called ``zebra`` and ``ospf6d`` .
 
 Instructions
 ------------
 
-The goal of this lab is to have a better understanding of OSPF. You'll have the possibility to watch how this protocol work.
+The goal of this lab is to have a better understanding of OSPF. You'll have the possibility to watch how this protocol works.
 
-To launch the labs you have to execute the python scrypt "xx.py"
-
- .. code:: console
-
-    python xx.py -option
-
-
-Then, as usual, launch the lab with netkit using lstart.
+Launch the lab with netkit using lstart.
 
 Observations
 ------------
 
 -
-    When your lab is launched, try to ping the other routers. Did it works immediately? Why?
+    When your lab is launched, try to ping6 the other routers. Did it works immediately? Why?
 
 -
     Perform traceroutes from/to different interfaces. 
     Think about the path the traceroute is expected to take, and the path ICMP replies are expected to take.
     Does the traceroute confirm your expetations?
 
-Now we will access the ospf6d daemon. This will help us to see the ospf database, neighbor and route.
+Now we will access the ospf6d daemon. This will help us to see the ospf database, neighbors and route.
 
 In netkit, type :
 
@@ -68,7 +61,7 @@ Now you can ask some cool stuff at the ospf daemon:
     Is the lsdb the same for all routers? should it be?
 
 -
-    Observe the neighbor, you can find information about the Designated Router.
+    Observe the neighbors, you can find information about the Designated Router.
 
 
 Tests
@@ -94,12 +87,5 @@ where IF is the name of your interface.
 
 where IF is the interface and X the new cost.
 
-The End
---------
-When you have finished clean your directory by using :
-
- .. code:: console
-
-    python xx.py -clean
 
 Have fun!
