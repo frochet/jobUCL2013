@@ -22,14 +22,7 @@ Instructions
 
 The goal of this lab is to have a better understanding of the rip protocol. You'll have the possibility to watch how this protocol works.
 
-To launch the labs you have to execute the python scrypt "xx.py"
-
- .. code:: console
-
-    python xx.py -option
-
-
-Then, as usual, launch the lab with netkit using lstart.
+As usual, launch the lab with netkit using lstart.
 
 Observations
 ------------
