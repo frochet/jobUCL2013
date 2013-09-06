@@ -10,7 +10,7 @@ In this lab, you'll work on a network with switchs that uses the spanning tree p
 
 Here is the topology of the network:
 
-  .. figure:: ../../../png/labs/stp/topology.png
+  .. figure:: ../../png/labs/stp/topology.png
      :align: center
      :scale: 100
 
