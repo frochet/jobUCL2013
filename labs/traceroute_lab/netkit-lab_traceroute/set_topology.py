@@ -69,6 +69,12 @@ def create_conf(lab):
         f.write('client1[0]=A\nClient2[0]=A\nr[0]=A\nr[1]=B\nserver[0]=B')
     f.close()
 
+def usage():
+
+  print "This script can set up 3 differents topologies. \n";
+  print "Try python set_topology.py [option] where option can be -A1 or -A2 or -A3"
+
+
 #main function
 def main(argv):
     if argv[0] == "-A1" :
@@ -86,6 +92,12 @@ def main(argv):
 
     elif argv[0] == "-clean":
         clean()
+    
+    elif argv[0] == "-h":
+      usage()
+    else:
+      print "wrong usage \n"
+      usage();
 
 if __name__=="__main__":
     main(sys.argv[1:])

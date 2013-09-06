@@ -16,14 +16,14 @@ where IPv6 is the address of the machine you want to know the route to.
 
 Here is the topology of the network:
 
-  .. figure:: ../../png/labs/traceroute/topology.png
+  .. figure:: ../../../png/labs/traceroute/topology.png
      :align: center
      :scale: 100
 
 Instructions
 ------------
 
-The goal of this lab is to have a better understanding of  routing tables. You have to find the errors and correct them so all the routers can ping each others.
+The goal of this lab is to have a better understanding of routing tables. You have to find the errors and correct them so all the routers can ping6 each others.
 
 To launch the labs you have to execute the python scrypt "create-topology.py"
 
