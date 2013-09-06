@@ -85,10 +85,10 @@ Analyzing the configuration
 
 If you look in the folders of the routers in the lab, you can find the configurations files of the differents daemons. For example, take a look at r1 configuration. You can find 3 files in ``lab/r1/etc/quagga``. 
 The first one is ``daemons``:
-This file contains informations about wich daemon should be runned on our router.
+This file contains informations about wich daemon should be started on our router.
 
 The second one is ``zebra.conf``
-This file contains the password that we use to connect to the zebra daemon when we are on the router. (the password asked when we type ``telnet localhost zebra``
+This file contains the password that we use to connect to the zebra daemon when we are on the router. (the password asked when we type ``telnet localhost zebra``)
 
 The third one is ``bgpd.conf``:
 This is the configuration file of our bgpd daemon. Let's see what all these lines means.
@@ -97,7 +97,7 @@ This is the configuration file of our bgpd daemon. Let's see what all these line
      :align: center
      :scale: 100
 
-Knowing that, you should be abble to play with the topology and even create new router that uses bgp. Try some different configurations, try to change how the filters works and observe what happens.
+Knowing that, you should be abble to play with the topology and even create new routers that use bgp. Try some different configurations, try to change how the filters work and observe what's happening.
 
 Tests
 -----
