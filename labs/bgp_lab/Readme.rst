@@ -103,7 +103,7 @@ Knowing that, you should be able to play with the topology and even create new r
 Tests
 -----
 
-On the original lab, make fail the AS9-AS1 link (ifconfig ... down). Observe which BGP messages are exchanged and the evolution of the router r7. What are your expectations? Does the experimentations confirm them?
+On the original lab, cause a failure on the AS9-AS1 link (ifconfig ... down). Observe which BGP messages are exchanged and the change for the router r7. What are your expectations? Does your observation confirm them?
 
 
 Have fun!
