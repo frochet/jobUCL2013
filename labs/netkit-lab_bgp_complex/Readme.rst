@@ -58,10 +58,12 @@ Now we can launch wireshark on our computer with the input file aaa.out. You can
 
 Observations
 ------------
+
 If you look at the routing table of the routers, you can see that they all have an entry for their subnetworks and for the network shared by r9 with the nexthop defined. But they have no knowledge of the others subnetworks and routers.
 
 Analyzing the configuration
 ---------------------------
+
 If you look in the folders of the routers in the lab, you can find the configurations files of the differents daemons. For example, take a look at r1 configuration. You can find 3 files in ``lab/r1/etc/quagga``. 
 The first one is ``daemons``:
 This file contains informations about wich daemon should be runned on our router.
