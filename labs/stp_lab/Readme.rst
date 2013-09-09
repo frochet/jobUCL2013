@@ -83,6 +83,11 @@ When all the switches are launched, you can look at the bridge state of each swi
     brctl showstp br0
 
 You can see wich ports are in blocking state, wich are in forwarding state.
+You can also look at the port-station table by entering :
+
+ .. code:: console
+
+    brctl showmacs
 
 Tests
 -----
