@@ -10,3 +10,7 @@ Modules added to Netkit
 -libsctp1
 -netperfmeter
 -php5
+-dibbler-client
+-dibbler-server
+-dibbler-relay
+-dibbler-doc
