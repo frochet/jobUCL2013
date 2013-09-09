@@ -4,3 +4,4 @@ ifconfig eth1 up
 ifconfig eth1 add 2001:DB8:DEAD:BEEF::2/64
 route -A inet6 add 2001:DB8:cafe:babe::/64 gw 2001:DB8:dead:beef::1
 sysctl -w net.ipv6.conf.all.forwarding=1
+/etc/init.d/ssh start

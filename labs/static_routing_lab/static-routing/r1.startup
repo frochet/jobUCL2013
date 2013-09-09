@@ -6,4 +6,4 @@ route -A inet6 add 2001:DB8:a110:babe::/64 gw 2001:DB8:dead:beef::2
 # Active ipv6 forwarding 
 sysctl -w net.ipv6.conf.all.forwarding=1
 
-
+/etc/init.d/ssh start
