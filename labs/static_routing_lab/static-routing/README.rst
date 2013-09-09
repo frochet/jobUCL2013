@@ -19,6 +19,13 @@ this command in each virtual machine to manipulate routing tables.
 After have set correctly all routes, you must be able to ping any machine in
 the network (use ping6)
 
+You can check if everything is working by launching 
+
+ .. code:: console
+
+    python test.py
+
+on pc1. (When a password is asked, type "root").
 Enjoy !
 
 
