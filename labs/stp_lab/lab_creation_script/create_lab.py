@@ -23,7 +23,13 @@ class Create_lab():
 	  zone = new_zone()
 	  s.set_interface(IF, zone)
 	  s_neighbour.set_interface(IF_neighbor, zone)
-  
+ 
+  def set_weights(self):
+    L = self.graph.nodes()
+
+
+  def get_component(node):
+    pass
   
   
   def new_zone():
