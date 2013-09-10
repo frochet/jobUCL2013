@@ -4,7 +4,7 @@ class Create_lab():
 
   def __init__(self, pathToGraph):
     self.graph = nx.read_dot(pathToGraph)
-    #self.graph = nx.to_agraph(self.graph)
+   # self.graph = nx.to_agraph(self.graph)
     self.netkit_components = []
     self.zones_given = []
 
@@ -31,15 +31,15 @@ class Create_lab():
     for node_from, nbrs in self.graph.adjacency_iter():
       for node_to, eattr in nbrs.items():
 	if node_from!=node_to:
-	   if "weight" in eattr :
-	     w = eattr['weight']
-	     s = self.get_component(j)
-	     IF = s.get_interface_between(i)
-	     if IF:
+	   if "weight" in eattr[0] :
+	     w = eattr[0]['weight']
+	     s = self.get_component(node_to)
+	     IF = s.get_interface_used_between(node_from)
+	     if IF != None:
 	       if s:
                  s.attr['map_weight'][IF] = w
 	       else:
-		 print "Error occured, no netkit_component called "+j
+		 print "Error occured, no netkit_component called "+node_to
 	     else:
                print "Error occured, no interface has been matched from "+node_to+" to neighbor "+node_from
 	   else:
