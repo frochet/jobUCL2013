@@ -1,0 +1,20 @@
+ifconfig eth2 up
+ifconfig eth2 add 2001:DB8:beef::3/48
+
+ifconfig eth3 up
+ifconfig eth3 add 2001:DB8:cad0::3/48
+
+insmod sch_htb
+
+tc qdisc del dev eth2
+tc qdisc add dev eth2 root handle 1: htb default 1 
+tc class add dev eth2 parent 1: classid 1:1 htb rate 200bit
+
+tc qdisc del dev eth3
+tc qdisc add dev eth3 root handle 1: htb default 1 
+tc class add dev eth3 parent 1: classid 1:1 htb rate 200bit
+
+# Active ipv6 forwarding 
+sysctl -w net.ipv6.conf.all.forwarding=1
+#/etc/init.d/zebra start
+
