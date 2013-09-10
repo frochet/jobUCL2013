@@ -4,6 +4,7 @@ ifconfig eth2 add 2001:DB8:beef::3/48
 ifconfig eth3 up
 ifconfig eth3 add 2001:DB8:cad0::3/48
 
+# Active ipv6 forwarding 
 sysctl -w net.ipv6.conf.all.forwarding=1
 #/etc/init.d/zebra start
 
