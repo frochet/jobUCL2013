@@ -2,10 +2,6 @@ ifconfig eth0 up
 ifconfig eth0 add 2001:db8:beef::2/48
 
 
-insmod sch_htb
-tc qdisc del dev eth0
-tc qdisc add dev eth0 root handle 1: htb default 1 
-tc class add dev eth0 parent 1: classid 1:1 htb rate 200bit
 
 # Active ipv6 forwarding 
 sysctl -w net.ipv6.conf.all.forwarding=1
