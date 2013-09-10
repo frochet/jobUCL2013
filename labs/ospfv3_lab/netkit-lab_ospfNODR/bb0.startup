@@ -7,6 +7,6 @@ ifconfig eth2 up
 ifconfig eth3 up
 
 # Active ipv6 forwarding 
-
+sysctl -w net.ipv6.conf.all.forwarding=1
 #/etc/init.d/zebra start
 
