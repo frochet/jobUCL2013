@@ -45,7 +45,7 @@ Now we will launch a tcpdump capture that we will save on a file in our hostlab(
 
  .. code:: console
 
-    tcpdump -n -i IF -w aaa.out &
+    tcpdump -n -i IF -w aaa.pcap &
 
 where aaa.out is our output file, IF the interface we want to listen on (any for all interfaces) and we add the "&" symbol so we can continue to work in the netkit shell.
 
@@ -53,7 +53,7 @@ Now we can launch wireshark on our computer with the input file aaa.out. You can
 
  .. code:: console
 
-    wireshark -k -i<(tail -f aaa.out)&
+    wireshark -k -i<(tail -f aaa.pcap)&
 
 
 Launching the daemon
