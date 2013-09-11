@@ -16,11 +16,11 @@ class Create_lab():
     for node in self.graph:
       node_degree = self.graph.degree(node)
       s = self.get_component(node)
+      zone = self.new_zone()
       for neighbor in self.graph.neighbors(node):
 	IF = s.get_next_interface(node_degree)
 	s_neighbor = self.get_component(neighbor)
 	IF_neighbor =  s_neighbor.get_next_interface(self.graph.degree(neighbor))
-	zone = self.new_zone()
 	if IF >= 0:
 	  s.set_interface(IF, zone, s_neighbor)
 	if IF_neighbor >= 0:
