@@ -28,7 +28,7 @@ class Create_stp_lab(Create_lab):
 
 def default():
   #Hard code a default lab 
-
+  pass
 
 def usage():
   pass

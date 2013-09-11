@@ -8,6 +8,9 @@ import sys
 
 class NetkitComponent:
 
+  reminder = [] # static variable to share something between component.
+                # like a config already used for a particular component
+
   def __init__(self, name):
     
     self.attr = dict()
@@ -27,7 +30,8 @@ class NetkitComponent:
     if not self.attr['IF']:
       return 0
     else:
-      L =  self.attr['IF'].sort(reverse=True)
+      self.attr['IF'].sort(reverse=True)
+      L = self.attr['IF']
       if L[0]+1 < degree:
         return L[0]+1
       else:
