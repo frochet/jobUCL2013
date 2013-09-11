@@ -9,8 +9,27 @@ class Create_lab():
     self.zones_given = []
 
   
-  def create_conf(self):
-    pass
+  def create_conf(self, pathToDir, lab_descr=None, lab_ver=None, lab_auth=None, lab_email=None, lab_web=None):
+    f = open(pathToDir+"lab.conf", "w")
+    if lab_descr:
+      f.write("LAB_DESCRIPTION=\""+lab_descr+"\"\n")
+    if lab_ver:
+      f.write("LAB_VERSION="+lab_ver+"\n")
+    if lab_auth :
+      f.write("LAB_AUTHOR=\""+lab_auth+"\"\n")
+    if lab_email:
+      f.write("LAB_EMAIL="+lab_email+"\n")
+    if lab_web:
+      f.write("LAB_WEB="+lab_web+"\n")
+
+
+    for component in self.netkit_compenents:
+      for interface in component.attr['map_IF_zone']:
+	f.write("%s[%d]=%s\n"%(component.attr['name'], interface,
+	  component.attr['map_IF_zone'][interface]))
+
+    f.close()
+    
 
   def set_interface_and_zone(self):
     for node in self.graph:
