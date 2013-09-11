@@ -8,9 +8,11 @@ class Switch(NetkitComponent):
 
 
   def fill_startup_file(self, path):
-    for interface in self.attr['IF']:
-      f.write("ifconfig eth%d")
-
     f = open(path+"/"+self.attr['name']+".startup","w")
-    for IF in self.attr['IF'].keys():
-      f.write("ifconfig eth0 "+IF+" up\n")
+    for IF in self.attr['IF']:
+      f.write("ifconfig eth%d "+IF+" up\n")
+
+    f.write("brctl addbr br0\n")
+    for IF in self.attr['IF']:
+      f.write("brctl addif br0 eth"+IF)
+ 

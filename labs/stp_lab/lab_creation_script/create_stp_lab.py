@@ -16,7 +16,7 @@ class Create_stp_lab(Create_lab):
     self.set_weights()
     for switch in self.netkit_components:
       switch.create_dir(pathToDir)
-      switch.create_startup(pathToDir)
+      switch.fill_startup_file(pathToDir)
 
       #Prints
 
@@ -24,6 +24,10 @@ class Create_stp_lab(Create_lab):
       print switch.attr['map_IF_neighbor']
       print switch.attr['map_IF_zone']
       print switch.attr['map_weight']
+
+
+def default():
+  #Hard code a default lab 
 
 
 def usage():
@@ -34,7 +38,7 @@ def main(argv):
     usage()
   else:
     if argv[0] == "-d":
-      pass # write actual defaults files
+      default() # write actual defaults files
     elif argv[0] == "-f":
       lab = Create_stp_lab(argv[1], argv[2])
     elif argv[0] == "-h":
