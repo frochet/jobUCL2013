@@ -23,6 +23,7 @@ class Create_stp_lab(Create_lab):
       print switch.attr['IF']
       print switch.attr['map_IF_neighbor']
       print switch.attr['map_IF_zone']
+      print switch.attr['map_weight']
 
 
 def usage():

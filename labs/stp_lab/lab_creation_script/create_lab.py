@@ -29,21 +29,22 @@ class Create_lab():
   def set_weights(self):
     L = self.graph.nodes()
     for node_from, nbrs in self.graph.adjacency_iter():
-      for node_to, eattr in nbrs.items():
-	if node_from!=node_to:
-	   if "weight" in eattr[0] :
-	     w = eattr[0]['weight']
-	     s = self.get_component(node_to)
-	     IF = s.get_interface_used_between(node_from)
-	     if IF != None:
-	       if s:
-                 s.attr['map_weight'][IF] = w
-	       else:
-		 print "Error occured, no netkit_component called "+node_to
-	     else:
-               print "Error occured, no interface has been matched from "+node_to+" to neighbor "+node_from
-	   else:
-	     print "no weight attribute to the "+node_from+ " -> "+node_to+" edge. Default value is taken"
+      for node_to, edges in nbrs.items():
+	for edge in edges.items():
+	  if node_from!=node_to:
+	    if "weight" in edge[1] :
+	      w = edge[1]['weight']
+	      s = self.get_component(node_to)
+	      IF = s.get_interface_used_between(node_from)
+	      if IF != None:
+	        if s:
+                  s.attr['map_weight'][IF] = w
+	        else:
+		  print "Error occured, no netkit_component called "+node_to
+	      else:
+                 print "Error occured, no interface has been matched from "+node_to+" to neighbor "+node_from
+	    else:
+	       print "no weight attribute to the "+node_from+ " -> "+node_to+" edge. Default value is taken"
   def get_component(self, node):
     for elem in self.netkit_components :
       if node == elem.attr['name'] :
