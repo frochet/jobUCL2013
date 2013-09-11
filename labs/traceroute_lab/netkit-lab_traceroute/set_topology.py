@@ -71,12 +71,14 @@ def create_conf(lab):
 
 def usage():
 
-  print "This script can set up 3 differents topologies. \n";
+  print "This script can set up 3 differents mistake in the lab topology. \n";
   print "Try python set_topology.py [option] where option can be -A1 or -A2 or -A3"
 
 
 #main function
 def main(argv):
+
+        
     if argv[0] == "-A1" :
         create_conf(1)
         configure(1)
