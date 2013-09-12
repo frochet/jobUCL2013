@@ -58,12 +58,15 @@ class Create_lab():
 	  IF_neighbor = s_neighbor.get_next_interface()
 	  if self.graph.node[s.attr['name']]["zone"] == self.graph.node[neighbor]["zone"]:
 	    if zone_id in s.attr['map_IF_zone'].values():
-	      #print "should see %s with IF=%d"% (neighbor, IF_neighbor)
 	      IF = None
 	      if IF_neighbor != None: 
 	        s_neighbor.set_interface(IF_neighbor, zone_id, s)
 		self._add_zone_given(zone_id)
+		#for IF, z in s.attr['map_IF_zone'].items():
+		#  if z == zone_id:
+		#    s.attr['map_IF_neighbor'] += [(IF, s_neighbor)]
 	    else:
+	      zone_id = self.new_zone()
               IF = s.get_next_interface()
 	      zone = zone_id
 	  else:
