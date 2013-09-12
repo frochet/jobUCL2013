@@ -38,7 +38,7 @@ class Switch(NetkitComponent):
     self._define_hw_addr()
     f = open(path+"/"+self.attr['name']+".startup","w")
     for IF in self.attr['IF']:
-      f.write("ifconfig eth"+str(IF)+" hw ether "+self.attr['mac-addr']+" up\n")
+      f.write("ifconfig eth"+str(IF)+" hw ether "+self.attr['mac-addr-if'][IF]+" up\n")
 
     f.write("brctl addbr br0\n")
     for IF in self.attr['IF']:

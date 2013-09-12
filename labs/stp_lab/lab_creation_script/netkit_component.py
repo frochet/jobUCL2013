@@ -15,12 +15,14 @@ class NetkitComponent:
     
     self.attr = dict()
     self.attr['map_IF_zone'] = dict() # Map interface to netkit zone and its neighbor
-    self.attr['map_IF_neighbor'] = dict()
+    self.attr['map_IF_neighbor'] = []
+    self.attr['map_IF_bandwidth'] = dict()
+    self.attr['map_IF_delay'] = dict()
     self.attr['name'] = name
     self.attr['map_weight'] = dict()
     self.attr['IF'] = []
     self.attr['nbr_IF'] = 0 
-    self.attr['ipv6'] = None     # more than 1 times
+    self.attr['ipv6'] = "::/128"     # more than 1 times
  
   def __cmp__(self, other):
     return cmp(self.attr['nbr_IF'], other.attr['nbr_IF'])
@@ -29,7 +31,7 @@ class NetkitComponent:
   def set_interface(self, interface, zone, neighbor): 
     """interface is an int and zone something between A0 and Z99"""
     self.attr['map_IF_zone'][interface] = zone
-    self.attr['map_IF_neighbor'][interface] = neighbor
+    self.attr['map_IF_neighbor'] += [(interface, neighbor)]
     self.attr['IF'] += [interface]
 
   def get_next_interface(self):
@@ -44,9 +46,12 @@ class NetkitComponent:
 	return None
   
   def get_interface_used_between(self, neighbor):
-    for key, value in self.attr['map_IF_neighbor'].items():
-      if value.attr['name'] == neighbor:
-	return key
+    for (interface, component) in self.attr['map_IF_neighbor']:
+      if component.attr['name'] == neighbor:
+	return interface
+    print "error occured : %s " % neighbor
+    for s in self.attr['map_IF_neighbor']:
+      print s
     return None
 
   def create_dir(self, path):
@@ -58,3 +63,13 @@ class NetkitComponent:
 	  print "Error happened when mkdir of "+self.attr['name']
   def create_startup(self, path):
     file(path+"/"+self.attr['name']+".startup", "w")
+
+  def set_delay(self, pathToDir):
+    
+    f = open(pathToDir+"/"+self.attr['name']+".startup", "a")
+
+    #add delay to startup file
+  def set_bandwidth(self, pathToDir):
+
+    f = open(pathToDir+"/"+self.attr['name']+".startup", "a")
+    

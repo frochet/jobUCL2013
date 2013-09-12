@@ -13,7 +13,7 @@ class Create_stp_lab(Create_lab):
       s = Switch(node)
       self.netkit_components += [s]
     self.set_interface_and_zone()
-    self.set_weights()
+    self.set_data_from_edges()
     for switch in self.netkit_components:
       switch.create_dir(pathToDir)
       switch.fill_startup_file(pathToDir)

@@ -64,7 +64,6 @@ class Create_lab():
 	        s_neighbor.set_interface(IF_neighbor, zone_id, s)
 		self._add_zone_given(zone_id)
 	    else:
-	      zone_id = self.new_zone()
               IF = s.get_next_interface()
 	      zone = zone_id
 	  else:
@@ -116,8 +115,7 @@ class Create_lab():
 		else:
 		  print "Error occured, no netkit_component called "+node_to
 	      else:
-		print "Error occured, no interface has been matched from
-		"+node_to+" to neighbor "+node_from
+		print "Error occured, no interface has been matched from "+node_to+" to neighbor "+node_from
 
   
   def set_bandwidth(self):
