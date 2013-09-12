@@ -14,5 +14,5 @@ class Switch(NetkitComponent):
 
     f.write("brctl addbr br0\n")
     for IF in self.attr['IF']:
-      f.write("brctl addif br0 eth"+str(IF))
+      f.write("brctl addif br0 eth"+str(IF)+"\n")
  
