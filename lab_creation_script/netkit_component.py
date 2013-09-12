@@ -20,7 +20,7 @@ class NetkitComponent:
     self.attr['map_weight'] = dict()
     self.attr['IF'] = []
     self.attr['nbr_IF'] = 0 
-    self.attr['ipv6'] = None     # more than 1 times
+    self.attr['ipv6'] = "::/128"     # more than 1 times
  
   def __cmp__(self, other):
     return cmp(self.attr['nbr_IF'], other.attr['nbr_IF'])

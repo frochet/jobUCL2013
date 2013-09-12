@@ -10,7 +10,7 @@ class Router(NetkitComponent):
 
   def __init__(self,name):
     NetkitComponent.__init__(self, name)
-    self.attr['as'] = None
+    self.attr['as'] = 0
     self.attr['router-id'] = ''
     
   def define_router_id(self):
@@ -30,12 +30,13 @@ class Router(NetkitComponent):
       temp[2] +=1
     else:
       temp[3] +=1
-   
+      
+    temp= map(str,temp)
     Router.Rid=".".join(temp)
 
   def define_as(self):
     self.attr['as'] = Router.As
-    As += 1
+    Router.As += 1
 
   def fill_ospf_startup_file(self, path):
     f = open(path+"/"+self.attr['name']+".startup","w")
@@ -48,6 +49,8 @@ class Router(NetkitComponent):
     f.close()
 
   def create_ospf_dir(self, path):
+    self.define_router_id()
+    self.define_as()
     try:
       os.makedirs(path+"/"+self.attr['name']+"/etc/quagga")
     except OSError:
@@ -70,15 +73,17 @@ class Router(NetkitComponent):
       f.write("interface eth"+str(IF)+"\n")
       f.write("ipv6 ospf6 cost"+self.attr['map_weight'][IF]+"\n")
     f.write("router ospf6\n")
-    f.write("router-id "+str(self.attr['router-id'])+"\n")
+    f.write("router-id "+self.attr['router-id']+"\n")
 
     for IF in self.attr['IF']:
-      f.write("interface eth"+str(IF)+" area 0.0.0.0")
+      f.write("interface eth"+str(IF)+" area 0.0.0.0\n")
 
     f.write("log file /var/log/zebra/ospf6d.log")
     f.close()
 
   def create_ripng_dir(self,path):
+    self.define_router_id()
+    self.define_as()
     try:
       os.makedirs(path+"/"+self.attr['name']+"/etc/quagga")
     except OSError:
@@ -100,6 +105,8 @@ class Router(NetkitComponent):
     f.close()
 
   def create_bgp_dir(self,path):
+    self.define_router_id()
+    self.define_as()
     try:
       os.makedirs(path+"/"+self.attr['name']+"/etc/quagga")
     except OSError:  
@@ -122,13 +129,13 @@ class Router(NetkitComponent):
     f.write("router bgp "+str(Router.As)+"\n")
     f.write("bgp router-id "+str(self.attr['router-id'])+"\n")
     for neighbor in self.attr['map_IF_neighbor'].values():
-      f.write("neighbor "+neighbor.attr['ipv6']+" remote-as "+neighbor.attr['as']+"\n")
-      f.write("!add routemap if it's needed.")
-    for neighbor in self.attr['map_IF_neighbor'].values()=
+      f.write("neighbor "+neighbor.attr['ipv6']+" remote-as "+str(neighbor.attr['as'])+"\n")
+      f.write("!add routemap if it's needed.\n")
+    for neighbor in self.attr['map_IF_neighbor'].values():
       f.write("no neighbor "+neighbor.attr['ipv6']+" activate\n")
     f.write("address-family ipv6\n")
     f.write("!add the network that the router must share below\n")
-    for neighbor in self.attr['map_IF_neighbor']
+    for neighbor in self.attr['map_IF_neighbor'].values():
       f.write("neighbor "+neighbor.attr['ipv6']+" activate\n")
     f.write("exit-address-family\n")
     f.write("!make your community list and route map below\n")
