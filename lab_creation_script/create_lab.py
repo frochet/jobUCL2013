@@ -105,10 +105,10 @@ class Create_lab():
       if node == elem.attr['name'] :
 	return elem
     return None
-  
-  
-  
+ 
 
+  def usage():
+    print "This script generate a netkit lab from a .dot file"
 
   def new_zone(self):
     """ create a random zone A0 ~ Z99  """

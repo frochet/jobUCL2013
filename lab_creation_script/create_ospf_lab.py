@@ -24,7 +24,8 @@ class Create_ospf_lab(Create_lab):
             print router.attr['map_weight']
 
 def usage():
-    pass
+    super(Create_ospf_lab, self).usage()
+    print "python create_ospf_lab -f [pathToDotFile] [pathToNetkitDirectory]"
     
 def main(argv):
     if len(argv)==0:

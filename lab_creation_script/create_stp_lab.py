@@ -27,7 +27,8 @@ def default():
   pass
 
 def usage():
-  pass
+  super(Create_stp_lab, self).usage()
+  print "python create_stp_lab -f [pathToDotFile] [pathToNetkitDirectory]"
 
 def main(argv):
   if len(argv) == 0:
