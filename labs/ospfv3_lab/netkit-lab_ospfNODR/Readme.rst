@@ -121,12 +121,17 @@ Now it's time to play with the topology.
 where IF is the name of your interface.
 
 -
-    When you are in the daemon (telnet ::1 ospf6d) , change link cost and try some traceroute.
+    When you are in the daemon (telnet ::1 ospf6d) , change link cost and try some traceroute. Below, the line you should enter in your console:
 
  .. code:: console
 
+    telnet ::1 ospf6d
+    zebra
+    enable
+    configure terminal
+    router ospf6
     interface IF
-    ospf6 cost X
+    ipv6 ospf6 cost X
 
 where IF is the interface and X the new cost.
 

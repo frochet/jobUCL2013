@@ -1484,24 +1484,24 @@
        id="path3396-6"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccc"
-       inkscape:export-filename="/home/justin/Reseau/jobUCL2013/png/labs/webserver/figure.png"
-       inkscape:export-xdpi="2.8316991"
-       inkscape:export-ydpi="2.8316991" />
+       inkscape:export-filename="/home/justin/Reseau/jobUCL2013/png/labs/dhcp/topology.png"
+       inkscape:export-xdpi="3.2316322"
+       inkscape:export-ydpi="3.2316322" />
     <path
        style="fill:none;stroke:#000000;stroke-width:26.56298828;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
        d="m 20297.991,11892.959 0,-4351.6186 0,0 0,0 -5007.04,-3921.4233"
        id="path3396-5"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccc"
-       inkscape:export-filename="/home/justin/Reseau/jobUCL2013/png/labs/webserver/figure.png"
-       inkscape:export-xdpi="2.8316991"
-       inkscape:export-ydpi="2.8316991" />
+       inkscape:export-filename="/home/justin/Reseau/jobUCL2013/png/labs/dhcp/topology.png"
+       inkscape:export-xdpi="3.2316322"
+       inkscape:export-ydpi="3.2316322" />
     <g
        id="g5648"
        transform="matrix(10.514827,0,0,10.514827,3875.5298,11139.291)"
-       inkscape:export-filename="/home/justin/Reseau/jobUCL2013/png/labs/webserver/figure.png"
-       inkscape:export-xdpi="2.8316991"
-       inkscape:export-ydpi="2.8316991">
+       inkscape:export-filename="/home/justin/Reseau/jobUCL2013/png/labs/dhcp/topology.png"
+       inkscape:export-xdpi="3.2316322"
+       inkscape:export-ydpi="3.2316322">
       <path
          d="m 165.05086,181.31432 -23.72163,-91.688035 90.90856,-38.962391 23.86782,1.609993 16.39102,3.542068 4.27146,28.014388 117.79311,19.083717 7.9502,8.45758 -0.0435,33.25182 -5.20001,48.38626 -10.61497,58.69003 -11.38876,8.77981 -22.73345,-7.32059 -6.48967,10.06758 -10.9175,8.73434 -10.918,2.61629 -10.40166,0.0403 -11.17543,-4.14581 -9.62892,-6.3999 -7.30752,-8.65382 -1.37722,-7.36571 9.02435,-21.97956 -34.03569,-13.60724 -44.93438,44.11462 -36.68325,-20.93035 -12.63494,-54.33536 z"
          id="svg_2"
@@ -1535,9 +1535,9 @@
     <g
        transform="matrix(10.514827,0,0,10.514827,17774.205,11110.194)"
        id="g6307"
-       inkscape:export-filename="/home/justin/Reseau/jobUCL2013/png/labs/webserver/figure.png"
-       inkscape:export-xdpi="2.8316991"
-       inkscape:export-ydpi="2.8316991">
+       inkscape:export-filename="/home/justin/Reseau/jobUCL2013/png/labs/dhcp/topology.png"
+       inkscape:export-xdpi="3.2316322"
+       inkscape:export-ydpi="3.2316322">
       <path
          style="fill:#fcfcfd"
          inkscape:connector-curvature="0"
@@ -1571,9 +1571,9 @@
     <g
        id="g13778"
        transform="matrix(1.1832747,0,0,1.0705264,4202.8205,-2938.4422)"
-       inkscape:export-filename="/home/justin/Reseau/jobUCL2013/png/labs/webserver/figure.png"
-       inkscape:export-xdpi="2.8316991"
-       inkscape:export-ydpi="2.8316991">
+       inkscape:export-filename="/home/justin/Reseau/jobUCL2013/png/labs/dhcp/topology.png"
+       inkscape:export-xdpi="3.2316322"
+       inkscape:export-ydpi="3.2316322">
       <g
          id="g13780"
          style="visibility:visible">
@@ -1684,9 +1684,9 @@
        id="flowRoot4484-8"
        style="font-size:1000px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
        transform="translate(-2598.5025,8039.7645)"
-       inkscape:export-filename="/home/justin/Reseau/jobUCL2013/png/labs/webserver/figure.png"
-       inkscape:export-xdpi="2.8316991"
-       inkscape:export-ydpi="2.8316991"><flowRegion
+       inkscape:export-filename="/home/justin/Reseau/jobUCL2013/png/labs/dhcp/topology.png"
+       inkscape:export-xdpi="3.2316322"
+       inkscape:export-ydpi="3.2316322"><flowRegion
          id="flowRegion4486-1"><rect
            id="rect4488-7"
            width="5182.3418"
@@ -1699,9 +1699,9 @@
        id="flowRoot4484-5"
        style="font-size:1000px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
        transform="translate(-16241.81,8251.2885)"
-       inkscape:export-filename="/home/justin/Reseau/jobUCL2013/png/labs/webserver/figure.png"
-       inkscape:export-xdpi="2.8316991"
-       inkscape:export-ydpi="2.8316991"><flowRegion
+       inkscape:export-filename="/home/justin/Reseau/jobUCL2013/png/labs/dhcp/topology.png"
+       inkscape:export-xdpi="3.2316322"
+       inkscape:export-ydpi="3.2316322"><flowRegion
          id="flowRegion4486-8"><rect
            id="rect4488-2"
            width="5182.3418"
@@ -1716,7 +1716,10 @@
        x="16128.718"
        y="3972.3049"
        id="text11508"
-       sodipodi:linespacing="125%"><tspan
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/justin/Reseau/jobUCL2013/png/labs/dhcp/topology.png"
+       inkscape:export-xdpi="3.2316322"
+       inkscape:export-ydpi="3.2316322"><tspan
          sodipodi:role="line"
          id="tspan11510"
          x="16128.718"
@@ -1727,7 +1730,10 @@
        x="10597.475"
        y="3841.4202"
        id="text11508-8"
-       sodipodi:linespacing="125%"><tspan
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/justin/Reseau/jobUCL2013/png/labs/dhcp/topology.png"
+       inkscape:export-xdpi="3.2316322"
+       inkscape:export-ydpi="3.2316322"><tspan
          sodipodi:role="line"
          id="tspan11510-9"
          x="10597.475"
@@ -1736,7 +1742,10 @@
        xml:space="preserve"
        id="flowRoot11533"
        style="font-size:600px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       transform="translate(3807.4349,-264.4052)"><flowRegion
+       transform="translate(3807.4349,-264.4052)"
+       inkscape:export-filename="/home/justin/Reseau/jobUCL2013/png/labs/dhcp/topology.png"
+       inkscape:export-xdpi="3.2316322"
+       inkscape:export-ydpi="3.2316322"><flowRegion
          id="flowRegion11535"><rect
            id="rect11537"
            width="2062.3606"
@@ -1748,7 +1757,10 @@
        xml:space="preserve"
        id="flowRoot11541"
        style="font-size:600px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       transform="translate(-846.09665,1269.145)"><flowRegion
+       transform="translate(-846.09665,1269.145)"
+       inkscape:export-filename="/home/justin/Reseau/jobUCL2013/png/labs/dhcp/topology.png"
+       inkscape:export-xdpi="3.2316322"
+       inkscape:export-ydpi="3.2316322"><flowRegion
          id="flowRegion11543"><rect
            id="rect11545"
            width="5235.2231"
