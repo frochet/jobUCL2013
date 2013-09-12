@@ -28,6 +28,8 @@ class Router(NetkitComponent):
     if temp[3]>= 255:
       temp[3]=0
       temp[2]+=1
+    else:
+      temp[3]+=1
     Rid=".".join(temp)
 
   def define_as(self):
