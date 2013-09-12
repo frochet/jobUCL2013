@@ -7,6 +7,7 @@ class Create_lab():
    # self.graph = nx.to_agraph(self.graph)
     self.netkit_components = []
     self.zones_given = []
+    self.zones_ip=dict() #____:____:XXXX:XXXX::____
 
   
   def create_conf(self, pathToDir, lab_descr=None, lab_ver=None, lab_auth=None, lab_email=None, lab_web=None):
@@ -134,3 +135,37 @@ class Create_lab():
   def _add_zone_given(self, zone):
     if zone not in self.zones_given:
       self.zones_given += [zone]
+      
+      
+      
+  def give_ipv6(self,Prefix):
+    ipzone="0000:0001"
+    for zone in self.zones_given:
+      self.zones_ip[zone]=ipzone
+      temp=ipzone.split(":")
+      i=0
+      while i<2:
+        temp[i]=int("0x"+temp[i],0)
+        i+=1
+      if temp[0]>=65535:
+        printf("too much subnetworks")
+      if temp[1]>=65535:
+        temp[0]+=10000  #to have more differents subnetworks, not only 0001,0002,...
+        temp[1]=0
+      else:
+        temp[1]+=10000  #to have more differents subnetworks, not only 0001,0002,...
+        
+      temp[0]= "%0.4x" % temp[0]
+      temp[1]= "%0.4x" % temp[1]
+      ipzone=":".join(temp)
+      
+      
+    for components in self.netkit_components:
+      ipend="0000"
+      for IF in components.attr['IF']:
+      #  print self.zones_ip
+       # print self.zones_given
+        components.attr['map_IF_ipv6'][IF]=""+Prefix+""+self.zones_ip[components.attr['map_IF_zone'][IF]]+"::"+ipend
+        ipend=int("0x"+ipend,0)
+        ipend+=1
+        ipend="%0.4x" % ipend

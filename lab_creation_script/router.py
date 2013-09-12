@@ -41,8 +41,9 @@ class Router(NetkitComponent):
   def fill_ospf_startup_file(self, path):
     f = open(path+"/"+self.attr['name']+".startup","w")
     for IF in self.attr['IF']:
+      print self.attr['map_IF_ipv6']
       f.write("ifconfig eth"+str(IF)+" up\n")
-      #f.write("ifconfig eth"+IF+" add ::) adresse ip 
+      f.write("ifconfig eth"+str(IF)+" add "+self.attr['map_IF_ipv6'][IF]+"/64\n") 
 
     f.write("# Active ipv6 forwarding\n") 
     f.write("sysctl -w net.ipv6.conf.all.forwarding=1\n")

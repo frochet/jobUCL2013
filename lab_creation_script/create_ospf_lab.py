@@ -12,6 +12,7 @@ class Create_ospf_lab(Create_lab):
             self.netkit_components += [r]
         self.set_interface_and_zone()
         self.set_weights()
+        self.give_ipv6("2001:db8:")
         for router in self.netkit_components:
             router.create_dir(pathToDir)
             router.create_startup(pathToDir)
