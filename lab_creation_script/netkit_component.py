@@ -16,6 +16,8 @@ class NetkitComponent:
     self.attr = dict()
     self.attr['map_IF_zone'] = dict() # Map interface to netkit zone and its neighbor
     self.attr['map_IF_neighbor'] = dict()
+    self.attr['map_IF_bandwidth'] = dict()
+    self.attr['map_IF_delay'] = dict()
     self.attr['name'] = name
     self.attr['map_weight'] = dict()
     self.attr['IF'] = []
