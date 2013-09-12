@@ -28,6 +28,7 @@ class Create_lab():
         f.write("%s[%d]=%s\n"%(component.attr['name'], interface, component.attr['map_IF_zone'][interface]))
 
     f.close()
+    self._create_sniffer(pathToDir)
  
   def _set_nbr_interface(self):
     for node in self.graph:
@@ -61,6 +62,7 @@ class Create_lab():
 	      IF = None
 	      if IF_neighbor != None: 
 	        s_neighbor.set_interface(IF_neighbor, zone_id, s)
+		self._add_zone_given(zone_id)
 	    else:
 	      zone_id = self.new_zone()
               IF = s.get_next_interface()
@@ -76,16 +78,17 @@ class Create_lab():
           IF_neighbor = s_neighbor.get_next_interface()
 	if IF != None and IF_neighbor != None:
 	  s.set_interface(IF, zone, s_neighbor)
- 	  s_neighbor.set_interface(IF_neighbor, zone, s)
+	  s_neighbor.set_interface(IF_neighbor, zone, s)
+	  self._add_zone_given(zone)
  
   def set_weights(self):
     L = self.graph.nodes()
     for node_from, nbrs in self.graph.adjacency_iter():
       for node_to, edges in nbrs.items():
-	for edge in edges.items():
+	for edge in edges.values():
 	  if node_from!=node_to:
-	    if "weight" in edge[1] :
-	      w = edge[1]['weight']
+	    if "weight" in edge :
+	      w = edge['weight']
 	      s = self.get_component(node_to)
 	      IF = s.get_interface_used_between(node_from)
 	      if IF != None:
@@ -116,18 +119,18 @@ class Create_lab():
       zone+=random.choice('01234566789')
       if zone not in self.zones_given :
 	cond = False
-	self.zones_given += [zone]
     return zone
     
     
-  def create_snifer(self):
-    zones_served=[]
+  def _create_sniffer(self, pathToDir):
     IF=0
+    f = open(pathToDir+"/lab.conf", "a")
     for i in self.zones_given :
-      if i not in zone_served:
-        f = open(pathToDir+"lab.conf", "w")
-        f.write("sniffer["+IF+"] = "+ i"\n")
-        zone_served.add(i)
-        IF+=1
-    
-    
+      f.write("sniffer["+str(IF)+"] = "+i+"\n")
+      IF+=1
+    f.close()
+  
+
+  def _add_zone_given(self, zone):
+    if zone not in self.zones_given:
+      self.zones_given += [zone]
