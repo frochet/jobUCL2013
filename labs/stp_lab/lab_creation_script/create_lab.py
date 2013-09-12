@@ -63,6 +63,9 @@ class Create_lab():
 	      if IF_neighbor != None: 
 	        s_neighbor.set_interface(IF_neighbor, zone_id, s)
 		self._add_zone_given(zone_id)
+		#for IF, z in s.attr['map_IF_zone'].items():
+		#  if z == zone_id:
+		#    s.attr['map_IF_neighbor'] += [(IF, s_neighbor)]
 	    else:
 	      zone_id = self.new_zone()
               IF = s.get_next_interface()
@@ -81,16 +84,15 @@ class Create_lab():
 	  s_neighbor.set_interface(IF_neighbor, zone, s)
 	  self._add_zone_given(zone)
  
-  def set_weights(self):
-    L = self.graph.nodes()
+  def set_data_from_edges(self):
     for node_from, nbrs in self.graph.adjacency_iter():
       for node_to, edges in nbrs.items():
 	for edge in edges.values():
 	  if node_from!=node_to:
+	    s = self.get_component(node_to)
+	    IF = s.get_interface_used_between(node_from)
 	    if "weight" in edge :
 	      w = edge['weight']
-	      s = self.get_component(node_to)
-	      IF = s.get_interface_used_between(node_from)
 	      if IF != None:
 	        if s:
                   s.attr['map_weight'][IF] = w
@@ -100,15 +102,38 @@ class Create_lab():
                  print "Error occured, no interface has been matched from "+node_to+" to neighbor "+node_from
 	    else:
 	       print "no weight attribute to the "+node_from+ " -> "+node_to+" edge. Default value is taken"
+            if "delay" in edge:
+              delay = edge['delay']
+	      if IF != None:
+	        if s:
+		  s.attr['map_IF_delay'][IF] = delay
+		else:
+		  print "Error occured, no netkit_component called "+node_to
+	      else:
+		print "Error occured, no interface has been matched from "+node_to+" to neighbor "+node_from
+	    if "bandwidth" in edge: 
+	      bandwidth = edge['bandwidth']
+	      if IF != None:
+		if s:
+		  s.att['map_IF_bandwidth'][IF] = bandwidth
+		else:
+		  print "Error occured, no netkit_component called "+node_to
+	      else:
+		print "Error occured, no interface has been matched from "+node_to+" to neighbor "+node_from
+
+  
+  def set_bandwidth(self):
+    pass
+  
   def get_component(self, node):
     for elem in self.netkit_components :
       if node == elem.attr['name'] :
 	return elem
     return None
-  
-  
-  
+ 
 
+  def usage():
+    print "This script generate a netkit lab from a .dot file"
 
   def new_zone(self):
     """ create a random zone A0 ~ Z99  """

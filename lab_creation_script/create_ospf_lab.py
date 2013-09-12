@@ -11,7 +11,7 @@ class Create_ospf_lab(Create_lab):
             r = Router(node)
             self.netkit_components += [r]
         self.set_interface_and_zone()
-        self.set_weights()
+        self.set_data_from_edges()
         self.give_ipv6("2001:db8:")
         for router in self.netkit_components:
             router.create_dir(pathToDir)

@@ -30,7 +30,6 @@ class Switch(NetkitComponent):
       temp2[0]="%0.2x" % temp2[0]
       temp2[1]="%0.2x" % temp2[1]
       Switch.Mac=":".join(temp2)
-          
     
     
     
