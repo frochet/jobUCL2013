@@ -119,3 +119,15 @@ class Create_lab():
 	self.zones_given += [zone]
     return zone
     
+    
+  def create_snifer(self):
+    zones_served=[]
+    IF=0
+    for i in self.zones_given :
+      if i not in zone_served:
+        f = open(pathToDir+"lab.conf", "w")
+        f.write("sniffer["+IF+"] = "+ i"\n")
+        zone_served.add(i)
+        IF+=1
+    
+    
