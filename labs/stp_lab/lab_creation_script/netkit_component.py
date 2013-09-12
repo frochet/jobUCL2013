@@ -52,9 +52,9 @@ class NetkitComponent:
   def create_dir(self, path):
     if not os.path.isdir(path+"/+"+self.attr['name']):
       try:
-	os.mkdir(path+""+self.attr['name'])
+	os.mkdir(path+"/"+self.attr['name'])
       except OSError:
 	if not os.path.isdir(path+""+self.attr['name']) :
 	  print "Error happened when mkdir of "+self.attr['name']
   def create_startup(self, path):
-    file(path+""+self.attr['name']+".startup", "w")
+    file(path+"/"+self.attr['name']+".startup", "w")

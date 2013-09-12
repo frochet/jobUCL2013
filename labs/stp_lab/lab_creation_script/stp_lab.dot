@@ -1,0 +1,12 @@
+graph g{
+
+ switch1 -- switch7
+ switch1 -- switch22
+ switch1 -- switch44
+ switch7 -- switch22
+ switch22 -- switch44
+ switch44 -- switch2
+ switch9 -- switch2
+ switch9 -- switch7
+
+}

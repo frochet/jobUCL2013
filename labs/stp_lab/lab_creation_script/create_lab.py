@@ -10,7 +10,7 @@ class Create_lab():
 
   
   def create_conf(self, pathToDir, lab_descr=None, lab_ver=None, lab_auth=None, lab_email=None, lab_web=None):
-    f = open(pathToDir+"lab.conf", "w")
+    f = open(pathToDir+"/lab.conf", "w")
     if lab_descr:
       f.write("LAB_DESCRIPTION=\""+lab_descr+"\"\n")
     if lab_ver:
