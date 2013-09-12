@@ -23,26 +23,60 @@ class Create_lab():
       f.write("LAB_WEB="+lab_web+"\n")
 
 
-    for component in self.netkit_compenents:
+    for component in self.netkit_components:
       for interface in component.attr['map_IF_zone']:
 	f.write("%s[%d]=%s\n"%(component.attr['name'], interface,
 	  component.attr['map_IF_zone'][interface]))
 
     f.close()
-    
-
-  def set_interface_and_zone(self):
+ 
+  def _set_nbr_interface(self):
     for node in self.graph:
-      node_degree = self.graph.degree(node)
-      s = self.get_component(node)
-      zone = self.new_zone()
+      count = -1;
       for neighbor in self.graph.neighbors(node):
-	IF = s.get_next_interface(node_degree)
-	s_neighbor = self.get_component(neighbor)
-	IF_neighbor =  s_neighbor.get_next_interface(self.graph.degree(neighbor))
-	if IF >= 0:
+        if "zone" in self.graph.node[node] and "zone" in self.graph.node[neighbor]:
+	  if self.graph.node[node]['zone'] == self.graph.node[neighbor]['zone']:
+	    count+=1
+      s = self.get_component(node)
+      if count >= 0:
+	s.attr['nbr_IF'] = self.graph.degree(node) - count
+      else:
+	s.attr['nbr_IF'] = self.graph.degree(node)
+      
+  def set_interface_and_zone(self):
+    self._set_nbr_interface()
+    zone_id = self.new_zone()
+    zone = ""
+    IF = -1
+    IF_neighbor = -1
+    L = self.netkit_components
+    L.sort(reverse=True)
+    for s in L:
+      for neighbor in self.graph.neighbors(s.attr['name']):
+	if "zone" in self.graph.node[s.attr['name']] and "zone" in self.graph.node[neighbor]:
+	  s_neighbor = self.get_component(neighbor)
+	  IF_neighbor = s_neighbor.get_next_interface()
+	  if self.graph.node[s.attr['name']]["zone"] == self.graph.node[neighbor]["zone"]:
+	    if zone_id in s.attr['map_IF_zone'].values():
+	      #print "should see %s with IF=%d"% (neighbor, IF_neighbor)
+	      IF = None
+	      if IF_neighbor != None: 
+	        s_neighbor.set_interface(IF_neighbor, zone_id, s)
+	    else:
+	      zone_id = self.new_zone()
+              IF = s.get_next_interface()
+	      zone = zone_id
+	  else:
+	    zone_id = self.new_zone()
+	    IF = s.get_next_inteface(node_degree)
+	    zone = zone_id
+        else:
+	  zone = self.new_zone()
+	  IF = s.get_next_interface()
+	  s_neighbor = self.get_component(neighbor)
+          IF_neighbor = s_neighbor.get_next_interface()
+	if IF != None and IF_neighbor != None:
 	  s.set_interface(IF, zone, s_neighbor)
-	if IF_neighbor >= 0:
  	  s_neighbor.set_interface(IF_neighbor, zone, s)
  
   def set_weights(self):

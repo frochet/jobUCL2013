@@ -19,27 +19,33 @@ class NetkitComponent:
     self.attr['name'] = name
     self.attr['map_weight'] = dict()
     self.attr['IF'] = []
-  
+    self.attr['nbr_IF'] = 0 
+    self.attr['ipv6'] = None     # more than 1 times
+ 
+  def __cmp__(self, other):
+    return cmp(self.attr['nbr_IF'], other.attr['nbr_IF'])
+
+
   def set_interface(self, interface, zone, neighbor): 
     """interface is an int and zone something between A0 and Z99"""
     self.attr['map_IF_zone'][interface] = zone
-    self.attr['map_IF_neighbor'][interface] = neighbor.attr['name']
+    self.attr['map_IF_neighbor'][interface] = neighbor
     self.attr['IF'] += [interface]
 
-  def get_next_interface(self, degree):
+  def get_next_interface(self):
     if not self.attr['IF']:
       return 0
     else:
       self.attr['IF'].sort(reverse=True)
       L = self.attr['IF']
-      if L[0]+1 < degree:
+      if L[0]+1 < self.attr['nbr_IF']:
         return L[0]+1
       else:
 	return None
   
   def get_interface_used_between(self, neighbor):
-    for key in self.attr['map_IF_neighbor'].keys():
-      if self.attr['map_IF_neighbor'][key] == neighbor:
+    for key, value in self.attr['map_IF_neighbor'].items():
+      if value.attr['name'] == neighbor:
 	return key
     return None
 
