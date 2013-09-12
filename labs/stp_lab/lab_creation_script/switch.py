@@ -1,22 +1,22 @@
 from netkit_component import NetkitComponent
 
 
-Mac="00:01"
 class Switch(NetkitComponent):
-
-
+   
+  Mac="00:01"
+ 
   def __init__(self, name):
-    NetkitComponent.__init__(self, name)  
-    self.attr['mac-addr']=""
+     NetkitComponent.__init__(self, name)  
+     self.attr['mac-addr']=""
 
-  def define_hw_addr(self):
-    global Mac
-    self.attr['mac-addr']="00:00:00:00:"+Mac
-    temp=Mac.split(":")
-    temp2=[]
+  def _define_hw_addr(self):
+    self.attr['mac-addr']="00:00:00:00:"+Switch.Mac
+    temp=Switch.Mac.split(":")
+    temp2=[0, 0]
     i=0
-    while i<2:
-      temp2[i]=int("0x"+temp[i])
+    while i < 2:
+      temp2[i]=int("0x"+temp[i], 0)
+      i+=1
     if temp2[0]>=255:
       printf("you made way too much switch!")
       exit()
@@ -25,16 +25,17 @@ class Switch(NetkitComponent):
       temp2[1]=0
     else:
       temp2[1]+=1
-    Mac=":".join(hex(temp2))
+    Switch.Mac=":".join(hex(temp2))
           
     
     
     
 
   def fill_startup_file(self, path):
+    self._define_hw_addr()
     f = open(path+"/"+self.attr['name']+".startup","w")
     for IF in self.attr['IF']:
-      f.write("ifconfig eth"+str(IF)+" hw ether "+self.attr['mac-addr']+"up\n")
+      f.write("ifconfig eth"+str(IF)+" hw ether "+self.attr['mac-addr']+" up\n")
 
     f.write("brctl addbr br0\n")
     for IF in self.attr['IF']:
