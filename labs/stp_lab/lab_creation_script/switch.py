@@ -39,4 +39,8 @@ class Switch(NetkitComponent):
     f.write("brctl addbr br0\n")
     for IF in self.attr['IF']:
       f.write("brctl addif br0 eth"+str(IF)+"\n")
- 
+    
+    for key, value in self.attr['map_weight'].items():
+      f.write("brctl setpathcost br0 eth%s %s" % (key, value))
+
+    f.close()
