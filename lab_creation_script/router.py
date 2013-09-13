@@ -41,7 +41,6 @@ class Router(NetkitComponent):
   def fill_startup_file(self, path):
     f = open(path+"/"+self.attr['name']+".startup","w")
     for IF in self.attr['IF']:
-      print self.attr['map_IF_ipv6']
       f.write("ifconfig eth"+str(IF)+" up\n")
       f.write("ifconfig eth"+str(IF)+" add "+self.attr['map_IF_ipv6'][IF]+"/64\n") 
 

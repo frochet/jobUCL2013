@@ -12,10 +12,15 @@ class Create_lab():
 
   
   def create_conf(self, pathToDir, lab_descr=None, lab_ver=None, lab_auth="O.Bonaventure,F.Rochet, J.Vellemans", lab_email=None, lab_web=None):
+    """
+    This function is used to create the lab.conf file. You should always finish
+    to use this when scripting a new lab, in a create_[name]_lab.py file
+
+    """
     f = open(pathToDir+"/lab.conf", "w")
     if lab_descr:
       f.write("LAB_DESCRIPTION=\""+lab_descr+"\"\n")
-    if lab_ver:
+    if lab_ver
       f.write("LAB_VERSION="+lab_ver+"\n")
     if lab_auth :
       f.write("LAB_AUTHOR=\""+lab_auth+"\"\n")
@@ -47,6 +52,9 @@ class Create_lab():
 	s.attr['nbr_IF'] = self.graph.degree(node)
       
   def set_interface_and_zone(self):
+    """
+     
+    """
     self._set_nbr_interface()
     zone_id = self.new_zone()
     zone = ""
