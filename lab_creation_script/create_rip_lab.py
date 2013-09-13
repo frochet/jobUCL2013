@@ -11,19 +11,14 @@ class Create_rip_lab(Create_lab):
             r = Router(node)
             self.netkit_components += [r]
         self.set_interface_and_zone()
-        self.set_weights()
+        self.set_data_from_edges()
+	self.give_ipv6("2001:db8:")
         for router in self.netkit_components:
             router.create_dir(pathToDir)
             router.create_startup(pathToDir)
             router.fill_ospf_startup_file(pathToDir)
             router.create_ripng_dir(pathToDir)
             
-            #Prints
-
-            print router.attr['IF']
-            print router.attr['map_IF_neighbor']
-            print router.attr['map_IF_zone']
-            print router.attr['map_weight']
         self.create_conf(pathToDir)
 def usage():
     super(Create_rip_lab, self).usage()

@@ -66,9 +66,23 @@ class NetkitComponent:
   def set_delay(self, pathToDir):
     
     f = open(pathToDir+"/"+self.attr['name']+".startup", "a")
-
+    
+    for interface, delay in self.attr['map_IF_delay'].items():
     #add delay to startup file
+      if interface in self.attr['map_IF_bandwidth'].keys():
+      #If we already have bandwidth limitation over this interface
+        f.write("tc qdisc add dev eth%d parent 1:1 handle 20: netem delay %dms\n"%(inteface, delay))
+      else:
+        f.write("tc qdisc add dev eth%d root netem delay %dms\n"%(interface, delay))
+    f.close()
+
   def set_bandwidth(self, pathToDir):
 
     f = open(pathToDir+"/"+self.attr['name']+".startup", "a")
-    
+    for interface, speed in self.attr['map_IF_bandwidth'].items():
+      f.write("insmod sch_htb\n")
+      f.write("tc qdisc del dev eth%d\n"%interface)
+      f.write("tc qdisc add dev eth%d root handle 1: htb default 1\n" % interface)
+      f.write("tc class add dev eth%d parent 1: classid 1:1 htb rate%dkbit \n" %(interface, speed))
+
+    f.close()

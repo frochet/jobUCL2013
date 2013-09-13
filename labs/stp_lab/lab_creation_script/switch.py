@@ -46,5 +46,7 @@ class Switch(NetkitComponent):
     
     for key, value in self.attr['map_weight'].items():
       f.write("brctl setpathcost br0 eth%s %s" % (key, value))
-
+    
+    self.set_bandwidth(path)
+    self.set_delay(path)
     f.close()
