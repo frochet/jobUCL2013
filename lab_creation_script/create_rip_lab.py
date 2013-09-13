@@ -16,7 +16,7 @@ class Create_rip_lab(Create_lab):
         for router in self.netkit_components:
             router.create_dir(pathToDir)
             router.create_startup(pathToDir)
-            router.fill_ospf_startup_file(pathToDir)
+            router.fill_startup_file(pathToDir)
             router.create_ripng_dir(pathToDir)
             
         self.create_conf(pathToDir)

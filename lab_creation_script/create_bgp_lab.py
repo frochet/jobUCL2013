@@ -15,7 +15,7 @@ class Create_bgp_lab(Create_lab):
         for router in self.netkit_components:
             router.create_dir(pathToDir)
             router.create_startup(pathToDir)
-            router.fill_ospf_startup_file(pathToDir)
+            router.fill_startup_file(pathToDir)
             router.create_bgp_dir(pathToDir)
             
 	self.create_conf(pathToDir)

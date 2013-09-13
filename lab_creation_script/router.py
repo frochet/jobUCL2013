@@ -38,7 +38,7 @@ class Router(NetkitComponent):
     self.attr['as'] = Router.As
     Router.As += 1
 
-  def fill_ospf_startup_file(self, path):
+  def fill_startup_file(self, path):
     f = open(path+"/"+self.attr['name']+".startup","w")
     for IF in self.attr['IF']:
       print self.attr['map_IF_ipv6']
