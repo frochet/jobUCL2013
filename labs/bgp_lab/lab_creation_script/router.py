@@ -46,17 +46,10 @@ class Router(NetkitComponent):
 
     f.write("# Active ipv6 forwarding\n") 
     f.write("sysctl -w net.ipv6.conf.all.forwarding=1\n")
-<<<<<<< HEAD
-    
-    self.set_bandwidth(path) 
-    self.set_delay(path)
-    f.close()
-=======
     f.close()
     self.set_bandwidth(path) 
     self.set_delay(path)
    
->>>>>>> c10ce85b97f656b7d19a1132d60424a97611803b
 
   def create_ospf_dir(self, path):
     self.define_router_id()
@@ -137,20 +130,6 @@ class Router(NetkitComponent):
     f = open(path+"/"+self.attr['name']+"/etc/quagga/bgpd.conf","w")
     f.write("hostname bgpd\npassword zebra\n")
     f.write("router bgp "+str(Router.As)+"\n")
-<<<<<<< HEAD
-    f.write("bgp router-id "+str(self.attr['router-id'])+"\n")
-    for neighbor in self.attr['map_IF_neighbor'].values():
-      f.write("neighbor "+neighbor.attr['ipv6']+" remote-as "+str(neighbor.attr['as'])+"\n")
-      f.write("!add routemap if it's needed.\n")
-    for neighbor in self.attr['map_IF_neighbor'].values():
-      f.write("no neighbor "+neighbor.attr['ipv6']+" activate\n")
-    f.write("address-family ipv6\n")
-    f.write("!add the network that the router must share below\n")
-    for neighbor in self.attr['map_IF_neighbor'].values():
-      f.write("neighbor "+neighbor.attr['ipv6']+" activate\n")
-    f.write("exit-address-family\n")
-    f.write("!make your community list and route map below\n")
-=======
     f.write("!\n")
     f.write("bgp router-id "+str(self.attr['router-id'])+"\n")
     for (IF, neighbor) in self.attr['map_IF_neighbor']:
@@ -169,5 +148,4 @@ class Router(NetkitComponent):
     f.write("!\n")
     f.write("!make your community list and route map below\n")
     f.close()
->>>>>>> c10ce85b97f656b7d19a1132d60424a97611803b
       
