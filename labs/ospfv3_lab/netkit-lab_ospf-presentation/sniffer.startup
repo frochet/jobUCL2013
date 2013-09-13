@@ -1,9 +1,0 @@
-ifconfig eth2 up
-ifconfig eth2 add 2001:DB8:beef::10/48
-
-ifconfig eth3 up
-ifconfig eth3 add 2001:DB8:cad0::10/48
-
-sysctl -w net.ipv6.conf.all.forwarding=1
-
-tcpdump -n -i any -w /hostlab/ospf.pcap &
