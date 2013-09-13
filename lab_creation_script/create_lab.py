@@ -2,6 +2,13 @@ import networkx as nx
 import random
 import os
 class Create_lab():
+  """
+   This class is a super class of any netkit labs. For each new netkit lab, you
+   have to create a create_[name]_la.py python file which will inherits from
+   this class.
+
+   /!\ This class should never be instancied /!\ 
+  """
 
   def __init__(self, pathToGraph):
     self.graph = nx.read_dot(pathToGraph)
