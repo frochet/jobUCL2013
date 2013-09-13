@@ -20,7 +20,7 @@ class Create_lab():
     f = open(pathToDir+"/lab.conf", "w")
     if lab_descr:
       f.write("LAB_DESCRIPTION=\""+lab_descr+"\"\n")
-    if lab_ver
+    if lab_ver:
       f.write("LAB_VERSION="+lab_ver+"\n")
     if lab_auth :
       f.write("LAB_AUTHOR=\""+lab_auth+"\"\n")
