@@ -72,7 +72,7 @@ class Router(NetkitComponent):
     f.write("hostname ospf6d\npassword zebra\n")
     for IF in self.attr['map_weight']:
       f.write("interface eth"+str(IF)+"\n")
-      f.write("ipv6 ospf6 cost"+self.attr['map_weight'][IF]+"\n")
+      f.write("ipv6 ospf6 cost "+self.attr['map_weight'][IF]+"\n")
     f.write("router ospf6\n")
     f.write("router-id "+self.attr['router-id']+"\n")
 

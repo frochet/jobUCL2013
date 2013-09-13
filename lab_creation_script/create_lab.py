@@ -207,9 +207,8 @@ class Create_lab():
       temp[1]= "%0.4x" % temp[1]
       ipzone=":".join(temp)
       
-      
+    ipend="0000"  
     for components in self.netkit_components:
-      ipend="0000"
       for IF in components.attr['IF']:
       #  print self.zones_ip
        # print self.zones_given
