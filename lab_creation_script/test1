@@ -1,0 +1,14 @@
+graph g{ 
+  r1 -- r2 [weight=100]
+  r1 -- r3
+  r1 -- rx
+  r2 -- rx [delay = 1000,bandwith = 1]
+  r3 -- rx
+  r3 -- r4 [bandwith=1]
+  r2 -- r5 [delay=2000]
+  r4 -- r5
+  r1 [zone="A"];
+  r2 [zone="A"];
+  r3 [zone="A"];
+  rx [zone="A"];
+}

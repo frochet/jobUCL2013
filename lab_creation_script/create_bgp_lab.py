@@ -18,7 +18,7 @@ class Create_bgp_lab(Create_lab):
       router.fill_startup_file(pathToDir)
       router.create_bgp_dir(pathToDir)
 
-	self.create_conf(pathToDir)
+    self.create_conf(pathToDir)
 
 
 def usage():

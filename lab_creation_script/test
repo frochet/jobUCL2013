@@ -1,0 +1,11 @@
+graph g{ 
+  r1 -- r2 [weight=100]
+  r2 -- r3
+  r2 -- r4 [delay = 1000]
+  r2 -- r5
+  r4 -- r5
+  r5 -- r6
+  r1 [zone="A"];
+  r2 [zone="A"];
+  r3 [zone="A"];
+}

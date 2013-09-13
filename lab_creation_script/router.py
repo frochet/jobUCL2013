@@ -46,10 +46,10 @@ class Router(NetkitComponent):
 
     f.write("# Active ipv6 forwarding\n") 
     f.write("sysctl -w net.ipv6.conf.all.forwarding=1\n")
-    
+    f.close()
     self.set_bandwidth(path) 
     self.set_delay(path)
-    f.close()
+   
 
   def create_ospf_dir(self, path):
     self.define_router_id()
@@ -147,4 +147,5 @@ class Router(NetkitComponent):
     f.write("exit-address-family\n")
     f.write("!\n")
     f.write("!make your community list and route map below\n")
+    f.close()
       

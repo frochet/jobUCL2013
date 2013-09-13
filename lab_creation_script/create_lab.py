@@ -88,7 +88,7 @@ class Create_lab():
 	      zone = zone_id
 	  else:
 	    zone_id = self.new_zone()
-	    IF = s.get_next_inteface(node_degree)
+	    IF = s.get_next_interface()
 	    zone = zone_id
         else:
 	  zone = self.new_zone()

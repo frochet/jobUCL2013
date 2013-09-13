@@ -90,7 +90,7 @@ class NetkitComponent:
      it set a new qdisc to htb class handling the limitation.
     """
     f = open(pathToDir+"/"+self.attr['name']+".startup", "a")
-    
+
     for interface, delay in self.attr['map_IF_delay'].items():
     #add delay to startup file
       if interface in self.attr['map_IF_bandwidth'].keys():
