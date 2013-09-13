@@ -133,9 +133,6 @@ class Create_lab():
 		print "Error occured, no interface has been matched from "+node_to+" to neighbor "+node_from
 
   
-  def set_bandwidth(self):
-    pass
-  
   def get_component(self, node):
     for elem in self.netkit_components :
       if node == elem.attr['name'] :
