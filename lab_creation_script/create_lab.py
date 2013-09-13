@@ -1,6 +1,7 @@
 import networkx as nx
 import random
 import os
+import sys
 class Create_lab():
   """
    This class is a super class of any netkit labs. For each new netkit lab, you
@@ -46,24 +47,34 @@ class Create_lab():
     self._create_sniffer(pathToDir)
  
   def _set_nbr_interface(self):
-    for node in self.graph:
-      count = -1;
-      for neighbor in self.graph.neighbors(node):
-        if "zone" in self.graph.node[node] and "zone" in self.graph.node[neighbor]:
-	  if self.graph.node[node]['zone'] == self.graph.node[neighbor]['zone']:
+    for s in self.netkit_components :
+      s.attr['nbr_IF'] = self.graph.degree(s.attr['name'])
+    
+    def _compute_nbr_same_zone(zone, listEdges):
+      count = -1
+      for edges in listEdges:
+	for edge in edges.values():
+	  if zone == edge['zone']:
 	    count+=1
-      s = self.get_component(node)
-      if count >= 0:
-	s.attr['nbr_IF'] = self.graph.degree(node) - count
+      if count > 0:
+	return 1
       else:
-	s.attr['nbr_IF'] = self.graph.degree(node)
-      
-  def set_interface_and_zone(self):
-    """
-    This function is used to set interfaces and zone for the given graph. This
-    function should be called after the creation of all netkit_components from
-    the given graph. See one of create_[name]_lab.py for example.
-    """
+	return 0
+    for node_from, node_to_and_edges in self.graph.adjacency_iter():
+      s = self.get_component(node_from)
+      remind_zone=[]
+      for node_to, edges in node_to_and_edges.items():
+	counter = 0
+	for edge in edges.values():
+	   zone = edge['zone']
+	   if zone not in remind_zone:
+	     counter  += _compute_nbr_same_zone(zone, node_to_and_edges.values())
+             remind_zone += [zone]
+        if counter >= 0:
+	  s.attr['nbr_IF'] -= counter
+
+
+  def _set_interface_and_zone(self):
     self._set_nbr_interface()
     zone_id = self.new_zone()
     zone = ""
@@ -74,6 +85,8 @@ class Create_lab():
     for s in L:
       for neighbor in self.graph.neighbors(s.attr['name']):
 	if "zone" in self.graph.node[s.attr['name']] and "zone" in self.graph.node[neighbor]:
+	  #print s.attr['name']
+	  #print self.graph.node[s.attr['name']]
 	  s_neighbor = self.get_component(neighbor)
 	  IF_neighbor = s_neighbor.get_next_interface()
 	  if self.graph.node[s.attr['name']]["zone"] == self.graph.node[neighbor]["zone"]:
@@ -101,6 +114,34 @@ class Create_lab():
 	  self._add_zone_given(zone)
     self._set_mapping_IF_neighbors()
 
+  
+  def set_interface_and_zone(self):
+    """
+    This function is used to set interfaces and zone for the given graph. This
+    function should be called after the creation of all netkit_components from
+    the given graph. See one of create_[name]_lab.py for example.
+    """
+    self._set_nbr_interface()
+    for node_from, nbrs in self.graph.adjacency_iter():
+      for node_to, edges in nbrs.items():
+	for edge in edges.values():
+	  s = self.get_component(node_from)
+	  s_neighbor = self.get_component(node_to)
+	  if "zone" in edge:
+	    IF = s.get_next_interface()
+	    if IF != None:
+              zone = edge['zone']
+	      s.set_interface(IF, zone, s_neighbor)
+          else:
+            print "Error: zone is missing for edge "+edge
+	    sys.exit()
+    self._set_mapping_IF_neighbors()
+    for s in self.netkit_components:
+      print s.attr['name']
+      print s.attr['map_IF_zone']
+      print s.attr['nbr_IF']
+  
+  
   def _set_mapping_IF_neighbors(self):
 
     L = self.netkit_components[:]
