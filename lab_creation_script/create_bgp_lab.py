@@ -23,7 +23,7 @@ class Create_bgp_lab(Create_lab):
             print router.attr['map_IF_neighbor']
             print router.attr['map_IF_zone']
             print router.attr['map_weight']
-
+        self.create_conf(pathToDir)
 def usage():
     super(Create_bgp_lab, self).usage()
     print "python create_bgp_lab -f [pathToDotFile] [pathToNetkitDirectory]"

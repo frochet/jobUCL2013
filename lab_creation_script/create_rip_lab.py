@@ -24,7 +24,7 @@ class Create_rip_lab(Create_lab):
             print router.attr['map_IF_neighbor']
             print router.attr['map_IF_zone']
             print router.attr['map_weight']
-
+        self.create_conf(pathToDir)
 def usage():
     super(Create_rip_lab, self).usage()
     print "python create_rip_lab -f [pathToDotFile] [pathToNetkitDirectory]"

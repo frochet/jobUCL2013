@@ -18,7 +18,6 @@ class Create_ospf_lab(Create_lab):
             router.create_startup(pathToDir)
             router.fill_ospf_startup_file(pathToDir)
             router.create_ospf_dir(pathToDir)
-            
             #Prints
 
             print router.attr['IF']
@@ -26,6 +25,7 @@ class Create_ospf_lab(Create_lab):
             print router.attr['map_IF_zone']
             print router.attr['map_weight']
 
+        self.create_conf(pathToDir)   
 def usage():
     super(Create_ospf_lab, self).usage()
     print "python create_ospf_lab -f [pathToDotFile] [pathToNetkitDirectory]"
