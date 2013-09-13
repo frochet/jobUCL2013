@@ -166,8 +166,6 @@ class Create_lab():
     return None
  
 
-  def usage():
-    print "This script generate a netkit lab from a .dot file"
 
   def new_zone(self):
     """ create a random zone A0 ~ Z99  """

@@ -18,25 +18,19 @@ class Create_stp_lab(Create_lab):
       switch.create_dir(pathToDir)
       switch.fill_startup_file(pathToDir)
 
-      #Prints
 
     self.create_conf(pathToDir)
 
-def default():
-  #Hard code a default lab 
-  pass
 
 def usage():
-  super(Create_stp_lab, self).usage()
   print "python create_stp_lab -f [pathToDotFile] [pathToNetkitDirectory]"
+
 
 def main(argv):
   if len(argv) == 0:
     usage()
   else:
-    if argv[0] == "-d":
-      default() # write actual defaults files
-    elif argv[0] == "-f":
+    if argv[0] == "-f":
       lab = Create_stp_lab(argv[1], argv[2])
     elif argv[0] == "-h":
       usage()
