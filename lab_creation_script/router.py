@@ -47,6 +47,9 @@ class Router(NetkitComponent):
 
     f.write("# Active ipv6 forwarding\n") 
     f.write("sysctl -w net.ipv6.conf.all.forwarding=1\n")
+    
+    self.set_bandwidth(path) 
+    self.set_delay(path)
     f.close()
 
   def create_ospf_dir(self, path):
