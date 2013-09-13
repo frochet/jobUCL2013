@@ -31,7 +31,6 @@ class NetkitComponent:
   def set_interface(self, interface, zone, neighbor): 
     """interface is an int and zone something between A0 and Z99"""
     self.attr['map_IF_zone'][interface] = zone
-   # self.attr['map_IF_neighbor'] += [(interface, neighbor)]
     self.attr['IF'] += [interface]
 
   def get_next_interface(self):

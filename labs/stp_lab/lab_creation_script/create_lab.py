@@ -1,5 +1,6 @@
 import networkx as nx
 import random
+import os
 class Create_lab():
 
   def __init__(self, pathToGraph):
@@ -10,7 +11,7 @@ class Create_lab():
     self.zones_ip=dict() #____:____:XXXX:XXXX::____
 
   
-  def create_conf(self, pathToDir, lab_descr=None, lab_ver=None, lab_auth=None, lab_email=None, lab_web=None):
+  def create_conf(self, pathToDir, lab_descr=None, lab_ver=None, lab_auth="O.Bonaventure,F.Rochet, J.Vellemans", lab_email=None, lab_web=None):
     f = open(pathToDir+"/lab.conf", "w")
     if lab_descr:
       f.write("LAB_DESCRIPTION=\""+lab_descr+"\"\n")
@@ -25,6 +26,7 @@ class Create_lab():
 
 
     for component in self.netkit_components:
+      f.write(""+str(component.attr['name'])+"[M]=64\n")
       for interface in component.attr['map_IF_zone']:
         f.write("%s[%d]=%s\n"%(component.attr['name'], interface, component.attr['map_IF_zone'][interface]))
 
@@ -63,9 +65,6 @@ class Create_lab():
 	      if IF_neighbor != None: 
 	        s_neighbor.set_interface(IF_neighbor, zone_id, s)
 		self._add_zone_given(zone_id)
-		#for IF, z in s.attr['map_IF_zone'].items():
-		#  if z == zone_id:
-		#    s.attr['map_IF_neighbor'] += [(IF, s_neighbor)]
 	    else:
 	      zone_id = self.new_zone()
               IF = s.get_next_interface()
@@ -162,12 +161,25 @@ class Create_lab():
   def _create_sniffer(self, pathToDir):
     IF=0
     f = open(pathToDir+"/lab.conf", "a")
+    f.write("sniffer[M]=64\n")
     for i in self.zones_given :
-      f.write("sniffer["+str(IF)+"] = "+i+"\n")
+      f.write("sniffer["+str(IF)+"]="+i+"\n")
       IF+=1
     f.close()
   
-
+    f = open(pathToDir+"/sniffer.startup", "w")
+    j=0
+    while j<IF:
+      f.write("ifconfig eth"+str(j)+" up\n")
+      j+=1
+    f.close()
+    try:
+      os.makedirs(pathToDir+"/sniffer")
+    except OSError:
+      if not os.path.isdir(pathToDir+"/sniffer"):
+	print "Bad things happened during directory set up. lab could not working properly"
+  
+  
   def _add_zone_given(self, zone):
     if zone not in self.zones_given:
       self.zones_given += [zone]
