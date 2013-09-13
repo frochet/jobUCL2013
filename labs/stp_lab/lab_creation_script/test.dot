@@ -4,6 +4,7 @@ graph g{
   a -- d
   d -- c
   a -- e
+  a -- h
   a -- f [weight=10]
   a [zone="A", shape=ellipse,fillcolor="burlywood",style="filled"];
   b [shape=box,fillcolor="palegreen",style="filled,rounded"];
@@ -11,5 +12,6 @@ graph g{
   d;
   e [zone="A"];
   f [zone="A"];
+  h [zone="A"];
 }
 
