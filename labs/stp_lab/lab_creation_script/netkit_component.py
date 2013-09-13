@@ -22,7 +22,7 @@ class NetkitComponent:
     self.attr['map_weight'] = dict()
     self.attr['IF'] = []
     self.attr['nbr_IF'] = 0 
-    self.attr['ipv6'] = "::/128"     # more than 1 times
+    self.attr['map_IF_ipv6'] = dict()     # more than 1 times
  
   def __cmp__(self, other):
     return cmp(self.attr['nbr_IF'], other.attr['nbr_IF'])
@@ -31,7 +31,7 @@ class NetkitComponent:
   def set_interface(self, interface, zone, neighbor): 
     """interface is an int and zone something between A0 and Z99"""
     self.attr['map_IF_zone'][interface] = zone
-    self.attr['map_IF_neighbor'] += [(interface, neighbor)]
+   # self.attr['map_IF_neighbor'] += [(interface, neighbor)]
     self.attr['IF'] += [interface]
 
   def get_next_interface(self):

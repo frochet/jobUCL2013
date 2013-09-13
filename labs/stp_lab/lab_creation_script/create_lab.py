@@ -7,6 +7,7 @@ class Create_lab():
    # self.graph = nx.to_agraph(self.graph)
     self.netkit_components = []
     self.zones_given = []
+    self.zones_ip=dict() #____:____:XXXX:XXXX::____
 
   
   def create_conf(self, pathToDir, lab_descr=None, lab_ver=None, lab_auth=None, lab_email=None, lab_web=None):
@@ -49,7 +50,7 @@ class Create_lab():
     zone = ""
     IF = -1
     IF_neighbor = -1
-    L = self.netkit_components
+    L = self.netkit_components[:]
     L.sort(reverse=True)
     for s in L:
       for neighbor in self.graph.neighbors(s.attr['name']):
@@ -58,7 +59,6 @@ class Create_lab():
 	  IF_neighbor = s_neighbor.get_next_interface()
 	  if self.graph.node[s.attr['name']]["zone"] == self.graph.node[neighbor]["zone"]:
 	    if zone_id in s.attr['map_IF_zone'].values():
-	      #print "should see %s with IF=%d"% (neighbor, IF_neighbor)
 	      IF = None
 	      if IF_neighbor != None: 
 	        s_neighbor.set_interface(IF_neighbor, zone_id, s)
@@ -83,7 +83,19 @@ class Create_lab():
 	  s.set_interface(IF, zone, s_neighbor)
 	  s_neighbor.set_interface(IF_neighbor, zone, s)
 	  self._add_zone_given(zone)
- 
+    self._set_mapping_IF_neighbors()
+
+  def _set_mapping_IF_neighbors(self):
+
+    L = self.netkit_components[:]
+    L.sort(reverse=True)
+    for s in L:
+      for neighbor in self.graph.neighbors(s.attr['name']):
+	for IF, zone in s.attr['map_IF_zone'].items():
+	  s_neighbor = self.get_component(neighbor)
+	  if zone in s_neighbor.attr['map_IF_zone'].values():
+	    s.attr['map_IF_neighbor'] += [(IF, s_neighbor)]
+
   def set_data_from_edges(self):
     for node_from, nbrs in self.graph.adjacency_iter():
       for node_to, edges in nbrs.items():
@@ -159,3 +171,37 @@ class Create_lab():
   def _add_zone_given(self, zone):
     if zone not in self.zones_given:
       self.zones_given += [zone]
+      
+      
+      
+  def give_ipv6(self,Prefix):
+    ipzone="0000:0001"
+    for zone in self.zones_given:
+      self.zones_ip[zone]=ipzone
+      temp=ipzone.split(":")
+      i=0
+      while i<2:
+        temp[i]=int("0x"+temp[i],0)
+        i+=1
+      if temp[0]>=65535:
+        printf("too much subnetworks")
+      if temp[1]>=65535:
+        temp[0]+=10000  #to have more differents subnetworks, not only 0001,0002,...
+        temp[1]=0
+      else:
+        temp[1]+=10000  #to have more differents subnetworks, not only 0001,0002,...
+        
+      temp[0]= "%0.4x" % temp[0]
+      temp[1]= "%0.4x" % temp[1]
+      ipzone=":".join(temp)
+      
+      
+    for components in self.netkit_components:
+      ipend="0000"
+      for IF in components.attr['IF']:
+      #  print self.zones_ip
+       # print self.zones_given
+        components.attr['map_IF_ipv6'][IF]=""+Prefix+""+self.zones_ip[components.attr['map_IF_zone'][IF]]+"::"+ipend
+        ipend=int("0x"+ipend,0)
+        ipend+=1
+        ipend="%0.4x" % ipend

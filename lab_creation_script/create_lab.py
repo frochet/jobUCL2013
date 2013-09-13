@@ -50,7 +50,7 @@ class Create_lab():
     zone = ""
     IF = -1
     IF_neighbor = -1
-    L = self.netkit_components
+    L = self.netkit_components[:]
     L.sort(reverse=True)
     for s in L:
       for neighbor in self.graph.neighbors(s.attr['name']):
@@ -63,9 +63,6 @@ class Create_lab():
 	      if IF_neighbor != None: 
 	        s_neighbor.set_interface(IF_neighbor, zone_id, s)
 		self._add_zone_given(zone_id)
-		#for IF, z in s.attr['map_IF_zone'].items():
-		#  if z == zone_id:
-		#    s.attr['map_IF_neighbor'] += [(IF, s_neighbor)]
 	    else:
 	      zone_id = self.new_zone()
               IF = s.get_next_interface()
@@ -83,7 +80,19 @@ class Create_lab():
 	  s.set_interface(IF, zone, s_neighbor)
 	  s_neighbor.set_interface(IF_neighbor, zone, s)
 	  self._add_zone_given(zone)
- 
+    self._set_mapping_IF_neighbors()
+
+  def _set_mapping_IF_neighbors(self):
+
+    L = self.netkit_components[:]
+    L.sort(reverse=True)
+    for s in L:
+      for neighbor in self.graph.neighbors(s.attr['name']):
+	for IF, zone in s.attr['map_IF_zone'].items():
+	  s_neighbor = self.get_component(neighbor)
+	  if zone in s_neighbor.attr['map_IF_zone'].values():
+	    s.attr['map_IF_neighbor'] += [(IF, s_neighbor)]
+
   def set_data_from_edges(self):
     for node_from, nbrs in self.graph.adjacency_iter():
       for node_to, edges in nbrs.items():
