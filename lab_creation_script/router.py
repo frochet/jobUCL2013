@@ -130,16 +130,21 @@ class Router(NetkitComponent):
     f = open(path+"/"+self.attr['name']+"/etc/quagga/bgpd.conf","w")
     f.write("hostname bgpd\npassword zebra\n")
     f.write("router bgp "+str(Router.As)+"\n")
+    f.write("!\n")
     f.write("bgp router-id "+str(self.attr['router-id'])+"\n")
-    for neighbor in self.attr['map_IF_neighbor'].values():
-      f.write("neighbor "+neighbor.attr['ipv6']+" remote-as "+str(neighbor.attr['as'])+"\n")
+    for (IF, neighbor) in self.attr['map_IF_neighbor']:
+      f.write("neighbor "+neighbor.attr['map_IF_ipv6'][neighbor.get_interface_used_between(self.attr['name'])]+" remote-as "+str(neighbor.attr['as'])+"\n")
       f.write("!add routemap if it's needed.\n")
-    for neighbor in self.attr['map_IF_neighbor'].values():
-      f.write("no neighbor "+neighbor.attr['ipv6']+" activate\n")
+    f.write("!\n")
+    for (IF, neighbor) in self.attr['map_IF_neighbor']:
+      f.write("no neighbor "+neighbor.attr['map_IF_ipv6'][neighbor.get_interface_used_between(self.attr['name'])]+" activate\n")
+    f.write("!\n")
     f.write("address-family ipv6\n")
     f.write("!add the network that the router must share below\n")
-    for neighbor in self.attr['map_IF_neighbor'].values():
-      f.write("neighbor "+neighbor.attr['ipv6']+" activate\n")
+    f.write("!\n")
+    for (IF, neighbor) in self.attr['map_IF_neighbor']:
+      f.write("neighbor "+neighbor.attr['map_IF_ipv6'][neighbor.get_interface_used_between(self.attr['name'])]+" activate\n")
     f.write("exit-address-family\n")
+    f.write("!\n")
     f.write("!make your community list and route map below\n")
       

@@ -11,14 +11,14 @@ class Create_bgp_lab(Create_lab):
       self.netkit_components += [r]
     self.set_interface_and_zone()
     self.set_data_from_edges()
-	self.give_ipv6("2001:db8:")
+    self.give_ipv6("2001:db8:")
     for router in self.netkit_components:
       router.create_dir(pathToDir)
       router.create_startup(pathToDir)
       router.fill_startup_file(pathToDir)
       router.create_bgp_dir(pathToDir)
       
-	self.create_conf(pathToDir)
+    self.create_conf(pathToDir)
 def usage():
   super(Create_bgp_lab, self).usage()
   print "python create_bgp_lab -f [pathToDotFile] [pathToNetkitDirectory]"
