@@ -23,7 +23,7 @@ Basically, you will have each time the files :
 What can you do with this script ? 
 
 => You can give to it a .dot file containing the representation of your
-networks. The netkit lab will be generated from it and ready to work.
+network. The netkit lab will be generated from it and ready to work.
 
 The synthax used in the .dot file is the DOT language (http://www.graphviz.org/doc/info/lang.html)
 
@@ -55,7 +55,41 @@ direct neighbours.
 The script will handle itself interfaces and IP. For the exemple above, r1 will
 be connected with the same interface toward r5, r6 and r7. If you don't want
 one of them coming in the same interface in r1. Just remove its zone option. An
-other zone will be given to it.
+other zone will be given to it by the script.
+
+About this .dot file. For the moment, each .dot file you will found are graph.
+But you can use digraph if you want, it will works.
+
+Example:
+
+digraph g{
+  r1 -> r2
+  r2 -> r3
+  r1 -> r3 [weight=100]
+  r3 -> r1
+}
+
+lab fully scripted
+-------------------
+
+static routing
+rip
+stp
+ospfv3
+
+For each of them, you should be able to give a .dot file of the configuration
+you want.
+
+If you want to add a new labs
+----------------------------------------
+
+Well, you will have to dive into the code. each function are commented. At
+least each important one.
+
+To add a new script to generate a new lab, you will have to create a .py file
+like one of create_stp_lab.py, create_ospf_lab.py, ... they are very similar
+and aims to set up the lab with the function inside the class Create_lab and
+the netkit_component.
 
 
 
