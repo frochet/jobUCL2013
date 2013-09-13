@@ -8,6 +8,15 @@ import sys
 
 class NetkitComponent:
 
+  """
+   This class is the super class of any network element in netkit. Classes
+   Switch and Router inherit from it in their respective file.
+   If you want to add a netkit component, you should use this class as a super
+   class.
+
+   /!\ this class should never be instanciated /!\ 
+  """
+
   reminder = [] # static variable to share something between component.
                 # like a config already used for a particular component
 
@@ -34,6 +43,11 @@ class NetkitComponent:
     self.attr['IF'] += [interface]
 
   def get_next_interface(self):
+    """
+     Return the next disponnible interface for a component.
+     Depends of nbr_IF attribute which is computed with node degree
+     and zone.
+    """
     if not self.attr['IF']:
       return 0
     else:
@@ -45,15 +59,22 @@ class NetkitComponent:
 	return None
   
   def get_interface_used_between(self, neighbor):
+    """
+     Return the interface used between self and
+     its neighbor
+     Return None if no iterface between them. => todo: this
+     case should raise an exception and exit gracefully.
+     For the moment it just print an error if None is returned.
+    """
     for (interface, component) in self.attr['map_IF_neighbor']:
       if component.attr['name'] == neighbor:
 	return interface
-    print "error occured : %s " % neighbor
-    for s in self.attr['map_IF_neighbor']:
-      print s
     return None
 
   def create_dir(self, path):
+    """
+     Create the directory for self, if it not exist yet.
+    """
     if not os.path.isdir(path+"/+"+self.attr['name']):
       try:
 	os.mkdir(path+"/"+self.attr['name'])
@@ -64,7 +85,10 @@ class NetkitComponent:
     file(path+"/"+self.attr['name']+".startup", "w")
 
   def set_delay(self, pathToDir):
-    
+    """
+     Set tc delay in the startup file. If bandwidth limitation already exists
+     it set a new qdisc to htb class handling the limitation.
+    """
     f = open(pathToDir+"/"+self.attr['name']+".startup", "a")
     
     for interface, delay in self.attr['map_IF_delay'].items():
@@ -77,7 +101,11 @@ class NetkitComponent:
     f.close()
 
   def set_bandwidth(self, pathToDir):
-
+    """
+     Set tc bandwidth limitation in the startup file. The data come from the
+     a mapping between an interface and its corresponding limitation. These
+     data have parsed from the .dot file.
+    """
     f = open(pathToDir+"/"+self.attr['name']+".startup", "a")
     for interface, speed in self.attr['map_IF_bandwidth'].items():
       f.write("insmod sch_htb\n")
