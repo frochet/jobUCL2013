@@ -2,6 +2,13 @@ import networkx as nx
 import random
 import os
 class Create_lab():
+  """
+   This class is a super class of any netkit labs. For each new netkit lab, you
+   have to create a create_[name]_la.py python file which will inherits from
+   this class.
+
+   /!\ This class should never be instancied /!\ 
+  """
 
   def __init__(self, pathToGraph):
     self.graph = nx.read_dot(pathToGraph)
@@ -12,6 +19,11 @@ class Create_lab():
 
   
   def create_conf(self, pathToDir, lab_descr=None, lab_ver=None, lab_auth="O.Bonaventure,F.Rochet, J.Vellemans", lab_email=None, lab_web=None):
+    """
+    This function is used to create the lab.conf file. You should always finish
+    to use this when scripting a new lab, in a create_[name]_lab.py file
+
+    """
     f = open(pathToDir+"/lab.conf", "w")
     if lab_descr:
       f.write("LAB_DESCRIPTION=\""+lab_descr+"\"\n")
@@ -47,6 +59,11 @@ class Create_lab():
 	s.attr['nbr_IF'] = self.graph.degree(node)
       
   def set_interface_and_zone(self):
+    """
+    This function is used to set interfaces and zone for the given graph. This
+    function should be called after the creation of all netkit_components from
+    the given graph. See one of create_[name]_lab.py for example.
+    """
     self._set_nbr_interface()
     zone_id = self.new_zone()
     zone = ""
@@ -96,6 +113,15 @@ class Create_lab():
 	    s.attr['map_IF_neighbor'] += [(IF, s_neighbor)]
 
   def set_data_from_edges(self):
+    """
+    This function is used to get the options from the edges of a given .dot
+    file
+    3 options are handled :
+     - weight
+     - delay
+     - bandwidth
+    """
+
     for node_from, nbrs in self.graph.adjacency_iter():
       for node_to, edges in nbrs.items():
 	for edge in edges.values():
@@ -140,8 +166,6 @@ class Create_lab():
     return None
  
 
-  def usage():
-    print "This script generate a netkit lab from a .dot file"
 
   def new_zone(self):
     """ create a random zone A0 ~ Z99  """
@@ -159,8 +183,8 @@ class Create_lab():
     IF=0
     f = open(pathToDir+"/lab.conf", "a")
     f.write("sniffer[M]=64\n")
-    for i in self.zones_given :
-      f.write("sniffer["+str(IF)+"]="+i+"\n")
+    for zone in self.zones_given :
+      f.write("sniffer["+str(IF)+"]="+zone+"\n")
       IF+=1
     f.close()
   
@@ -184,6 +208,10 @@ class Create_lab():
       
       
   def give_ipv6(self,Prefix):
+    """
+     This function is used to give ipV6 to component of the graph.
+    """
+
     ipzone="0000:0001"
     for zone in self.zones_given:
       self.zones_ip[zone]=ipzone
@@ -207,8 +235,6 @@ class Create_lab():
     ipend="0000"  
     for components in self.netkit_components:
       for IF in components.attr['IF']:
-      #  print self.zones_ip
-       # print self.zones_given
         components.attr['map_IF_ipv6'][IF]=""+Prefix+""+self.zones_ip[components.attr['map_IF_zone'][IF]]+"::"+ipend
         ipend=int("0x"+ipend,0)
         ipend+=1
