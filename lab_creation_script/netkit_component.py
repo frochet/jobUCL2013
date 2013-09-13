@@ -73,7 +73,7 @@ class NetkitComponent:
       #If we already have bandwidth limitation over this interface
         f.write("tc qdisc add dev eth%d parent 1:1 handle 20: netem delay %dms\n"%(inteface, delay))
       else:
-        f.write("tc qdisc add dev eth%d root netem delay %dms\n"%(interface, delay))
+        f.write("tc qdisc add dev eth%s root netem delay %sms\n"%(interface, delay))
     f.close()
 
   def set_bandwidth(self, pathToDir):
