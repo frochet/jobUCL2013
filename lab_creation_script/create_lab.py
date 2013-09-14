@@ -74,12 +74,7 @@ class Create_lab():
             print "Error: zone is missing for edge "+edge
 	    sys.exit()
     self._set_mapping_IF_neighbors()
-    for s in self.netkit_components:
-      print s.attr['name']
-      print s.attr['map_IF_zone']
-      print s.attr['nbr_IF']
-  
-  
+ 
   def _set_mapping_IF_neighbors(self):
 
     L = self.netkit_components[:]
