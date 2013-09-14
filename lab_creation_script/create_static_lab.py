@@ -2,7 +2,7 @@ import sys
 from router import Router
 from create_lab import Create_lab
 
-class Create_ospf_lab(Create_lab):
+class Create_static_lab(Create_lab):
 
     def __init__(self,pathToGraph,pathToDir):
         Create_lab.__init__(self,pathToGraph)
@@ -19,7 +19,7 @@ class Create_ospf_lab(Create_lab):
 
         self.create_conf(pathToDir)
 def usage():
-    print "python create_ospf_lab -f [pathToDotFile] [pathToNetkitDirectory]"
+    print "python create_static_lab -f [pathToDotFile] [pathToNetkitDirectory]"
     
 def main(argv):
     if len(argv)==0:
@@ -28,7 +28,7 @@ def main(argv):
         if argv[0] == "-d":
             pass # write default labs file
         elif argv[0] =="-f":
-            lab = Create_ospf_lab(argv[1], argv[2])
+            lab = Create_static_lab(argv[1], argv[2])
         elif argv[0] == "-h":
             usage()
         else:
