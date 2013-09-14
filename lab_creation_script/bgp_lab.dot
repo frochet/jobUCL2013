@@ -1,0 +1,13 @@
+graph{
+  r9 -- r1 [zone=A, delay = 1]
+  r1 -- r2 [zone=B, delay = 100]
+  r1 -- r4 [zone=C, delay = 1]
+  r1 -- r5 [zone=D, delay = 10]
+  r1 -- r6 [zone=E, delay = 100]
+
+  r2 -- r3 [zone=F, delay = 100]
+  r3 -- r7 [zone=G, delay = 1]
+  r4 -- r7 [zone=H, delay = 1]
+  r5 -- r7 [zone=I, delay = 1]
+  r6 -- r7 [zone=J, delay = 1]
+}
