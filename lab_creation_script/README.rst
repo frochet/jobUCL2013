@@ -57,11 +57,11 @@ But you can use digraph if you want, it will works.
 Example:
 
 digraph g{
-|  r1 -> r2 [zone=A]
-|  r2 -> r3 [zone=B]
-|  r1 -> r3 [zone=C, weight=100]
-|  r3 -> r1 [zone=C]
-|
+  r1 -> r2 [zone=A]
+  r2 -> r3 [zone=B]
+  r1 -> r3 [zone=C, weight=100]
+  r3 -> r1 [zone=C]
+
 }
 
 lab fully scripted
