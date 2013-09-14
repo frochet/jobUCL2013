@@ -57,19 +57,20 @@ But you can use digraph if you want, it will works.
 Example:
 
 digraph g{
-  r1 -> r2 [zone=A]
-  r2 -> r3 [zone=B]
-  r1 -> r3 [zone=C, weight=100]
-  r3 -> r1 [zone=C]
+|  r1 -> r2 [zone=A]
+|  r2 -> r3 [zone=B]
+|  r1 -> r3 [zone=C, weight=100]
+|  r3 -> r1 [zone=C]
+|
 }
 
 lab fully scripted
 -------------------
 
-static routing
-rip
-stp
-ospfv3
+1. static routing
+2. rip
+3. stp
+4. ospfv3
 
 For each of them, you should be able to give a .dot file of the configuration
 you want.
@@ -96,7 +97,7 @@ webserver :
 This lab is mainly used to collect traces. See its readme for details. This lab
 is scripted to set tcp options you want.
 
-if you want to add a new labs
+if you want to add a new lab
 ----------------------------------------
 
 Well, you will have to dive into the code. each function are commented. At
