@@ -74,7 +74,29 @@ ospfv3
 For each of them, you should be able to give a .dot file of the configuration
 you want.
 
-If you want to add a new labs
+lab partially scripted
+-----------------------
+
+traceroute:
+
+if you want any other network architecture, you can use the script
+static routing to generate your network architecture from a dot file and then edit yourself the
+created .startup file to introduce your route errors or any bizarre stuff to
+create the exercice
+
+bgp :
+
+The configurations of quagga are currently static for the set up lab. With the
+script, you can create any network you want, but you have to modify the quagga
+conf files to match your purpose.
+
+
+webserver :
+
+This lab is mainly used to collect traces. See its readme for details. This lab
+is scripted to set tcp options you want.
+
+if you want to add a new labs
 ----------------------------------------
 
 Well, you will have to dive into the code. each function are commented. At
