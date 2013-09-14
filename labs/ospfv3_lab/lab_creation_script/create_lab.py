@@ -1,9 +1,8 @@
 import networkx as nx
 import random
 import os
+import sys
 class Create_lab():
-<<<<<<< HEAD
-=======
   """
    This class is a super class of any netkit labs. For each new netkit lab, you
    have to create a create_[name]_la.py python file which will inherits from
@@ -11,25 +10,20 @@ class Create_lab():
 
    /!\ This class should never be instancied /!\ 
   """
->>>>>>> c10ce85b97f656b7d19a1132d60424a97611803b
 
   def __init__(self, pathToGraph):
     self.graph = nx.read_dot(pathToGraph)
    # self.graph = nx.to_agraph(self.graph)
     self.netkit_components = []
     self.zones_given = []
-    self.zones_ip=dict() #____:____:XXXX:XXXX::____
 
   
   def create_conf(self, pathToDir, lab_descr=None, lab_ver=None, lab_auth="O.Bonaventure,F.Rochet, J.Vellemans", lab_email=None, lab_web=None):
-<<<<<<< HEAD
-=======
     """
     This function is used to create the lab.conf file. You should always finish
     to use this when scripting a new lab, in a create_[name]_lab.py file
 
     """
->>>>>>> c10ce85b97f656b7d19a1132d60424a97611803b
     f = open(pathToDir+"/lab.conf", "w")
     if lab_descr:
       f.write("LAB_DESCRIPTION=\""+lab_descr+"\"\n")
@@ -52,68 +46,35 @@ class Create_lab():
     self._create_sniffer(pathToDir)
  
   def _set_nbr_interface(self):
-    for node in self.graph:
-      count = -1;
-      for neighbor in self.graph.neighbors(node):
-        if "zone" in self.graph.node[node] and "zone" in self.graph.node[neighbor]:
-	  if self.graph.node[node]['zone'] == self.graph.node[neighbor]['zone']:
-	    count+=1
-      s = self.get_component(node)
-      if count >= 0:
-	s.attr['nbr_IF'] = self.graph.degree(node) - count
-      else:
-	s.attr['nbr_IF'] = self.graph.degree(node)
-      
+    for s in self.netkit_components :
+      s.attr['nbr_IF_max'] = self.graph.degree(s.attr['name'])
+    
+ 
   def set_interface_and_zone(self):
-<<<<<<< HEAD
-=======
     """
     This function is used to set interfaces and zone for the given graph. This
     function should be called after the creation of all netkit_components from
     the given graph. See one of create_[name]_lab.py for example.
     """
->>>>>>> c10ce85b97f656b7d19a1132d60424a97611803b
     self._set_nbr_interface()
-    zone_id = self.new_zone()
-    zone = ""
-    IF = -1
-    IF_neighbor = -1
-    L = self.netkit_components[:]
-    L.sort(reverse=True)
-    for s in L:
-      for neighbor in self.graph.neighbors(s.attr['name']):
-	if "zone" in self.graph.node[s.attr['name']] and "zone" in self.graph.node[neighbor]:
-	  s_neighbor = self.get_component(neighbor)
-	  IF_neighbor = s_neighbor.get_next_interface()
-	  if self.graph.node[s.attr['name']]["zone"] == self.graph.node[neighbor]["zone"]:
-	    if zone_id in s.attr['map_IF_zone'].values():
-	      IF = None
-	      if IF_neighbor != None: 
-	        s_neighbor.set_interface(IF_neighbor, zone_id, s)
-		self._add_zone_given(zone_id)
-	    else:
-	      zone_id = self.new_zone()
-              IF = s.get_next_interface()
-	      zone = zone_id
-	  else:
-	    zone_id = self.new_zone()
-<<<<<<< HEAD
-	    IF = s.get_next_inteface(node_degree)
-=======
+    for node_from, nbrs in self.graph.adjacency_iter():
+      zone_remind = []
+      for node_to, edges in nbrs.items():
+	for edge in edges.values():
+	  s = self.get_component(node_from)
+	  s_neighbor = self.get_component(node_to)
+	  if "zone" in edge:
 	    IF = s.get_next_interface()
->>>>>>> c10ce85b97f656b7d19a1132d60424a97611803b
-	    zone = zone_id
-        else:
-	  zone = self.new_zone()
-	  IF = s.get_next_interface()
-	  s_neighbor = self.get_component(neighbor)
-          IF_neighbor = s_neighbor.get_next_interface()
-	if IF != None and IF_neighbor != None:
-	  s.set_interface(IF, zone, s_neighbor)
-	  s_neighbor.set_interface(IF_neighbor, zone, s)
-	  self._add_zone_given(zone)
+	    if IF != None and edge['zone'] not in zone_remind:
+              zone = edge['zone']
+	      s.set_interface(IF, zone, s_neighbor)
+              self._add_zone_given(zone)
+	      zone_remind+=[zone]
+          else:
+            print "Error: zone is missing for edge "+edge
+	    sys.exit()
     self._set_mapping_IF_neighbors()
-
+ 
   def _set_mapping_IF_neighbors(self):
 
     L = self.netkit_components[:]
@@ -126,8 +87,6 @@ class Create_lab():
 	    s.attr['map_IF_neighbor'] += [(IF, s_neighbor)]
 
   def set_data_from_edges(self):
-<<<<<<< HEAD
-=======
     """
     This function is used to get the options from the edges of a given .dot
     file
@@ -137,7 +96,6 @@ class Create_lab():
      - bandwidth
     """
 
->>>>>>> c10ce85b97f656b7d19a1132d60424a97611803b
     for node_from, nbrs in self.graph.adjacency_iter():
       for node_to, edges in nbrs.items():
 	for edge in edges.values():
@@ -182,11 +140,6 @@ class Create_lab():
     return None
  
 
-<<<<<<< HEAD
-  def usage():
-    print "This script generate a netkit lab from a .dot file"
-=======
->>>>>>> c10ce85b97f656b7d19a1132d60424a97611803b
 
   def new_zone(self):
     """ create a random zone A0 ~ Z99  """
@@ -204,13 +157,8 @@ class Create_lab():
     IF=0
     f = open(pathToDir+"/lab.conf", "a")
     f.write("sniffer[M]=64\n")
-<<<<<<< HEAD
-    for i in self.zones_given :
-      f.write("sniffer["+str(IF)+"]="+i+"\n")
-=======
     for zone in self.zones_given :
       f.write("sniffer["+str(IF)+"]="+zone+"\n")
->>>>>>> c10ce85b97f656b7d19a1132d60424a97611803b
       IF+=1
     f.close()
   
@@ -234,16 +182,14 @@ class Create_lab():
       
       
   def give_ipv6(self,Prefix):
-<<<<<<< HEAD
-=======
     """
      This function is used to give ipV6 to component of the graph.
     """
-
->>>>>>> c10ce85b97f656b7d19a1132d60424a97611803b
+    
+    zones_ip=dict()
     ipzone="0000:0001"
     for zone in self.zones_given:
-      self.zones_ip[zone]=ipzone
+      zones_ip[zone]=ipzone
       temp=ipzone.split(":")
       i=0
       while i<2:
@@ -264,12 +210,7 @@ class Create_lab():
     ipend="0000"  
     for components in self.netkit_components:
       for IF in components.attr['IF']:
-<<<<<<< HEAD
-      #  print self.zones_ip
-       # print self.zones_given
-=======
->>>>>>> c10ce85b97f656b7d19a1132d60424a97611803b
-        components.attr['map_IF_ipv6'][IF]=""+Prefix+""+self.zones_ip[components.attr['map_IF_zone'][IF]]+"::"+ipend
+        components.attr['map_IF_ipv6'][IF]=""+Prefix+""+zones_ip[components.attr['map_IF_zone'][IF]]+"::"+ipend
         ipend=int("0x"+ipend,0)
         ipend+=1
         ipend="%0.4x" % ipend

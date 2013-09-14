@@ -19,7 +19,6 @@ class Create_ospf_lab(Create_lab):
 
         self.create_conf(pathToDir)
 def usage():
-    super(Create_ospf_lab, self).usage()
     print "python create_ospf_lab -f [pathToDotFile] [pathToNetkitDirectory]"
     
 def main(argv):

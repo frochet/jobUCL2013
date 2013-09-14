@@ -8,8 +8,6 @@ import sys
 
 class NetkitComponent:
 
-<<<<<<< HEAD
-=======
   """
    This class is the super class of any network element in netkit. Classes
    Switch and Router inherit from it in their respective file.
@@ -19,7 +17,6 @@ class NetkitComponent:
    /!\ this class should never be instanciated /!\ 
   """
 
->>>>>>> c10ce85b97f656b7d19a1132d60424a97611803b
   reminder = [] # static variable to share something between component.
                 # like a config already used for a particular component
 
@@ -33,49 +30,35 @@ class NetkitComponent:
     self.attr['name'] = name
     self.attr['map_weight'] = dict()
     self.attr['IF'] = []
-    self.attr['nbr_IF'] = 0 
+    self.attr['nbr_IF_max'] = 0 
     self.attr['map_IF_ipv6'] = dict()     # more than 1 times
  
   def __cmp__(self, other):
-    return cmp(self.attr['nbr_IF'], other.attr['nbr_IF'])
+    return cmp(self.attr['nbr_IF_max'], other.attr['nbr_IF_max'])
 
 
   def set_interface(self, interface, zone, neighbor): 
-    """interface is an int and zone something between A0 and Z99"""
-    self.attr['map_IF_zone'][interface] = zone
+    """interface is an int and zone something between A and Z99"""
+    self.attr['map_IF_zone'][interface] = zone.encode("ascii")
     self.attr['IF'] += [interface]
 
   def get_next_interface(self):
-<<<<<<< HEAD
-=======
     """
      Return the next disponnible interface for a component.
-     Depends of nbr_IF attribute which is computed with node degree
+     Depends of nbr_IF_max attribute which is computed with node degree
      and zone.
     """
->>>>>>> c10ce85b97f656b7d19a1132d60424a97611803b
     if not self.attr['IF']:
       return 0
     else:
       self.attr['IF'].sort(reverse=True)
       L = self.attr['IF']
-      if L[0]+1 < self.attr['nbr_IF']:
+      if L[0]+1 < self.attr['nbr_IF_max']:
         return L[0]+1
       else:
 	return None
   
   def get_interface_used_between(self, neighbor):
-<<<<<<< HEAD
-    for (interface, component) in self.attr['map_IF_neighbor']:
-      if component.attr['name'] == neighbor:
-	return interface
-    print "error occured : %s " % neighbor
-    for s in self.attr['map_IF_neighbor']:
-      print s
-    return None
-
-  def create_dir(self, path):
-=======
     """
      Return the interface used between self and
      its neighbor
@@ -92,7 +75,6 @@ class NetkitComponent:
     """
      Create the directory for self, if it not exist yet.
     """
->>>>>>> c10ce85b97f656b7d19a1132d60424a97611803b
     if not os.path.isdir(path+"/+"+self.attr['name']):
       try:
 	os.mkdir(path+"/"+self.attr['name'])
@@ -103,31 +85,18 @@ class NetkitComponent:
     file(path+"/"+self.attr['name']+".startup", "w")
 
   def set_delay(self, pathToDir):
-<<<<<<< HEAD
-    
-    f = open(pathToDir+"/"+self.attr['name']+".startup", "a")
-    
-=======
     """
      Set tc delay in the startup file. If bandwidth limitation already exists
      it set a new qdisc to htb class handling the limitation.
     """
     f = open(pathToDir+"/"+self.attr['name']+".startup", "a")
 
->>>>>>> c10ce85b97f656b7d19a1132d60424a97611803b
     for interface, delay in self.attr['map_IF_delay'].items():
     #add delay to startup file
       if interface in self.attr['map_IF_bandwidth'].keys():
       #If we already have bandwidth limitation over this interface
         f.write("tc qdisc add dev eth%d parent 1:1 handle 20: netem delay %dms\n"%(inteface, delay))
       else:
-<<<<<<< HEAD
-        f.write("tc qdisc add dev eth%d root netem delay %dms\n"%(interface, delay))
-    f.close()
-
-  def set_bandwidth(self, pathToDir):
-
-=======
         f.write("tc qdisc add dev eth%s root netem delay %sms\n"%(interface, delay))
     f.close()
 
@@ -137,7 +106,6 @@ class NetkitComponent:
      a mapping between an interface and its corresponding limitation. These
      data have parsed from the .dot file.
     """
->>>>>>> c10ce85b97f656b7d19a1132d60424a97611803b
     f = open(pathToDir+"/"+self.attr['name']+".startup", "a")
     for interface, speed in self.attr['map_IF_bandwidth'].items():
       f.write("insmod sch_htb\n")
