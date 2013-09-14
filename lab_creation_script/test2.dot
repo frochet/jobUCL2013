@@ -1,10 +1,6 @@
 graph g{
 
-  a--b
-  b--c
-  a--c
-  a [zone="A"];
-  b [zone="A"]
-  c [zone="A"];
-
+  a--b [zone=A]
+  b--c [zone=A]
+  a--c [zone=A]
 }

@@ -30,11 +30,11 @@ class NetkitComponent:
     self.attr['name'] = name
     self.attr['map_weight'] = dict()
     self.attr['IF'] = []
-    self.attr['nbr_IF'] = 0 
+    self.attr['nbr_IF_max'] = 0 
     self.attr['map_IF_ipv6'] = dict()     # more than 1 times
  
   def __cmp__(self, other):
-    return cmp(self.attr['nbr_IF'], other.attr['nbr_IF'])
+    return cmp(self.attr['nbr_IF_max'], other.attr['nbr_IF_max'])
 
 
   def set_interface(self, interface, zone, neighbor): 
@@ -45,7 +45,7 @@ class NetkitComponent:
   def get_next_interface(self):
     """
      Return the next disponnible interface for a component.
-     Depends of nbr_IF attribute which is computed with node degree
+     Depends of nbr_IF_max attribute which is computed with node degree
      and zone.
     """
     if not self.attr['IF']:
@@ -53,7 +53,7 @@ class NetkitComponent:
     else:
       self.attr['IF'].sort(reverse=True)
       L = self.attr['IF']
-      if L[0]+1 < self.attr['nbr_IF']:
+      if L[0]+1 < self.attr['nbr_IF_max']:
         return L[0]+1
       else:
 	return None

@@ -47,73 +47,9 @@ class Create_lab():
  
   def _set_nbr_interface(self):
     for s in self.netkit_components :
-      s.attr['nbr_IF'] = self.graph.degree(s.attr['name'])
+      s.attr['nbr_IF_max'] = self.graph.degree(s.attr['name'])
     
-    def _compute_nbr_same_zone(zone, listEdges):
-      count = -1
-      for edges in listEdges:
-	for edge in edges.values():
-	  if zone == edge['zone']:
-	    count+=1
-      if count > 0:
-	return 1
-      else:
-	return 0
-    for node_from, node_to_and_edges in self.graph.adjacency_iter():
-      s = self.get_component(node_from)
-      remind_zone=[]
-      for node_to, edges in node_to_and_edges.items():
-	counter = 0
-	for edge in edges.values():
-	   zone = edge['zone']
-	   if zone not in remind_zone:
-	     counter  += _compute_nbr_same_zone(zone, node_to_and_edges.values())
-             remind_zone += [zone]
-        if counter >= 0:
-	  s.attr['nbr_IF'] -= counter
-
-
-  def _set_interface_and_zone(self):
-    self._set_nbr_interface()
-    zone_id = self.new_zone()
-    zone = ""
-    IF = -1
-    IF_neighbor = -1
-    L = self.netkit_components[:]
-    L.sort(reverse=True)
-    for s in L:
-      for neighbor in self.graph.neighbors(s.attr['name']):
-	if "zone" in self.graph.node[s.attr['name']] and "zone" in self.graph.node[neighbor]:
-	  #print s.attr['name']
-	  #print self.graph.node[s.attr['name']]
-	  s_neighbor = self.get_component(neighbor)
-	  IF_neighbor = s_neighbor.get_next_interface()
-	  if self.graph.node[s.attr['name']]["zone"] == self.graph.node[neighbor]["zone"]:
-	    if zone_id in s.attr['map_IF_zone'].values():
-	      IF = None
-	      if IF_neighbor != None: 
-	        s_neighbor.set_interface(IF_neighbor, zone_id, s)
-		self._add_zone_given(zone_id)
-	    else:
-	      zone_id = self.new_zone()
-              IF = s.get_next_interface()
-	      zone = zone_id
-	  else:
-	    zone_id = self.new_zone()
-	    IF = s.get_next_interface()
-	    zone = zone_id
-        else:
-	  zone = self.new_zone()
-	  IF = s.get_next_interface()
-	  s_neighbor = self.get_component(neighbor)
-          IF_neighbor = s_neighbor.get_next_interface()
-	if IF != None and IF_neighbor != None:
-	  s.set_interface(IF, zone, s_neighbor)
-	  s_neighbor.set_interface(IF_neighbor, zone, s)
-	  self._add_zone_given(zone)
-    self._set_mapping_IF_neighbors()
-
-  
+ 
   def set_interface_and_zone(self):
     """
     This function is used to set interfaces and zone for the given graph. This
