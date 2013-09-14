@@ -1,7 +1,0 @@
-ifconfig eth0 up
-ifconfig eth1 up
-ifconfig eth2 up
-ifconfig eth3 up
-ifconfig eth4 up
-ifconfig eth5 up
-ifconfig eth6 up
