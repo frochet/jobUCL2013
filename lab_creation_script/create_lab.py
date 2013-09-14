@@ -16,7 +16,6 @@ class Create_lab():
    # self.graph = nx.to_agraph(self.graph)
     self.netkit_components = []
     self.zones_given = []
-    self.zones_ip=dict() #____:____:XXXX:XXXX::____
 
   
   def create_conf(self, pathToDir, lab_descr=None, lab_ver=None, lab_auth="O.Bonaventure,F.Rochet, J.Vellemans", lab_email=None, lab_web=None):
@@ -123,15 +122,18 @@ class Create_lab():
     """
     self._set_nbr_interface()
     for node_from, nbrs in self.graph.adjacency_iter():
+      zone_remind = []
       for node_to, edges in nbrs.items():
 	for edge in edges.values():
 	  s = self.get_component(node_from)
 	  s_neighbor = self.get_component(node_to)
 	  if "zone" in edge:
 	    IF = s.get_next_interface()
-	    if IF != None:
+	    if IF != None and edge['zone'] not in zone_remind:
               zone = edge['zone']
 	      s.set_interface(IF, zone, s_neighbor)
+              self._add_zone_given(zone)
+	      zone_remind+=[zone]
           else:
             print "Error: zone is missing for edge "+edge
 	    sys.exit()
@@ -252,10 +254,11 @@ class Create_lab():
     """
      This function is used to give ipV6 to component of the graph.
     """
-
+    
+    zones_ip=dict()
     ipzone="0000:0001"
     for zone in self.zones_given:
-      self.zones_ip[zone]=ipzone
+      zones_ip[zone]=ipzone
       temp=ipzone.split(":")
       i=0
       while i<2:
@@ -276,7 +279,7 @@ class Create_lab():
     ipend="0000"  
     for components in self.netkit_components:
       for IF in components.attr['IF']:
-        components.attr['map_IF_ipv6'][IF]=""+Prefix+""+self.zones_ip[components.attr['map_IF_zone'][IF]]+"::"+ipend
+        components.attr['map_IF_ipv6'][IF]=""+Prefix+""+zones_ip[components.attr['map_IF_zone'][IF]]+"::"+ipend
         ipend=int("0x"+ipend,0)
         ipend+=1
         ipend="%0.4x" % ipend
