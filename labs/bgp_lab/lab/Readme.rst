@@ -92,7 +92,7 @@ This file contains the password that we use to connect to the zebra daemon when 
 The third one is ``bgpd.conf``:
 This is the configuration file of our bgpd daemon. Let's see what all these lines means.
 
-  .. figure:: ../../png/labs/bgp/bgpdconf.png
+  .. figure:: ../../../png/labs/bgp/bgpdconf.png
      :align: center
      :scale: 100
 
