@@ -38,7 +38,7 @@ class Create_lab():
 
 
     for component in self.netkit_components:
-      f.write(""+str(component.attr['name'])+"[M]=\n"+str(memory))
+      f.write(""+str(component.attr['name'])+"[M]="+str(memory)+"\n")
       for interface in component.attr['map_IF_zone']:
         f.write("%s[%d]=%s\n"%(component.attr['name'], interface, component.attr['map_IF_zone'][interface]))
 
