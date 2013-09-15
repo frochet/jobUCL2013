@@ -23,6 +23,54 @@ Instructions
 The goal of this lab is to have a better understanding of the rip protocol. You'll have the possibility to watch how this protocol works.
 
 As usual, launch the lab with netkit using lstart, and use wireshark with the "sniffer"
+Situation
+---------
+
+
+In this lab, you'll work on a network with routers that use OSPFv3 to build their routing tables.
+
+Here is the topology of the network:
+
+  .. figure:: ../../../png/labs/ospfnord/topology.png
+     :align: center
+     :scale: 100
+
+
+To use OSPF, these routers uses daemons called ``zebra`` and ``ospf6d`` .
+
+Instructions
+------------
+
+For this lab, you will use the "Wireshark" tool. It's a packet sniffer (like tcpdump) but it is more convenient to use.
+
+To install it (under debian):
+
+ .. code:: console
+
+    sudo apt-get install wireshark
+
+To use it with netkit :
+
+    When you have launched a lab, you can access to your home directory or the lab directory from a netkit machine. These directories are located in ``/hosthome`` and ``/hostlab`` in netkit. Go in that directory :
+
+ .. code:: console
+
+    cd /hostlab
+
+Now we will launch a tcpdump capture that we will save on a file in our hostlab(or hosthome) directory (option -w). This will permits us to start a capture from this file with wireshark.
+
+ .. code:: console
+
+    tcpdump -n -i IF -w aaa.pcap &
+
+where aaa.out is our output file, IF the interface we want to listen on (any for all interfaces) and we add the "&" symbol so we can continue to work in the netkit shell.
+
+Now we can launch wireshark on our computer with the input file aaa.out. You can do that with :
+
+ .. code:: console
+
+    wireshark -k -i<(tail -f aaa.pcap)&
+
 
 Observations
 ------------
@@ -48,9 +96,6 @@ After a while, all destinations are available. Why it's not instantaneous?
 -
     sniff the rip packets using tcpdump & wireshark and observe them. Is this consistent with your expectations?
 
- .. code:: console
-
-    tcpdump -i any -v -s 1518
 
 Note : -i option permits to choose an interface. -v permits to display all packet details -s permits to capture the entire ethernet packets (not only the first 68 bytes)
 
