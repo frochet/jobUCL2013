@@ -70,7 +70,7 @@ First of all launch the ripngd and zebra daemon. To do that, type on each router
 
  .. code:: console
 
-    /etc/.init.d/zebra start
+    /etc/init.d/zebra start
 
 After a while, all destinations are available. Why it's not instantaneous?
 
