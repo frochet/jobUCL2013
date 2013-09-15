@@ -23,23 +23,7 @@ Instructions
 The goal of this lab is to have a better understanding of the rip protocol. You'll have the possibility to watch how this protocol works.
 
 As usual, launch the lab with netkit using lstart, and use wireshark with the "sniffer"
-Situation
----------
 
-
-In this lab, you'll work on a network with routers that use OSPFv3 to build their routing tables.
-
-Here is the topology of the network:
-
-  .. figure:: ../../../png/labs/ospfnord/topology.png
-     :align: center
-     :scale: 100
-
-
-To use OSPF, these routers uses daemons called ``zebra`` and ``ospf6d`` .
-
-Instructions
-------------
 
 For this lab, you will use the "Wireshark" tool. It's a packet sniffer (like tcpdump) but it is more convenient to use.
 
@@ -86,7 +70,7 @@ First of all launch the ripngd and zebra daemon. To do that, type on each router
 
  .. code:: console
 
-    /etc/.init.d/zebra start
+    /etc/init.d/zebra start
 
 After a while, all destinations are available. Why it's not instantaneous?
 
