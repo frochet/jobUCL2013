@@ -10,7 +10,7 @@ In this lab, you'll work on a network with routers that use border gateway proto
 
 Here is the topology of the network:
 
-  .. figure:: ../../png/labs/bgp/topology.png
+  .. figure:: ../../../png/labs/bgp/topology.png
      :align: center
      :scale: 100
 
@@ -73,9 +73,8 @@ In this terminal you can use:
 
  .. code:: console
 
-    show ip bgp neighbors
-    show ip community-list
-    show ip bgp summary
+    show ipv6 bgp summary
+    show ip bgp neighbors (*not working with ipv6 command*)
 
 to get more infos.
 
@@ -93,7 +92,7 @@ This file contains the password that we use to connect to the zebra daemon when 
 The third one is ``bgpd.conf``:
 This is the configuration file of our bgpd daemon. Let's see what all these lines means.
 
-  .. figure:: ../../png/labs/bgp/bgpdconf.png
+  .. figure:: ../../../png/labs/bgp/bgpdconf.png
      :align: center
      :scale: 100
 
