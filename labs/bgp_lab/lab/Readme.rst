@@ -75,6 +75,7 @@ In this terminal you can use:
 
     show ipv6 bgp summary
     show ip bgp neighbors (*not working with ipv6 command*)
+    show ip community-list
 
 to get more infos.
 
