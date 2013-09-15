@@ -1,0 +1,4 @@
+ifconfig eth0 up
+ifconfig eth0 add 2001:db8:0000:0001::0000/64
+#add ipv6 route here
+/etc/init.d/ssh starti
