@@ -1,12 +1,12 @@
 graph g{
 
- switch1 -- switch7
- switch1 -- switch22
- switch1 -- switch44
- switch7 -- switch22
- switch22 -- switch44
- switch44 -- switch2
- switch9 -- switch2
- switch9 -- switch7
+ switch1 -- switch7 [zone=C]
+ switch1 -- switch22 [zone=D]
+ switch1 -- switch44 [zone=E]
+ switch7 -- switch22 [zone=H]
+ switch22 -- switch44 [zone=G]
+ switch44 -- switch2 [zone=F]
+ switch9 -- switch2 [zone=A]
+ switch9 -- switch7 [zone=B]
 
 }
