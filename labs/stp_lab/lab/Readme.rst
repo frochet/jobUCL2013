@@ -87,7 +87,7 @@ You can also look at the port-station table by entering :
 
  .. code:: console
 
-    brctl showmacs
+    brctl showmacs br0
 
 Tests
 -----
