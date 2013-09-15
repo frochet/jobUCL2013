@@ -71,7 +71,7 @@ class Create_lab():
               self._add_zone_given(zone)
 	      zone_remind+=[zone]
           else:
-            print "Error: zone is missing for edge "+edge
+            print "Error: zone is missing for edge "+node_from+"--"+node_to+"."
 	    sys.exit()
     self._set_mapping_IF_neighbors()
  
