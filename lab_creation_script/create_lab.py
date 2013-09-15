@@ -18,7 +18,7 @@ class Create_lab():
     self.zones_given = []
 
   
-  def create_conf(self, pathToDir, lab_descr=None, lab_ver=None, lab_auth="O.Bonaventure,F.Rochet, J.Vellemans", lab_email=None, lab_web=None):
+  def create_conf(self, pathToDir, lab_descr=None, lab_ver=None, lab_auth="O.Bonaventure,F.Rochet, J.Vellemans", lab_email=None, lab_web=None, memory=64):
     """
     This function is used to create the lab.conf file. You should always finish
     to use this when scripting a new lab, in a create_[name]_lab.py file
@@ -38,7 +38,7 @@ class Create_lab():
 
 
     for component in self.netkit_components:
-      f.write(""+str(component.attr['name'])+"[M]=64\n")
+      f.write(""+str(component.attr['name'])+"[M]=\n"+str(memory))
       for interface in component.attr['map_IF_zone']:
         f.write("%s[%d]=%s\n"%(component.attr['name'], interface, component.attr['map_IF_zone'][interface]))
 
