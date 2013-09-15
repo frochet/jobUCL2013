@@ -22,7 +22,7 @@ Instructions
 
 The goal of this lab is to have a better understanding of the rip protocol. You'll have the possibility to watch how this protocol works.
 
-As usual, launch the lab with netkit using lstart.
+As usual, launch the lab with netkit using lstart, and use wireshark with the "sniffer"
 
 Observations
 ------------
@@ -46,7 +46,7 @@ After a while, all destinations are available. Why it's not instantaneous?
     Check routing tables. They should be all updated.
 
 -
-    sniff the rip packets using tcpdump and observe them. Is this consistent with your expectations?
+    sniff the rip packets using tcpdump & wireshark and observe them. Is this consistent with your expectations?
 
  .. code:: console
 
