@@ -18,7 +18,7 @@ class Create_lab():
     self.zones_given = []
 
   
-  def create_conf(self, pathToDir, lab_descr=None, lab_ver=None, lab_auth="O.Bonaventure,F.Rochet, J.Vellemans", lab_email=None, lab_web=None, memory=64):
+  def create_conf(self, pathToDir, lab_descr=None, lab_ver=None, lab_auth="O.Bonaventure,F.Rochet, J.Vellemans", lab_email=None, lab_web=None):
     """
     This function is used to create the lab.conf file. You should always finish
     to use this when scripting a new lab, in a create_[name]_lab.py file
@@ -38,7 +38,7 @@ class Create_lab():
 
 
     for component in self.netkit_components:
-      f.write(""+str(component.attr['name'])+"[M]="+str(memory)+"\n")
+      f.write(""+str(component.attr['name'])+"[M]=64\n")
       for interface in component.attr['map_IF_zone']:
         f.write("%s[%d]=%s\n"%(component.attr['name'], interface, component.attr['map_IF_zone'][interface]))
 
@@ -71,7 +71,7 @@ class Create_lab():
               self._add_zone_given(zone)
 	      zone_remind+=[zone]
           else:
-            print "Error: zone is missing for edge "+node_from+"--"+node_to+"."
+            print "Error: zone is missing for edge "+edge
 	    sys.exit()
     self._set_mapping_IF_neighbors()
  
