@@ -10,7 +10,7 @@ In this lab, you'll work on a network with routers that use border gateway proto
 
 Here is the topology of the network:
 
-  .. figure:: ../../png/labs/bgp/topology.png
+  .. figure:: ../../../png/labs/bgp/topology.png
      :align: center
      :scale: 100
 
@@ -73,9 +73,8 @@ In this terminal you can use:
 
  .. code:: console
 
-    show ip bgp neighbors
-    show ip community-list
-    show ip bgp summary
+    show ipv6 bgp summary
+    show ip bgp neighbors (*not working with ipv6 command*)
 
 to get more infos.
 
