@@ -97,6 +97,12 @@ webserver :
 This lab is mainly used to collect traces. See its readme for details. This lab
 is scripted to set tcp options you want.
 
+dhcp :
+
+no lab creaction script has been made for it. The reason is that a different
+network topology doesn't change anything about the exercice. Anyway, if you
+want to automatize this lab, see the section below.
+
 if you want to add a new lab
 ----------------------------------------
 
@@ -107,6 +113,12 @@ To add a new script to generate a new lab, you will have to create a .py file
 like one of create_stp_lab.py, create_ospf_lab.py, ... they are very similar
 and aims to set up the lab with the function inside the class Create_lab and
 the netkit_component.
+
+Let's take the example of dhcpv6 lab, which have currently a simple router
+connected to 2 host. If you want to automatize this lab, you just have to
+create a create_dhcp_lab.py similar to the other one. And write inside
+router.py and pc.py a few lines to add what should be present in the .startup
+file.
 
 
 
