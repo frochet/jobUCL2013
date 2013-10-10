@@ -51,7 +51,7 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 subdir = .
 DIST_COMMON = README $(am__configure_deps) $(srcdir)/Makefile.am \
-	$(srcdir)/Makefile.in $(top_srcdir)/configure COPYING \
+	$(srcdir)/Makefile.in $(top_srcdir)/configure COPYING INSTALL \
 	install-sh missing
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/configure.ac
@@ -113,11 +113,11 @@ distuninstallcheck_listfiles = find . -type f -print
 am__distuninstallcheck_listfiles = $(distuninstallcheck_listfiles) \
   | sed 's|^\./|$(prefix)/|' | grep -v '$(infodir)/dir$$'
 distcleancheck_listfiles = find . -type f -print
-ACLOCAL = ${SHELL} /home/jaym/Documents/jobUCL/netkit-core/missing --run aclocal-1.11
+ACLOCAL = ${SHELL} /home/jaym/Documents/jobUCL/jobUCL2013/netkit/netkit-core/missing --run aclocal-1.11
 AMTAR = $${TAR-tar}
-AUTOCONF = ${SHELL} /home/jaym/Documents/jobUCL/netkit-core/missing --run autoconf
-AUTOHEADER = ${SHELL} /home/jaym/Documents/jobUCL/netkit-core/missing --run autoheader
-AUTOMAKE = ${SHELL} /home/jaym/Documents/jobUCL/netkit-core/missing --run automake-1.11
+AUTOCONF = ${SHELL} /home/jaym/Documents/jobUCL/jobUCL2013/netkit/netkit-core/missing --run autoconf
+AUTOHEADER = ${SHELL} /home/jaym/Documents/jobUCL/jobUCL2013/netkit/netkit-core/missing --run autoheader
+AUTOMAKE = ${SHELL} /home/jaym/Documents/jobUCL/jobUCL2013/netkit/netkit-core/missing --run automake-1.11
 AWK = mawk
 CYGPATH_W = echo
 DEFS = -DPACKAGE_NAME=\"netkitcore\" -DPACKAGE_TARNAME=\"netkitcore\" -DPACKAGE_VERSION=\"0.1\" -DPACKAGE_STRING=\"netkitcore\ 0.1\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\"
@@ -132,7 +132,7 @@ INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
 LIBOBJS = 
 LIBS = 
 LTLIBOBJS = 
-MAKEINFO = ${SHELL} /home/jaym/Documents/jobUCL/netkit-core/missing --run makeinfo
+MAKEINFO = ${SHELL} /home/jaym/Documents/jobUCL/jobUCL2013/netkit/netkit-core/missing --run makeinfo
 MKDIR_P = /bin/mkdir -p
 PACKAGE = netkitcore
 PACKAGE_BUGREPORT = 
@@ -147,10 +147,10 @@ SET_MAKE =
 SHELL = /bin/bash
 STRIP = 
 VERSION = 0.1
-abs_builddir = /home/jaym/Documents/jobUCL/netkit-core
-abs_srcdir = /home/jaym/Documents/jobUCL/netkit-core
-abs_top_builddir = /home/jaym/Documents/jobUCL/netkit-core
-abs_top_srcdir = /home/jaym/Documents/jobUCL/netkit-core
+abs_builddir = /home/jaym/Documents/jobUCL/jobUCL2013/netkit/netkit-core
+abs_srcdir = /home/jaym/Documents/jobUCL/jobUCL2013/netkit/netkit-core
+abs_top_builddir = /home/jaym/Documents/jobUCL/jobUCL2013/netkit/netkit-core
+abs_top_srcdir = /home/jaym/Documents/jobUCL/jobUCL2013/netkit/netkit-core
 am__leading_dot = .
 am__tar = $${TAR-tar} chof - "$$tardir"
 am__untar = $${TAR-tar} xf -
@@ -166,7 +166,7 @@ host_alias =
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /home/jaym/Documents/jobUCL/netkit-core/install-sh
+install_sh = ${SHELL} /home/jaym/Documents/jobUCL/jobUCL2013/netkit/netkit-core/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
