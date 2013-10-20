@@ -31,18 +31,18 @@ You should use the command dig.
 
     dig @server -t type FQDN
 
-If no server are specified, dig use the default one that you can find in /etc/resolv.conf
+If no server are specified, dig uses the default one that you can find in /etc/resolv.conf.
 
-While doing these request, observe the packets that are exchanged between the differents DNS server. Is this what you expected? Sketch the Question/response order on the figure below.
+While doing these requests, observe the packets that are exchanged between the differents DNS server. Is this what you expected? Sketch the Question/response order on the figure below.
 
   .. figure:: ../../../png/labs/dns/topo.png
      :align: center
      :scale: 100
 
 
-You've learn that DNS can work in two way: Forward and Reverse. We will now resolve IPV6 addresses into their corresponding DNS names.
+You have learnt that DNS can work in two ways: Forward and Reverse. We will now resolve IPV6 addresses into their corresponding DNS names.
 
-Find the FQDN domain name of the following ipv6 addresses by asking the root server:
+Find the FQDN domain name of the following IPv6 addresses by asking the root server:
 
 -
 	2001:db8:ba1:b0a::22
