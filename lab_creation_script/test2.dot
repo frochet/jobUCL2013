@@ -1,0 +1,6 @@
+graph g{
+
+  a--b [zone=A]
+  b--c [zone=A]
+  a--c [zone=A]
+}

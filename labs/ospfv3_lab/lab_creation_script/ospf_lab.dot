@@ -1,0 +1,13 @@
+graph g{
+
+ bb0 -- bb1 [zone=A] 
+ bb0 -- bb2 [zone=B]
+ bb0 -- bb3 [zone=C]
+ bb0 -- bb4 [zone=D]
+ bb1 -- bb2 [zone=F]
+ bb1 -- bb4 [zone=E]
+ bb2 -- bb3 [zone=G]
+ 
+
+}
+

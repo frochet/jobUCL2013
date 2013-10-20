@@ -1,0 +1,9 @@
+graph g{ 
+  a -- b [weight=100][zone=A]
+  b -- c [zone=B]
+  a -- d [zone=C]
+  d -- c [zone=D]
+  a -- e [zone=E]
+  a -- h [zone=E]
+  a -- f [weight=10][zone=E]
+}

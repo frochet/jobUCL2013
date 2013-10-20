@@ -1,0 +1,12 @@
+# Fictional client-server protocol
+msc {
+#options
+ arcgradient = "25", width = "400";
+#nextstep
+ a [label="Sender"],b [label="Receiver"];
+
+ ...;
+ a=>b [label="ack0"];
+ a->a [label="Data.req()"];
+
+}

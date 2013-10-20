@@ -41,7 +41,11 @@ While doing these requests, observe the packets that are exchanged between the d
 
 You have learnt that DNS can work in two ways: Forward and Reverse. We will now resolve IPv6 addresses into their corresponding DNS names.
 
+<<<<<<< HEAD
 Find the FQDN domain name of the following IPv6 addresses by asking the root server:
+=======
+Find the FQDN domain name of the following ipv6 addresses by asking to one name server:
+>>>>>>> f2234aa9b2ab2e93ef9054c9541674a8421f3f81
 
 -
 	2001:db8:ba1:b0a::22

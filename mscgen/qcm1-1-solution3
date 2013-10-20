@@ -1,0 +1,17 @@
+# Fictional client-server protocol
+msc {
+#options
+ arcgradient = "25", width = "400";
+
+ a [label="Sender"],b [label="Receiver"];
+
+ a=>b [label="0"];
+ a<=b [label="ack0"];
+ a-xb [label="1"];
+ ...;
+ a=>b [label="1"];
+ a<=b [label="ack1"];
+ a=>b [label="0"];
+ a<=b [label="ack0"];
+
+}
