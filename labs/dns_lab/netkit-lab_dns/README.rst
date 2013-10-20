@@ -40,7 +40,7 @@ While doing these requests, observe the packets that are exchanged between the d
      :scale: 100
 
 
-You have learnt that DNS can work in two ways: Forward and Reverse. We will now resolve IPV6 addresses into their corresponding DNS names.
+You have learnt that DNS can work in two ways: Forward and Reverse. We will now resolve IPv6 addresses into their corresponding DNS names.
 
 Find the FQDN domain name of the following IPv6 addresses by asking the root server:
 
