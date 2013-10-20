@@ -1,6 +1,33 @@
 =================================
-LABO 2: DNS, BIND and IPV6
+LABO 2: DNS, BIND and IPv6
 =================================
+
+1. Starting Netkit
+------------------
+
+In order to run the Netkit network emulator, launch the following commands:
+
+ .. code:: console
+    
+    ssh -Y permeke@info.ucl.ac.be
+    export PATH=$PATH:/etinfo/applications/netkit/bin
+
+For launching a host instance, use the command vstart:
+
+ .. code:: console
+   
+    vstart hostname
+
+For launching a lab located in a folder /path/to/:
+
+ .. code:: console
+ 
+    lstart -d /path/to/lab
+
+For stopping the lab, please stop all the involved instances by using the command "halt".
+
+2. Exploring DNS
+----------------
 
 In this lab, you will experiment on Domain Name system. You will perform queries through DNS server.
 
