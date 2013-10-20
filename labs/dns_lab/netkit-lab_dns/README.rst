@@ -2,7 +2,6 @@
 LABO 2: DNS, BIND and IPV6
 =================================
 
-
 In this lab, you will experiment on Domain Name system. You will perform queries through DNS server.
 
 Below, you can find a graph where the DNS topology we will use is depicted.
