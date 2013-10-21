@@ -90,6 +90,17 @@ with ipv6 the IPv6 address you want to resolve.
 3. Using DNS to access a website
 --------------------------------
 
-Now that you have played a bit with DNS, we will now try to 
+Now that you have played a bit with DNS, we will now try to add a DNS entry that will point to some IP address and setup a website that can be joined through the added DNS entry.
+
+We will create the website on pc2 and we will call it helloworld.nanoinside.net. You thus have to add a DNS entry so that helloworld.nanoinside.net points to the IP address of pc2. See https://help.ubuntu.com/community/BIND9ServerHowto for a tutorial on bind9 configuration.
+
+Once the DNS entry is set up, it is time to configure the web server. Apache2 is installed. See http://tuxtweaks.com/2009/07/how-to-configure-apache-linux/ for a tutorial. The final goal is to see "Hello world !" when accessing the website:
+
+ .. code:: console
+
+    $ curl -s helloworld.nanoinside.net
+    Hello world !
+
+The configuration files of apache are located in /etc/apache2/
 
 Enjoy !
