@@ -9,22 +9,23 @@ In order to run the Netkit network emulator, launch the following commands:
 
  .. code:: console
     
-    ssh -Y permeke@info.ucl.ac.be
+    ssh -Y <ingilogin>@permeke.info.ucl.ac.be
     export PATH=$PATH:/etinfo/applications/netkit/bin
 
-For launching a host instance, use the command vstart:
+To launch a single host instance, use the command vstart:
 
  .. code:: console
    
     vstart hostname
 
-For launching a lab located in a folder /path/to/:
+To launch the DNS lab, use the following command:
 
  .. code:: console
  
-    lstart -d /path/to/lab
+    cp -r /etinfo/applications/netkit/dnslab $HOME/
+    lstart -d $HOME/dnslab
 
-For stopping the lab, please stop all the involved instances by using the command "halt".
+To stop the lab, please stop all the involved instances by using the command "halt".
 
 2. Exploring DNS
 ----------------
@@ -37,13 +38,10 @@ Below, you can find a graph where the DNS topology we will use is depicted.
      :align: center
      :scale: 100
 
-To begin experimentation. Go in the lab directory and launch the lab by using the command :
-
- .. code:: console
-
-    lstart
+To begin experimentation, launch the lab by running the commands explained above.
 
 The configuration of the DNS server are already done. For this lab we ask you to find the IP address of the following fully qualified domain names (FQDN):
+
 -
 	pc2.nanoinside.net
 -
@@ -83,5 +81,9 @@ Again, you should use the dig command but with the -x option.
 
 with ipv6 the IPv6 address you want to resolve.
 
+3. Using DNS to access a website
+--------------------------------
+
+Now that you have played a bit with DNS, we will now try to 
 
 Enjoy !
