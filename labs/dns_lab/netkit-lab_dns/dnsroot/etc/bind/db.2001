@@ -9,7 +9,7 @@ $ORIGIN a.0.b.0.1.a.b.0.8.b.d.0.1.0.0.2.ip6.arpa.
                         3600000 ; expire
                         0 ; negative cache ttl 
                         )
-@               IN      NS      5.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.a.0.b.0.1.a.b.0.8.b.d.0.1.0.0.2.ip6.arpa.
+@               IN      NS      ROOT-SERVER.
 
 5.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0	IN    PTR        .
 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0	IN    PTR        dnsorg.org.

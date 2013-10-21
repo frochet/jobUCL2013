@@ -22,10 +22,16 @@ To launch the DNS lab, use the following command:
 
  .. code:: console
  
-    cp -r /etinfo/applications/netkit/dnslab $HOME/
+    cp -r /etinfo/applications/netkit/dnslab/ $HOME/	# do not forget the trailing /'s
     lstart -d $HOME/dnslab
 
 To stop the lab, please stop all the involved instances by using the command "halt".
+
+Also, cleanup the virtual disks when you are finished:
+
+ .. code:: console
+
+    rm -f $HOME/dnslab/\*.disk
 
 2. Exploring DNS
 ----------------
